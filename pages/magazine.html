@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  
+
+  <!-- Main Navigation Bar -->
+  <section class="magazine-slider">
+  <div class="slider-heading-center">Upcoming Magazines</div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../images/assets/hero1.jpeg" alt="Mag 1" /></div>
+        <div class="swiper-slide"><img src="../images/assets/hero2.jpeg" alt="Mag 2" /></div>
+        <div class="swiper-slide"><img src="../images/assets/hero3.jpeg" alt="Mag 3" /></div>
+        <div class="swiper-slide"><img src="../images/assets/hero4.jpeg" alt="Mag 4" /></div>
+      </div>
+    </div>
+  </section>
+  <section class="magazine-banner">
+    <div class="magazine-banner-content">
+      <h2>MAGAZINES</h2>
+      <p>Step into the world of leadership, innovation, and impact. Each edition of The Empire Insights Magazine captures compelling stories and powerful journeys that redefine success.</p>
+    </div>
+  </section>
+
+  
+
+  <section class="magazine-cards">
+    <h2>Explore Our Editions</h2>
+    <div class="magazine-card-grid">
+
+      <div class="magazine-card">
+        <a href="magazine-preview.html?id=july2025">
+          <img src="covers/july2025.jpg" alt="July 2025 Edition">
+          <h3>July 2025</h3>
+        </a>
+      </div>
+
+      <div class="magazine-card">
+        <a href="magazine-preview.html?id=june2025">
+          <img src="covers/june2025.jpg" alt="June 2025 Edition">
+          <h3>June 2025</h3>
+        </a>
+      </div>
+
+      <div class="magazine-card">
+        <a href="magazine-preview.html?id=may2025">
+          <img src="covers/may2025.jpg" alt="May 2025 Edition">
+          <h3>May 2025</h3>
+        </a>
+      </div>
+
+      <div class="magazine-card">
+        <a href="magazine-preview.html?id=april2025">
+          <img src="covers/april2025.jpg" alt="April 2025 Edition">
+          <h3>April 2025</h3>
+        </a>
+      </div>
+
+      <div class="magazine-card">
+        <a href="magazine-preview.html?id=march2025">
+          <img src="covers/march2025.jpg" alt="March 2025 Edition">
+          <h3>March 2025</h3>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="../js/script.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="../js/include-nav-footer.js"></script>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.navbar');
+      nav.classList.toggle('show');
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  spaceBetween: 30,
+  speed: 1000,
+  loopAdditionalSlides: 2, // 👈 Prevents gaps with 4 slides
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      centeredSlides: true,
+    },
+    576: {
+      slidesPerView: 1.5,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 2,
+      centeredSlides: true,
+    },
+    992: {
+      slidesPerView: 3,
+      centeredSlides: true,
+    }
+  }
+});
+</script>
+</body>
+</html>

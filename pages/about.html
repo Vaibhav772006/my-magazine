@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+<!-- ✅ Banner Section -->
+<section class="about-banner">
+  <div class="about-content">
+    <h1>ABOUT US</h1>
+    <p>Empowering voices, inspiring stories, and celebrating success.</p>
+  </div>
+</section>
+
+
+ <section class="empire-about-section">
+    <div class="container">
+      <h2>🏛 Our Story</h2>
+      <p>
+        At The Empire Insights, we believe that leadership is more than strategy and results—it’s about vision, voice, and impact.
+        <br><br>
+        Our story began with a single ambition: to create a platform that captures the real essence of modern leadership. We wanted to go beyond titles and achievements to explore the experiences, values, and ideas that drive today’s most influential business minds.
+        <br><br>
+        We’re here to tell stories that inspire—not just for the sake of admiration, but for the spark they ignite in others. Every interview, every feature, every profile is a window into the power of purpose-led leadership.
+        <br><br>
+        In a world of noise, The Empire Insights is where clarity meets influence—and where the next generation of leaders finds its voice.
+      </p>
+
+      <h2>💼 About Us</h2>
+      <p>
+        The Empire Insights is a premium business leadership magazine committed to showcasing bold thinkers, innovative entrepreneurs, and transformative executives from around the world.
+        <br><br>
+        We exist to spotlight those who are not just leading companies—but reshaping industries, cultures, and conversations. Our content bridges business intelligence with human insight, offering readers a deeper look at leadership through the lens of authenticity, resilience, and vision.
+        <br><br>
+        Through compelling storytelling, curated interviews, and expert commentary, we aim to inform, inspire, and empower leaders at every stage of their journey. Whether you’re scaling a startup, running a multinational, or redefining your industry, The Empire Insights is your space to learn, reflect, and lead with intention.
+        <br><br>
+        At The Empire Insights Magazine, we spotlight the minds shaping the future of business. Through powerful storytelling and expert insight, we honor leaders who drive innovation, influence, and meaningful impact.
+      </p>
+    </div>
+  </section><!-- Enhanced FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>What is The Empire Insights?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>The Empire Insights is a premium digital magazine platform featuring business leaders, success stories, and industry insights.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How can I get featured?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>You can reach us via the Contact page or use our enquiry form. Our editorial team will get in touch with details.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Can I download the magazines?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, you can open and download magazine issues directly from the Magazines page.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<script src="../js/script.js"></script>
+<div id="footer-placeholder"></div>
+<script src="../js/include-nav-footer.js"></script>
+
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('.navbar');
+    nav.classList.toggle('show');
+  }
+</script>
+<script>
+  document.querySelectorAll(".faq-question").forEach((question) => {
+    question.addEventListener("click", () => {
+      const answer = question.nextElementSibling;
+
+      // Close other open answers if needed (optional)
+      document.querySelectorAll(".faq-answer").forEach((ans) => {
+        if (ans !== answer) {
+          ans.classList.remove("open");
+          ans.previousElementSibling.querySelector(".icon").textContent = "+";
+        }
+      });
+
+      // Toggle the current one
+      const isOpen = answer.classList.toggle("open");
+      const icon = question.querySelector(".icon");
+      icon.textContent = isOpen ? "−" : "+";
+    });
+  });
+</script>
+
+</body>
+</html>

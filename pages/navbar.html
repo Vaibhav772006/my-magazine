@@ -1,0 +1,243 @@
+<!-- HEADER START -->
+<header>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="left-bar">
+      <button>Advertisement</button>
+      <form onsubmit="event.preventDefault(); alert('Searching: ' + this.query.value)">
+        <input name="query" type="text" placeholder="Search..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <div class="right-bar">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="../images/logo.png" alt="Empire Insights Logo" style="height: 80px;" />
+      </a>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="magazine.html">Magazine</a>
+      <a href="blog.html">Blogs</a>
+      <a href="article.html">Articles</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</header>
+<!-- HEADER END -->
+
+<!-- ✅ CSS STYLES -->
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #004e92, #e1e3ee);
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 16px;
+    background-color: #111111;
+  }
+
+  .left-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .left-bar button {
+    padding: 6px 14px;
+    background-color: #f1c32b;
+    border: none;
+    border-radius: 20px;
+    color: #000e2f;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .left-bar form {
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+  }
+
+  .left-bar form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .left-bar form button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .right-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .right-bar a i {
+    color: #f1c32b;
+    font-size: 13px;
+    padding: 6px;
+    border-radius: 50%;
+    border: 1px solid #f1c32b;
+  }
+
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: #f1f3f1 !important;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: white;
+    display: none;
+  }
+
+  nav {
+  display: flex;
+  gap: 60px; /* More gap between menu items */
+  flex-wrap: wrap;
+  margin-top: 6px;
+  border-top: 2px solid #f1c32b; /* Stylish border */
+  border-bottom: 2px solid #f1c32b;
+  padding: 10px 0;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif; 
+}
+
+nav a {
+  color: #000e2f;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #f1c32b;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+#nav-links a.active {
+  color: #fff;
+  background-color: #f1c32b;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+      gap: 10px;
+    }
+  }
+
+  .content {
+    padding-top: 130px;
+  }
+</style>
+
+<!-- ✅ TOGGLE SCRIPT -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    if (nav.style.display === 'flex') {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.width = '100%';
+      nav.style.marginTop = '10px';
+      nav.style.gap = '10px';
+    }
+  }
+
+  function checkScreenWidth() {
+    const nav = document.getElementById('nav-links');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    if (window.innerWidth <= 768) {
+      nav.style.display = 'none';
+      toggleBtn.style.display = 'block';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'row';
+      toggleBtn.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('load', checkScreenWidth);
+  window.addEventListener('resize', checkScreenWidth);
+</script>
+
+<!-- FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />

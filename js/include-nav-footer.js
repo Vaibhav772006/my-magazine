@@ -1,26 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Load navbar
-  fetch("../pages/navbar.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+  const loadPartial = (selector, path) => {
+    const placeholder = document.querySelector(selector);
+    if (!placeholder) return Promise.resolve();
 
+    return fetch(new URL(path, document.baseURI))
+      .then(response => {
+        if (!response.ok) throw new Error(`Unable to load ${path}`);
+        return response.text();
+      })
+      .then(data => {
+        placeholder.innerHTML = data;
+      });
+  };
+
+  // Load navbar
+  loadPartial("#navbar-placeholder", "../pages/navbar.html")
+    .then(() => {
       // ✅ Highlight the active menu item
       const currentPage = window.location.pathname.split("/").pop();
       const links = document.querySelectorAll("#nav-links a");
       links.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
+        if (new URL(link.href).pathname.split("/").pop() === currentPage) {
           link.classList.add("active");
         }
       });
-    });
+    })
+    .catch(error => console.error(error));
 
   // Load footer
-  fetch("../pages/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
+  loadPartial("#footer-placeholder", "../pages/footer.html")
+    .catch(error => console.error(error));
 });
 // ✅ This function sets margin-top for all banners
 function adjustBannerTop() {

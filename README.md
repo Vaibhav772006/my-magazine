@@ -18,6 +18,17 @@ Opening HTML files directly with `file://` is not supported because browsers blo
 
 Upload the complete repository to any static host such as GitHub Pages, Netlify, or Cloudflare Pages. The root `index.html` forwards visitors to `pages/index.html`, and all assets use relative paths so the site also works when hosted beneath a repository or subdirectory path.
 
+### Vercel
+
+Import `vaibhav-katkar-dev/magazine` as a project and use these settings:
+
+- Framework Preset: `Other`
+- Root Directory: `.`
+- Build Command: leave empty
+- Output Directory: `.`
+
+The included `vercel.json` redirects `/` to the homepage under `pages/`. If Vercel still shows `NOT_FOUND`, open Project Settings and confirm the Root Directory is `.` rather than `pages` or another folder, then redeploy the `main` branch.
+
 There are no build or install steps. The site uses CDN-hosted Font Awesome, Google Fonts, Swiper, and a few external article images, so the deployed site needs outbound HTTPS access for those resources.
 
 ## Contact form

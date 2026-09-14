@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -36,56 +38,14 @@
 
   <section class="magazine-cards">
     <h2>Explore Our Editions</h2>
-    <div class="magazine-card-grid">
-
-      <div class="magazine-card">
-        <a href="magazine-preview.html?id=july2025">
-          <img src="covers/july2025.jpg" alt="July 2025 Edition">
-          <h3>July 2025</h3>
-        </a>
-      </div>
-
-      <div class="magazine-card">
-        <a href="magazine-preview.html?id=june2025">
-          <img src="covers/june2025.jpg" alt="June 2025 Edition">
-          <h3>June 2025</h3>
-        </a>
-      </div>
-
-      <div class="magazine-card">
-        <a href="magazine-preview.html?id=may2025">
-          <img src="covers/may2025.jpg" alt="May 2025 Edition">
-          <h3>May 2025</h3>
-        </a>
-      </div>
-
-      <div class="magazine-card">
-        <a href="magazine-preview.html?id=april2025">
-          <img src="covers/april2025.jpg" alt="April 2025 Edition">
-          <h3>April 2025</h3>
-        </a>
-      </div>
-
-      <div class="magazine-card">
-        <a href="magazine-preview.html?id=march2025">
-          <img src="covers/march2025.jpg" alt="March 2025 Edition">
-          <h3>March 2025</h3>
-        </a>
-      </div>
-
-    </div>
+    <div class="magazine-card-grid" id="magazine-list"></div>
   </section>
 
-  <script src="../js/script.js"></script>
+ 
   <div id="footer-placeholder"></div>
-  <script src="../js/include-nav-footer.js"></script>
+  
 
-  <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.navbar');
-      nav.classList.toggle('show');
-    }
-  </script>
+ 
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper(".mySwiper", {
@@ -119,5 +79,31 @@
   }
 });
 </script>
+<script defer src="../js/include-nav-footer.js"></script>
+<script defer src="../js/script.js"></script>
+<script>
+  fetch('../js/magazines.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Unable to load magazines');
+      return response.json();
+    })
+    .then(magazines => {
+      const list = document.getElementById('magazine-list');
+      magazines.forEach(magazine => {
+        list.insertAdjacentHTML('beforeend', `
+          <div class="magazine-card">
+            <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}">
+              <img src="${magazine.cover}" alt="${magazine.title}">
+              <h3>${magazine.title}</h3>
+            </a>
+          </div>
+        `);
+      });
+    })
+    .catch(() => {
+      document.getElementById('magazine-list').textContent = 'Magazines are temporarily unavailable.';
+    });
+</script>
+
 </body>
 </html>

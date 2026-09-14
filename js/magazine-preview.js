@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => {
       const magazine = data.find(m => m.id === magazineId);
-      if (!magazine) return;
+      if (!magazine) {
+        document.querySelector('.mag-preview-container').textContent = 'Magazine not found.';
+        return;
+      }
 
       document.getElementById("mag-preview-title").innerText = magazine.title;
       document.getElementById("mag-preview-subtitle").innerText = magazine.subtitle;
@@ -15,5 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // ✅ Set href on the Read More button
       document.getElementById("mag-read-more").href = `magazine-view.html?id=${magazine.id}`;
+    })
+    .catch(() => {
+      document.querySelector('.mag-preview-container').textContent = 'Unable to load this magazine.';
     });
 });

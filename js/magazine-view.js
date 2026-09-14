@@ -5,7 +5,10 @@ fetch("../js/magazines.json")
   .then(res => res.json())
   .then(data => {
     const mag = data.find(m => m.id === magId);
-    if (!mag) return;
+    if (!mag) {
+      document.querySelector('.mag-view-layout').textContent = 'Magazine not found.';
+      return;
+    }
 
     document.getElementById("mag-view-title").innerText = mag.title;
     document.getElementById("mag-view-subtitle").innerText = mag.subtitle;
@@ -28,4 +31,7 @@ fetch("../js/magazines.json")
       `;
       latestContainer.appendChild(card);
     });
+  })
+  .catch(() => {
+    document.querySelector('.mag-view-layout').textContent = 'Unable to load this magazine.';
   });

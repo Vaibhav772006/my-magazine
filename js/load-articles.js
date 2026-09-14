@@ -16,4 +16,7 @@ fetch('../js/articles.json')
 
       container.appendChild(card);
     });
+  })
+  .catch(() => {
+    document.getElementById('articles-container').textContent = 'Articles are temporarily unavailable.';
   });

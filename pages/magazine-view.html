@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magazine Full View</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <section class="mag-view-banner">
+    <h1 id="mag-view-title" class="mag-view-title"></h1>
+    <h3 id="mag-view-subtitle" class="mag-view-subtitle"></h3>
+  </section>
+
+  <div class="mag-view-layout">
+    <div class="mag-view-main">
+      <img id="mag-view-cover" class="mag-view-cover" />
+      <div id="mag-view-content" class="mag-view-text"></div>
+    </div>
+
+    <aside class="mag-view-sidebar">
+      <h3 class="mag-latest-heading">Latest Magazines</h3>
+      <div class="mag-latest-grid" id="mag-latest-container"></div>
+    </aside>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script defer src="../js/include-nav-footer.js"></script>
+  <script src="../js/magazine-view.js"></script>
+</body>
+</html>

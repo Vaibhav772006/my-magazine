@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Article</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Banner -->
+  <section class="view-article-banner page-banner">
+    <div class="view-article-banner-content">
+      <h2 id="article-title"></h2>
+      <p id="article-subtitle"></p>
+    </div>
+  </section>
+
+  <!-- Layout: Main + Sidebar -->
+  <div class="view-article-layout">
+    <!-- Main Article -->
+    <div class="view-article-main">
+      <img id="article-cover" class="view-article-cover" />
+      <br>
+      <hr class="article-divider" />
+      <br>
+      <div id="article-content" class="view-article-text"></div>
+    </div>
+
+    <!-- Sidebar: Latest Articles -->
+    <aside class="view-article-sidebar">
+      <h3 class="view-latest-heading">Latest Articles</h3>
+      <div class="view-latest-grid" id="latest-articles-container">
+        <!-- JS will inject latest article cards -->
+      </div>
+    </aside>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  
+  
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = urlParams.get('id');
+
+    fetch('../js/articles.json')
+      .then(res => res.json())
+      .then(data => {
+        // Load current article
+        const article = data.find(a => a.id === articleId);
+        if (!article) {
+          document.querySelector('.view-article-layout').textContent = 'Article not found.';
+          return;
+        }
+
+        document.getElementById('article-title').innerText = article.title;
+        document.getElementById('article-subtitle').innerText = article.subtitle;
+        document.getElementById('article-cover').src = article.cover;
+        document.getElementById('article-content').innerHTML = article.content;
+
+        // Load 5 latest articles excluding current
+        const latestContainer = document.getElementById('latest-articles-container');
+        const latestArticles = data.filter(a => a.id !== articleId).slice(0, 5);
+
+        latestArticles.forEach(a => {
+          const card = document.createElement('a');
+          card.href = `../pages/article-view.html?id=${a.id}`;
+
+
+          card.className = 'view-latest-card';
+          card.innerHTML = `
+            <img src="${a.cover}" alt="${a.title}" class="view-latest-img">
+            <div class="view-latest-content">
+              <h4 class="view-latest-title">${a.title}</h4>
+              <p class="view-latest-subtitle">${a.subtitle}</p>
+            </div>
+          `;
+          latestContainer.appendChild(card);
+        });
+      })
+      .catch(() => {
+        document.querySelector('.view-article-layout').textContent = 'Unable to load this article.';
+      });
+  </script>
+  <script defer src="../js/include-nav-footer.js"></script>
+</body>
+</html>

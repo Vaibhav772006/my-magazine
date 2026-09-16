@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  
+
+  <!-- Main Navigation Bar -->
+  <section class="magazine-slider">
+  <div class="slider-heading-center">Upcoming Magazines</div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../images/assets/hero1.jpeg" alt="Mag 1" /></div>
+        <div class="swiper-slide"><img src="../images/assets/hero2.jpeg" alt="Mag 2" /></div>
+        <div class="swiper-slide"><img src="../images/assets/hero3.jpeg" alt="Mag 3" /></div>
+        <div class="swiper-slide"><img src="../images/assets/hero4.jpeg" alt="Mag 4" /></div>
+      </div>
+    </div>
+  </section>
+  <section class="magazine-banner">
+    <div class="magazine-banner-content">
+      <h2>MAGAZINES</h2>
+      <p>Step into the world of leadership, innovation, and impact. Each edition of The Empire Insights Magazine captures compelling stories and powerful journeys that redefine success.</p>
+    </div>
+  </section>
+
+  
+
+  <section class="magazine-cards">
+    <h2>Explore Our Editions</h2>
+    <div class="magazine-card-grid" id="magazine-list"></div>
+  </section>
+
+ 
+  <div id="footer-placeholder"></div>
+  
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 3,
+  spaceBetween: 30,
+  speed: 1000,
+  loopAdditionalSlides: 2, // 👈 Prevents gaps with 4 slides
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      centeredSlides: true,
+    },
+    576: {
+      slidesPerView: 1.5,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 2,
+      centeredSlides: true,
+    },
+    992: {
+      slidesPerView: 3,
+      centeredSlides: true,
+    }
+  }
+});
+</script>
+<script defer src="../js/include-nav-footer.js"></script>
+<script defer src="../js/script.js"></script>
+<script>
+  fetch('../js/magazines.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Unable to load magazines');
+      return response.json();
+    })
+    .then(magazines => {
+      const list = document.getElementById('magazine-list');
+      magazines.forEach(magazine => {
+        list.insertAdjacentHTML('beforeend', `
+          <div class="magazine-card">
+            <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}">
+              <img src="${magazine.cover}" alt="${magazine.title}">
+              <h3>${magazine.title}</h3>
+            </a>
+          </div>
+        `);
+      });
+    })
+    .catch(() => {
+      document.getElementById('magazine-list').textContent = 'Magazines are temporarily unavailable.';
+    });
+</script>
+
+</body>
+</html>

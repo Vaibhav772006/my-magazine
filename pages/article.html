@@ -1,37 +1,58 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Articles</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Featured Stories & Analysis | The Empire Insight</title>
+  <meta name="description" content="Read transformative leadership frameworks, organizational strategy, and executive perspectives authored by industry leaders." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="article.html" />
 
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
   <div id="navbar-placeholder"></div>
 
-  <section class="article-banner page-banner">
-    <div class="article-banner-content">
-      <h2>ARTICLES</h2>
-      <p>Dive into thought-provoking articles authored by innovators, disruptors, and visionaries. Each article delivers in-depth insights into business, leadership, and impact.</p>
+  <!-- Breadcrumb Navigation -->
+  <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="separator">/</span>
+      <span class="current">Featured Stories</span>
+    </div>
+  </nav>
+
+  <!-- Editorial Banner -->
+  <section class="magazine-banner">
+    <div class="magazine-banner-content">
+      <span class="mag-banner-kicker"><i class="fas fa-feather-alt"></i> Editorial Analysis</span>
+      <h2>FEATURED STORIES</h2>
+      <p>In-depth frameworks, human capital intelligence, and executive perspectives on building resilient, purpose-driven organizations.</p>
     </div>
   </section>
 
-  <br><br>
+  <!-- Articles Container -->
+  <main class="ed-stories-wrap">
+    <div class="ed-section-header" style="margin-top: 40px;">
+      <h2>All Published Articles</h2>
+      <div class="ed-section-rule"></div>
+      <span class="ed-section-link">5 Articles</span>
+    </div>
 
-  <div class="articles-grid" id="articles-container">
-    <!-- Articles will load dynamically here -->
-  </div>
+    <div class="ed-stories-grid" id="articles-container">
+      <!-- Dynamically populated from js/articles.json -->
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #888;">
+        Loading articles&hellip;
+      </div>
+    </div>
+  </main>
 
-  <br>
-  
   <div id="footer-placeholder"></div>
- 
-  <script src="../js/load-articles.js"></script>
-<script defer src="../js/include-nav-footer.js"></script>
-<script defer src="../js/script.js"></script>
 
-  </body>
+  <script src="../js/load-articles.js"></script>
+  <script defer src="../js/include-nav-footer.js"></script>
+  <script defer src="../js/script.js"></script>
+</body>
 </html>

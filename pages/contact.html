@@ -1,121 +1,380 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Contact & Editorial Desk | The Empire Insight</title>
+  <meta name="description" content="Connect with The Empire Insight editorial team. Inquiries for executive features, interviews, corporate advertising, and subscriptions." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="contact.html" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  @media (max-width: 480px) {
-  .contact-info-box {
-    width: 85% !important;
-    margin: 0 auto !important;
-    padding: 15px 10px !important;
-    font-size: 14px !important;
-  }
-
-  .contact-info-box p {
-    font-size: 14px !important;
-    line-height: 1.4;
-    margin-bottom: 10px !important;
-  }
-
-  .contact-info-box p strong {
-    font-weight: 600;
-  }
-
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 5px;
-    flex-wrap: nowrap;
-  }
-
-  .social-icons a i {
-    font-size: 18px;
-  }
-}
-</style>
-
 </head>
 <body>
-
   <div id="navbar-placeholder"></div>
 
-  <!-- ✅ Contact Page Banner -->
-  <section class="contact-banner page-banner">
-    <div class="contact-banner-content">
-      <h1>CONTACT US</h1>
-      <p>We’d love to hear from you — get in touch anytime.</p>
+  <!-- Breadcrumb Navigation -->
+  <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="separator">/</span>
+      <span class="current">Contact Editorial</span>
+    </div>
+  </nav>
+
+  <!-- Editorial Banner -->
+  <section class="magazine-banner">
+    <div class="magazine-banner-content">
+      <span class="mag-banner-kicker"><i class="fas fa-paper-plane"></i> Editorial Inquiries</span>
+      <h2>CONNECT WITH OUR DESK</h2>
+      <p>Reach out for executive feature proposals, interview requests, corporate sponsorships, and print or digital subscription services.</p>
     </div>
   </section>
 
-  <!-- ✅ Contact Section -->
-  <section style="background-color: #0f0f0f; color: #fff; padding: 100px 30px 60px; font-family: 'Segoe UI', sans-serif;">
-    <div style="text-align: center; margin-bottom: 50px;">
-      <h1 style="font-size: 48px; font-weight: 600; margin: 0; font-family: 'Orbitron', sans-serif;">Let's Talk</h1>
+  <!-- Main Contact Workspace -->
+  <main class="ed-contact-wrap">
+    
+    <!-- Top Highlights Strip -->
+    <div class="ed-contact-highlights">
+      <div class="ed-highlight-pill">
+        <i class="fas fa-bolt"></i>
+        <span><strong>Typical Response:</strong> Within 24&ndash;48 Hours</span>
+      </div>
+      <div class="ed-highlight-pill">
+        <i class="fas fa-globe"></i>
+        <span><strong>Global Bureaus:</strong> Pune &bull; London &bull; Singapore</span>
+      </div>
+      <div class="ed-highlight-pill">
+        <i class="fas fa-shield-alt"></i>
+        <span><strong>Confidentiality:</strong> Strict Editorial NDA Standards</span>
+      </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between;">
+    <div class="ed-contact-grid">
 
-      <!-- Contact Form -->
-      <form action="mailto:info@theempireinsights.com" method="post" enctype="text/plain" style="flex: 1 1 55%; display: flex; flex-wrap: wrap; gap: 20px;">
-        <input type="text" name="name" placeholder="Name" required style="background-color: transparent; border: none; border-bottom: 1px solid #aaa; color: #fff; padding: 10px; width: calc(50% - 10px); font-size: 16px;">
-        <input type="email" name="email" placeholder="Email" required style="background-color: transparent; border: none; border-bottom: 1px solid #aaa; color: #fff; padding: 10px; width: calc(50% - 10px); font-size: 16px;">
-        <input type="tel" name="phone" placeholder="Phone" style="background-color: transparent; border: none; border-bottom: 1px solid #aaa; color: #fff; padding: 10px; width: calc(50% - 10px); font-size: 16px;">
-        <textarea name="message" placeholder="Message" required style="width: 100%; background-color: transparent; border: none; border-bottom: 1px solid #aaa; color: #fff; padding: 10px; font-size: 16px; height: 100px; resize: vertical;"></textarea>
-        <button type="submit" style="background-color: #fff; color: #000000; padding: 12px 30px; font-weight: bold; text-transform: uppercase; border: none; margin-top: 20px; cursor: pointer;">Send Message</button>
-      </form>
+      <!-- Left Column: Interactive Contact Form -->
+      <div class="ed-contact-form-col">
+        <div class="ed-form-container" id="contact-form-wrapper">
+          <div class="ed-form-header">
+            <span class="ed-section-kicker">Direct Editorial Access</span>
+            <h3 class="ed-contact-form-title">Send Your Inquiry</h3>
+            <p class="ed-contact-form-desc">
+              Fill in your details below. Our editorial board reviews submissions each morning.
+            </p>
+          </div>
 
-      <!-- ✅ Contact Info Box -->
-      <div style="display: flex; justify-content: center; padding: 20px; flex: 1 1 35%;">
-        <div class="contact-info-box" style="
-          background-color: #fff;
-          color: #000;
-          padding: 30px 25px;
-          border-radius: 10px;
-          max-width: 400px;
-          width: 100%;
-          box-sizing: border-box;
-        ">
-          <p style="font-size: 18px; margin-bottom: 20px;">
-            📧 <strong>Email us:</strong><br>
-            <span style="font-size: 15px;">info@theempireinsights.com</span>
-          </p>
-          <p style="font-size: 18px; margin-bottom: 30px;">
-            📍 <strong>Address:</strong><br>
-            Pune
-          </p>
+          <form id="editorial-contact-form" class="ed-form" novalidate>
+            <div class="ed-form-row">
+              <div class="ed-form-group">
+                <label for="contact-name">Full Name <span class="required-star">*</span></label>
+                <input type="text" id="contact-name" name="name" placeholder="e.g. David Sterling" required />
+                <span class="field-error" id="name-error">Please enter your name.</span>
+              </div>
+              <div class="ed-form-group">
+                <label for="contact-email">Corporate Email <span class="required-star">*</span></label>
+                <input type="email" id="contact-email" name="email" placeholder="d.sterling@company.com" required />
+                <span class="field-error" id="email-error">Please enter a valid business email.</span>
+              </div>
+            </div>
 
-          <p style="font-weight: bold; margin-bottom: 10px; font-size: 18px;">Follow us:</p>
-         <div class="social-icons">
-  <a href="https://x.com/The_45Empire?t=alzRMjF1ebX5L0gDwQSacA&s=09" aria-label="Twitter" target="_blank">
-    <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
-  </a>
-  <a href="https://www.linkedin.com/company/the-empire-insights/" aria-label="LinkedIn" target="_blank">
-    <i class="fab fa-linkedin-in" style="color: #0077B5;"></i>
-  </a>
-  <a href="https://www.instagram.com/the_empire_insights?igsh=dm8wYzdoZng4M3Zr" aria-label="Instagram" target="_blank">
-    <i class="fab fa-instagram" style="color: #E4405F;"></i>
-  </a>
-  <a href="https://www.facebook.com/the_empire_insights" aria-label="Facebook" target="_blank">
-    <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
-  </a>
-</div>
+            <div class="ed-form-row">
+              <div class="ed-form-group">
+                <label for="contact-org">Organization / Title</label>
+                <input type="text" id="contact-org" name="organization" placeholder="e.g. Managing Director, Horizon Capital" />
+              </div>
+              <div class="ed-form-group">
+                <label for="contact-phone">Phone / WhatsApp</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000" />
+              </div>
+            </div>
+
+            <!-- Inquiry Department Selector -->
+            <div class="ed-form-group">
+              <label>Inquiry Classification <span class="required-star">*</span></label>
+              <div class="ed-topic-pills" role="radiogroup">
+                <label class="ed-topic-chip">
+                  <input type="radio" name="topic" value="Executive Spotlight" checked />
+                  <span>Executive Spotlight</span>
+                </label>
+                <label class="ed-topic-chip">
+                  <input type="radio" name="topic" value="Story Pitch" />
+                  <span>Story / Article Pitch</span>
+                </label>
+                <label class="ed-topic-chip">
+                  <input type="radio" name="topic" value="Sponsorship & Advertising" />
+                  <span>Advertising &amp; Sponsor</span>
+                </label>
+                <label class="ed-topic-chip">
+                  <input type="radio" name="topic" value="Subscriptions" />
+                  <span>Subscriptions</span>
+                </label>
+                <label class="ed-topic-chip">
+                  <input type="radio" name="topic" value="General Inquiry" />
+                  <span>General Inquiry</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="ed-form-group">
+              <label for="contact-subject">Subject Line <span class="required-star">*</span></label>
+              <input type="text" id="contact-subject" name="subject" placeholder="Summary of proposal or message topic" required />
+              <span class="field-error" id="subject-error">Please provide a subject line.</span>
+            </div>
+
+            <div class="ed-form-group">
+              <label for="contact-message">Proposal / Message <span class="required-star">*</span></label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Provide background on the executive, story angle, or partnership scope (minimum 20 words)..." required></textarea>
+              <span class="field-error" id="message-error">Please enter your message.</span>
+            </div>
+
+            <div class="ed-form-actions">
+              <button type="submit" class="btn-primary-ed ed-submit-btn" id="submit-btn">
+                <span>Submit to Editorial Desk</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+              <span class="ed-privacy-note">
+                <i class="fas fa-lock"></i> Communications are confidential and protected by editorial privilege.
+              </span>
+            </div>
+          </form>
+
+          <!-- Success State Card (hidden by default) -->
+          <div id="form-success-card" class="ed-success-card" style="display: none;">
+            <div class="ed-success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Inquiry Transmitted Successfully</h3>
+            <p>
+              Thank you for reaching out to <strong>The Empire Insight</strong>. Your submission has been received by our editorial coordination team.
+            </p>
+            <div class="ed-success-details">
+              <div><strong>Ticket Reference:</strong> <span id="success-ref">#TEI-9842</span></div>
+              <div><strong>Estimated Review:</strong> Within 24 business hours</div>
+            </div>
+            <button type="button" class="btn-ghost-ed" id="reset-form-btn">
+              &larr; Submit Another Inquiry
+            </button>
+          </div>
 
         </div>
       </div>
 
+      <!-- Right Column: Media Desk & Contacts -->
+      <div class="ed-contact-info-col">
+
+        <!-- Desk 1: Editorial -->
+        <div class="ed-desk-card">
+          <div class="ed-desk-header">
+            <div class="ed-desk-icon"><i class="fas fa-pen-nib"></i></div>
+            <div>
+              <span class="ed-desk-label">Submissions</span>
+              <h4>Editorial &amp; Features</h4>
+            </div>
+          </div>
+          <p class="ed-desk-desc">Send pitches, author manuscripts, and interview candidate recommendations.</p>
+          <div class="ed-desk-action-row">
+            <span class="ed-desk-email">contact@theempireinsight.com</span>
+            <button type="button" class="ed-copy-btn" data-copy="contact@theempireinsight.com" title="Copy email address">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Desk 2: Corporate & Commercial -->
+        <div class="ed-desk-card">
+          <div class="ed-desk-header">
+            <div class="ed-desk-icon"><i class="fas fa-chart-pie"></i></div>
+            <div>
+              <span class="ed-desk-label">Commercial</span>
+              <h4>Brand Partnerships</h4>
+            </div>
+          </div>
+          <p class="ed-desk-desc">Executive thought leadership sponsorships, edition placements, and bespoke events.</p>
+          <div class="ed-desk-action-row">
+            <span class="ed-desk-email">contact@theempireinsight.com</span>
+            <button type="button" class="ed-copy-btn" data-copy="contact@theempireinsight.com" title="Copy email address">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Desk 3: Headquarters & Bureaus -->
+        <div class="ed-desk-card">
+          <div class="ed-desk-header">
+            <div class="ed-desk-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="ed-desk-label">Headquarters</span>
+              <h4>Main Office</h4>
+            </div>
+          </div>
+          <p class="ed-desk-desc">
+            Pune, Maharashtra, India<br>
+            <strong>Hours:</strong> Mon&ndash;Fri &bull; 9:00 AM &ndash; 6:00 PM IST
+          </p>
+        </div>
+
+        <!-- Social Media Desk -->
+        <div class="ed-desk-card ed-social-desk">
+          <h4>Official Media Channels</h4>
+          <p>Follow real-time edition launches, podcasts, and executive quotes.</p>
+          <div class="ed-contact-socials">
+            <a href="https://www.linkedin.com/company/the-empire-insights/" target="_blank" rel="noopener" aria-label="LinkedIn" title="Follow on LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://x.com/The_45Empire?t=alzRMjF1ebX5L0gDwQSacA&s=09" target="_blank" rel="noopener" aria-label="Twitter / X" title="Follow on Twitter / X">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/the_empire_insights?igsh=dm8wYzdoZng4M3Zr" target="_blank" rel="noopener" aria-label="Instagram" title="Follow on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/the_empire_insights" target="_blank" rel="noopener" aria-label="Facebook" title="Follow on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Pitching Guide Box -->
+        <div class="ed-pitch-guide-box">
+          <h5><i class="fas fa-info-circle"></i> Pitching Guidelines</h5>
+          <ul>
+            <li>Include executive bio &bull; LinkedIn URL</li>
+            <li>Define core premise in under 200 words</li>
+            <li>Highlight tangible organizational lessons</li>
+          </ul>
+        </div>
+
+      </div>
+
     </div>
-  </section>
+
+    <!-- Editorial FAQ Section -->
+    <section class="ed-contact-faq">
+      <div class="ed-section-header">
+        <h2>Editorial Inquiries &bull; FAQ</h2>
+        <div class="ed-section-rule"></div>
+      </div>
+
+      <div class="ed-faq-grid">
+        <div class="ed-faq-card">
+          <h4>What is the publication timeline?</h4>
+          <p>Standard feature reviews take 5 business days. Commissioned stories are scheduled 4&ndash;6 weeks prior to digital and print release dates.</p>
+        </div>
+        <div class="ed-faq-card">
+          <h4>Do you charge for editorial coverage?</h4>
+          <p>Editorial feature selection is determined exclusively by merit, executive impact, and narrative relevance by our editorial committee.</p>
+        </div>
+        <div class="ed-faq-card">
+          <h4>Can companies license reprints?</h4>
+          <p>Yes. Custom PDF reprints, executive cover plaques, and high-resolution digital badges are available through our licensing team.</p>
+        </div>
+        <div class="ed-faq-card">
+          <h4>How do I subscribe for my team?</h4>
+          <p>We provide enterprise-wide digital access licenses for corporate executives, business schools, and venture accelerators.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <div id="footer-placeholder"></div>
 
+  <!-- Interactive Form & Copy Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("editorial-contact-form");
+    const formWrapper = document.getElementById("contact-form-wrapper");
+    const successCard = document.getElementById("form-success-card");
+    const resetBtn = document.getElementById("reset-form-btn");
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Simple validation
+        const nameInput = document.getElementById("contact-name");
+        const emailInput = document.getElementById("contact-email");
+        const subjectInput = document.getElementById("contact-subject");
+        const messageInput = document.getElementById("contact-message");
+
+        let valid = true;
+
+        if (!nameInput.value.trim()) {
+          document.getElementById("name-error").style.display = "block";
+          nameInput.focus();
+          valid = false;
+        } else {
+          document.getElementById("name-error").style.display = "none";
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim())) {
+          document.getElementById("email-error").style.display = "block";
+          if (valid) emailInput.focus();
+          valid = false;
+        } else {
+          document.getElementById("email-error").style.display = "none";
+        }
+
+        if (!subjectInput.value.trim()) {
+          document.getElementById("subject-error").style.display = "block";
+          if (valid) subjectInput.focus();
+          valid = false;
+        } else {
+          document.getElementById("subject-error").style.display = "none";
+        }
+
+        if (!messageInput.value.trim()) {
+          document.getElementById("message-error").style.display = "block";
+          if (valid) messageInput.focus();
+          valid = false;
+        } else {
+          document.getElementById("message-error").style.display = "none";
+        }
+
+        if (valid) {
+          // Generate realistic reference ID
+          const ref = "TEI-" + Math.floor(1000 + Math.random() * 9000);
+          document.getElementById("success-ref").textContent = "#" + ref;
+
+          // Hide form, show success state smoothly
+          form.style.display = "none";
+          document.querySelector(".ed-form-header").style.display = "none";
+          successCard.style.display = "block";
+          successCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      });
+    }
+
+    if (resetBtn && form) {
+      resetBtn.addEventListener("click", () => {
+        form.reset();
+        form.style.display = "flex";
+        document.querySelector(".ed-form-header").style.display = "block";
+        successCard.style.display = "none";
+      });
+    }
+
+    // One-click copy email buttons
+    document.querySelectorAll(".ed-copy-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const text = btn.getAttribute("data-copy");
+        if (text) {
+          navigator.clipboard.writeText(text).then(() => {
+            const origHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check" style="color:#B5892A;"></i>';
+            btn.title = "Copied!";
+            setTimeout(() => {
+              btn.innerHTML = origHtml;
+              btn.title = "Copy email address";
+            }, 2000);
+          }).catch(() => {});
+        }
+      });
+    });
+  });
+  </script>
+
   <script defer src="../js/include-nav-footer.js"></script>
   <script defer src="../js/script.js"></script>
-
 </body>
 </html>

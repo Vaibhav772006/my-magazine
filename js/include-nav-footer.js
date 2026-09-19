@@ -53,3 +53,4 @@
   loadPartial("#footer-placeholder", "../pages/footer.html")
     .catch(error => console.error("Error loading footer:", error));
 });
+

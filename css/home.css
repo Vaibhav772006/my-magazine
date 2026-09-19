@@ -595,3 +595,845 @@ footer.footer {
   border-top: 1px solid #1A1A1A !important;
   padding: 20px 24px !important;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   ANDROID & MOBILE RESPONSIVE ENGINE (MAX-WIDTH: 768px & 480px)
+   Guarantees zero horizontal overflow, no layout breaks,
+   smooth touch scrolling, and calibrated mobile tap targets.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Global Android / Mobile fixes */
+html {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -webkit-tap-highlight-color: rgba(181, 137, 42, 0.2);
+}
+
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+/* Ensure no element ever forces horizontal scrolling */
+img, video, iframe, svg, canvas {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* =========================================================
+   TABLET & MOBILE BREAKPOINT (<= 768px)
+   ========================================================= */
+@media screen and (max-width: 768px) {
+
+  /* ── Header Calibration ────────────────────────────────── */
+  body {
+    padding-top: 96px !important;
+  }
+
+  .site-header, header.site-header {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .header-strip {
+    height: 32px !important;
+    min-height: 32px !important;
+  }
+
+  .header-strip-inner {
+    padding: 0 16px !important;
+    height: 32px !important;
+    justify-content: center !important;
+  }
+
+  .strip-tagline {
+    font-size: 0.6rem !important;
+    letter-spacing: 1.5px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .strip-right,
+  .strip-search,
+  .strip-sep,
+  .strip-socials {
+    display: none !important;
+  }
+
+  .header-main-inner {
+    height: 64px !important;
+    padding: 0 16px !important;
+  }
+
+  .nav-logo-img {
+    height: 38px !important;
+    max-width: 175px !important;
+    width: auto !important;
+  }
+
+  .nav-toggle {
+    display: flex !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 4px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .primary-nav {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: #0D0D0D !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 8px 0 18px !important;
+    border-top: 1px solid #1E1E1E !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7) !important;
+    max-height: calc(100dvh - 96px) !important;
+    max-height: calc(100vh - 96px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    z-index: 9999 !important;
+  }
+
+  .primary-nav.open {
+    display: flex !important;
+  }
+
+  .primary-nav a {
+    padding: 15px 22px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    font-size: 0.85rem !important;
+    display: flex !important;
+    align-items: center !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    letter-spacing: 1px !important;
+  }
+
+  .primary-nav a.active {
+    color: #B5892A !important;
+    background: rgba(181, 137, 42, 0.08) !important;
+  }
+
+  .nav-subscribe {
+    margin: 12px 18px 4px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 13px !important;
+    background: #B5892A !important;
+    color: #0D0D0D !important;
+    border-radius: 2px !important;
+    font-weight: 700 !important;
+  }
+
+  /* ── Hero Section (Android 100vh stutter fix) ───────────── */
+  .ed-hero {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 36px 0 44px !important;
+    overflow: visible !important;
+  }
+
+  .ed-hero-inner {
+    grid-template-columns: 1fr !important;
+    padding: 0 18px !important;
+    gap: 32px !important;
+  }
+
+  .ed-hero-text {
+    padding: 0 !important;
+  }
+
+  .ed-hero-headline {
+    font-size: clamp(1.85rem, 6.5vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .ed-hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .ed-hero-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 24px !important;
+    max-width: 100% !important;
+  }
+
+  .ed-hero-meta {
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .ed-hero-visual {
+    padding: 0 !important;
+    min-height: auto !important;
+    justify-content: center !important;
+  }
+
+  .ed-hero-cover-frame {
+    max-width: 250px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  .ed-hero-cover-frame::before {
+    top: -8px !important;
+    left: -8px !important;
+    right: 8px !important;
+    bottom: 8px !important;
+  }
+
+  .ed-hero-cover-caption {
+    position: relative !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    padding: 10px 14px !important;
+    font-size: 0.6rem !important;
+  }
+
+  /* ── Ticker Strip ───────────────────────────────────────── */
+  .ed-ticker-inner {
+    padding: 0 16px !important;
+    height: 44px !important;
+  }
+
+  .ed-ticker-label {
+    padding: 0 10px !important;
+    margin-right: 10px !important;
+    font-size: 0.55rem !important;
+  }
+
+  .ed-ticker-tags {
+    gap: 5px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .ed-ticker-tag {
+    padding: 4px 10px !important;
+    font-size: 0.62rem !important;
+  }
+
+  /* ── Section Headers ────────────────────────────────────── */
+  .ed-section-header {
+    margin-bottom: 24px !important;
+    padding-bottom: 8px !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .ed-section-header h2 {
+    font-size: 1.25rem !important;
+  }
+
+  .ed-section-link {
+    font-size: 0.62rem !important;
+  }
+
+  /* ── Featured Stories ───────────────────────────────────── */
+  .ed-features {
+    padding: 48px 0 !important;
+  }
+
+  .ed-features-wrap {
+    padding: 0 16px !important;
+  }
+
+  .ed-features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .ed-feature-main {
+    border-right: none !important;
+    padding-right: 0 !important;
+    border-bottom: 1px solid #E0DCD5 !important;
+    padding-bottom: 28px !important;
+  }
+
+  .ed-feature-main-title {
+    font-size: 1.5rem !important;
+  }
+
+  .ed-feature-row {
+    padding: 16px 0 !important;
+    gap: 12px !important;
+  }
+
+  .ed-feature-row-img {
+    width: 72px !important;
+    height: 54px !important;
+  }
+
+  /* ── Editions Grid ──────────────────────────────────────── */
+  .ed-editions {
+    padding: 48px 0 !important;
+  }
+
+  .ed-editions-wrap {
+    padding: 0 16px !important;
+  }
+
+  .ed-editions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .ed-edition-card {
+    min-width: 0 !important;
+  }
+
+  .ed-edition-cat {
+    font-size: 0.52rem !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  .ed-edition-title {
+    font-size: 0.82rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* ── Pull Quote ─────────────────────────────────────────── */
+  .ed-pullquote {
+    padding: 56px 0 !important;
+  }
+
+  .ed-pullquote-inner {
+    padding: 0 18px !important;
+  }
+
+  .ed-pq-mark {
+    font-size: 3.5rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  .ed-pq-text {
+    font-size: 1.15rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* ── Categories ─────────────────────────────────────────── */
+  .ed-categories {
+    padding: 48px 0 !important;
+  }
+
+  .ed-categories-wrap {
+    padding: 0 16px !important;
+  }
+
+  .ed-cat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .ed-cat-tile {
+    padding: 20px 10px !important;
+    min-width: 0 !important;
+  }
+
+  .ed-cat-name {
+    font-size: 0.8rem !important;
+    word-break: break-word !important;
+  }
+
+  /* ── About Section ──────────────────────────────────────── */
+  .ed-about {
+    padding: 48px 0 !important;
+  }
+
+  .ed-about-inner {
+    grid-template-columns: 1fr !important;
+    padding: 0 16px !important;
+    gap: 36px !important;
+  }
+
+  .ed-about-visual {
+    order: -1 !important;
+  }
+
+  .ed-about-frame {
+    max-width: 100% !important;
+  }
+
+  .ed-about-frame::before {
+    display: none !important; /* Prevents horizontal overflow */
+  }
+
+  .ed-about-img {
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .ed-about-headline {
+    font-size: 1.85rem !important;
+  }
+
+  .ed-about-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    padding: 16px 0 !important;
+  }
+
+  .ed-stat-num {
+    font-size: 1.45rem !important;
+  }
+
+  .ed-stat-lbl {
+    font-size: 0.58rem !important;
+  }
+
+  /* ── Newsletter / CTA ───────────────────────────────────── */
+  .ed-newsletter {
+    padding: 56px 0 !important;
+  }
+
+  .ed-newsletter-inner {
+    padding: 0 16px !important;
+  }
+
+  .ed-nl-headline {
+    font-size: 1.75rem !important;
+  }
+
+  /* ── Breadcrumb Navigation ──────────────────────────────── */
+  .mag-breadcrumb-nav {
+    padding: 10px 16px !important;
+  }
+
+  .mag-breadcrumb-container {
+    font-size: 0.8rem !important;
+    gap: 6px !important;
+  }
+
+  /* ── Sub-Page Banners ───────────────────────────────────── */
+  .magazine-banner {
+    padding: 44px 16px !important;
+    min-height: auto !important;
+  }
+
+  .magazine-banner h2 {
+    font-size: 1.9rem !important;
+  }
+
+  .magazine-banner p {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* ── Magazine List Page (magazine.html) ─────────────────── */
+  .mag-controls-section {
+    padding: 18px 16px !important;
+  }
+
+  .mag-search-box input {
+    font-size: 0.88rem !important;
+    padding: 11px 36px 11px 38px !important;
+  }
+
+  .mag-category-filters {
+    gap: 6px !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 6px !important;
+  }
+
+  .filter-pill {
+    white-space: nowrap !important;
+    padding: 6px 14px !important;
+    font-size: 0.76rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .magazine-cards {
+    padding: 28px 16px 60px !important;
+  }
+
+  .magazine-card-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .magazine-pro-card {
+    min-width: 0 !important;
+  }
+
+  .mag-pro-content {
+    padding: 18px 16px !important;
+  }
+
+  .mag-pro-title {
+    font-size: 1.18rem !important;
+  }
+
+  .mag-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .mag-btn-primary, .mag-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 11px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Magazine Preview Page ──────────────────────────────── */
+  .mag-preview-wrapper {
+    padding: 20px 16px 60px !important;
+  }
+
+  .mag-preview-card-spotlight {
+    padding: 20px 16px !important;
+  }
+
+  .mag-spotlight-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .mag-cover-frame {
+    max-width: 240px !important;
+    margin: 0 auto !important;
+  }
+
+  .mag-preview-title {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .mag-preview-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  .mag-specs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .mag-actions-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .mag-actions-row a,
+  .mag-actions-row button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .mag-toc-grid,
+  .mag-quotes-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* ── Magazine View Page (Reader) ────────────────────────── */
+  .mag-view-banner {
+    padding: 32px 16px !important;
+  }
+
+  .mag-view-title {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .mag-view-layout {
+    grid-template-columns: 1fr !important;
+    padding: 24px 16px 60px !important;
+    gap: 36px !important;
+  }
+
+  .mag-reader-toolbar {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .mag-reader-toolbar .mag-tool-group {
+    width: 100% !important;
+    display: flex !important;
+    gap: 8px !important;
+  }
+
+  .mag-reader-toolbar .mag-tool-group a,
+  .mag-reader-toolbar .mag-tool-group button {
+    flex: 1 !important;
+    justify-content: center !important;
+  }
+
+  .mag-editor-box {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 18px 16px !important;
+  }
+
+  /* ── Stories Archive (article.html) ─────────────────────── */
+  .ed-stories-wrap {
+    padding: 0 16px 60px !important;
+  }
+
+  .ed-stories-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .ed-story-title {
+    font-size: 1.25rem !important;
+  }
+
+  /* ── Article View Page (article-view.html) ────────────────── */
+  .ed-article-header {
+    padding: 36px 16px !important;
+  }
+
+  .ed-article-headline {
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .ed-article-sub {
+    font-size: 1rem !important;
+  }
+
+  .ed-article-layout {
+    grid-template-columns: 1fr !important;
+    margin: 28px auto 60px !important;
+    padding: 0 16px !important;
+    gap: 36px !important;
+  }
+
+  .ed-article-cover-frame {
+    max-height: 260px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .ed-article-byline-bar {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  .ed-article-body {
+    font-size: 0.98rem !important;
+    line-height: 1.75 !important;
+  }
+
+  .ed-article-nav-bottom {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .ed-article-nav-bottom a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* ── About Page (about.html) ────────────────────────────── */
+  .ed-about-page-wrap {
+    padding: 32px 16px 60px !important;
+  }
+
+  .ed-about-story-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .ed-about-col {
+    padding: 24px 18px !important;
+  }
+
+  .ed-about-section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .ed-values-strip {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .ed-val-card {
+    padding: 24px 18px !important;
+  }
+
+  .faq-question {
+    padding: 16px 18px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .faq-answer {
+    padding: 0 18px 16px !important;
+  }
+
+  /* ── Contact Page (contact.html) ────────────────────────── */
+  .ed-contact-wrap {
+    padding: 28px 16px 60px !important;
+  }
+
+  .ed-contact-highlights {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .ed-highlight-pill {
+    width: 100% !important;
+    font-size: 0.74rem !important;
+    padding: 8px 14px !important;
+  }
+
+  .ed-contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .ed-form-container {
+    padding: 20px 14px !important;
+  }
+
+  .ed-contact-form-title {
+    font-size: 1.5rem !important;
+  }
+
+  .ed-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .ed-topic-pills {
+    gap: 6px !important;
+  }
+
+  .ed-topic-chip span {
+    font-size: 0.72rem !important;
+    padding: 6px 12px !important;
+  }
+
+  .ed-form-group input,
+  .ed-form-group textarea,
+  .ed-form-select {
+    padding: 11px 12px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .ed-submit-btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+  }
+
+  .ed-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .ed-contact-faq {
+    margin-top: 48px !important;
+    padding-top: 36px !important;
+  }
+
+  /* ── Footer Responsive ──────────────────────────────────── */
+  .footer-cta-strip {
+    padding: 44px 16px !important;
+  }
+
+  .footer-cta-strip h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .footer-cta-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .footer-cta-btn-primary,
+  .footer-cta-btn-ghost {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 13px !important;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 16px 40px 16px !important;
+  }
+
+  .footer-card {
+    padding: 22px 18px !important;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+}
+
+/* =========================================================
+   SMALL SMARTPHONES (<= 480px, e.g. Samsung Galaxy, Pixel)
+   ========================================================= */
+@media screen and (max-width: 480px) {
+
+  .ed-hero-actions,
+  .ed-about-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .btn-primary-ed,
+  .btn-ghost-ed,
+  .ed-about-btn-primary,
+  .ed-about-btn-ghost {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .ed-editions-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .ed-cat-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .ed-about-stats {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    text-align: center !important;
+  }
+
+  .ed-stat-item {
+    align-items: center !important;
+  }
+
+  .mag-specs-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

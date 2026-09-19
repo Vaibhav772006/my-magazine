@@ -1,4 +1,4 @@
-﻿
+
 /* === Global Reset === */
 *,
 *::before,
@@ -5628,18 +5628,18 @@ footer.footer {
 }
 
 .footer-card {
-  background: #141414 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 2px !important;
-  padding: 32px 28px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 16px !important;
   box-shadow: none !important;
   display: flex !important;
   flex-direction: column !important;
-  transition: border-color 0.2s ease;
+  transition: none;
 }
 
 .footer-card:hover {
-  border-color: rgba(181, 137, 42, 0.4) !important;
+  border-color: transparent !important;
 }
 
 .footer-col {
@@ -6008,7 +6008,7 @@ footer.footer {
     padding-bottom: 40px !important;
   }
   .footer-card {
-    padding: 24px 20px !important;
+    padding: 0 8px !important;
   }
   .footer-cta-strip {
     padding: 44px 18px !important;
@@ -6806,7 +6806,7 @@ img, video, iframe, svg, canvas {
   }
 
   .footer-card {
-    padding: 22px 18px !important;
+    padding: 0 8px !important;
   }
 
   .footer-bottom-inner {
@@ -6860,5 +6860,135 @@ img, video, iframe, svg, canvas {
 
   .mag-specs-grid {
     grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   FLOATING SOCIAL MEDIA SIDEBAR
+   - Desktop: fixed right side, vertical strip
+   - Mobile/Android: fixed right side, smaller icons, vertical
+   ══════════════════════════════════════════════════════════════ */
+
+.floating-social {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 990;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: -2px 0 14px rgba(0,0,0,0.22);
+}
+
+.floating-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: width 0.22s ease, opacity 0.22s ease, filter 0.22s ease, transform 0.15s ease;
+  position: relative;
+  overflow: visible;
+}
+
+/* Brand colours */
+.floating-social a.fs-linkedin  { background: #0A66C2; }
+.floating-social a.fs-twitter   { background: #000000; }
+.floating-social a.fs-instagram { background: linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+.floating-social a.fs-facebook  { background: #1877F2; }
+
+/* Tooltip label on hover (desktop) */
+.floating-social a::before {
+  content: attr(data-label);
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(13,13,13,0.92);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 5px 11px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.floating-social a:hover::before {
+  opacity: 1;
+}
+
+.floating-social a:hover {
+  width: 52px;
+  filter: brightness(1.15);
+  z-index: 2;
+}
+
+/* Rounded top on first, bottom on last */
+.floating-social a:first-child {
+  border-radius: 6px 0 0 0;
+}
+.floating-social a:last-child {
+  border-radius: 0 0 0 6px;
+}
+
+/* ── Mobile / Android: Sleek vertical tabs, perfectly balanced ── */
+@media (max-width: 768px) {
+  .floating-social {
+    top: 52%;
+    bottom: auto;
+    transform: translateY(-50%);
+    right: 0;
+    gap: 3px;
+    box-shadow: none;
+  }
+
+  .floating-social a {
+    width: 36px;
+    height: 36px;
+    font-size: 0.88rem;
+    border-radius: 6px 0 0 6px !important;
+    box-shadow: -2px 2px 8px rgba(0,0,0,0.28);
+  }
+
+  .floating-social a:hover {
+    width: 40px;
+  }
+
+  .floating-social a:active {
+    transform: scale(0.92);
+    filter: brightness(1.25);
+  }
+
+  /* Hide hover tooltip on touch devices */
+  .floating-social a::before {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-social {
+    top: 54%;
+  }
+
+  .floating-social a {
+    width: 33px;
+    height: 33px;
+    font-size: 0.8rem;
+    border-radius: 5px 0 0 5px !important;
+  }
+
+  .floating-social a:hover {
+    width: 36px;
   }
 }

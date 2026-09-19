@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const loadPartial = (selector, path) => {
     const placeholder = document.querySelector(selector);
     if (!placeholder) return Promise.resolve();
@@ -18,10 +18,17 @@
     .then(() => {
       // Highlight active link
       const currentPage = window.location.pathname.split("/").pop() || "index.html";
+      const sectionMap = {
+        "magazine-preview.html": "magazine.html",
+        "magazine-view.html": "magazine.html",
+        "article-view.html": "article.html"
+      };
+      const targetPage = sectionMap[currentPage] || currentPage;
+
       const links = document.querySelectorAll(".primary-nav a, #nav-links a");
       links.forEach(link => {
         const linkPage = new URL(link.href, document.baseURI).pathname.split("/").pop() || "index.html";
-        if (linkPage === currentPage) {
+        if (linkPage === targetPage) {
           link.classList.add("active");
         } else {
           link.classList.remove("active");

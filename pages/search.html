@@ -2,52 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Search Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search | The Empire Insight</title>
+  <meta name="description" content="Search across all editions, articles, and stories from The Empire Insight." />
   <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
-
-<!-- Search Form -->
-
-
-<!-- Section containing all your content -->
-<section id="content">
-  <!-- 🔽 Include all articles/blogs/magazines here -->
-  <div class="searchable-item">
-    <h2>Empowering Women in Tech</h2>
-    <p>Exploring achievements in technology by women leaders...</p>
-  </div>
-
-  <div class="searchable-item">
-    <h2>AI in Education</h2>
-    <p>The impact of artificial intelligence in modern education...</p>
-  </div>
-
-  <div class="searchable-item">
-    <h2>Leadership Lessons 2025</h2>
-    <p>Stories from emerging leaders around the world...</p>
-  </div>
-
-  <!-- More .searchable-item divs auto-included or duplicated here -->
-</section>
-
-
-
-
-
-
-
-
-
-<script src="../js/include-nav-footer.js"></script>
-
-<script>
-  function toggleMenu() {
-    const nav = document.querySelector('.navbar');
-    nav.classList.toggle('show');
-  }
-</script>
-
+  <div id="navbar-placeholder"></div>
+  <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="separator">/</span>
+      <span class="current">Search</span>
+    </div>
+  </nav>
+  <section class="magazine-banner">
+    <div class="magazine-banner-content">
+      <span class="mag-banner-kicker"><i class="fas fa-search"></i> Search</span>
+      <h2>SEARCH THE EMPIRE INSIGHT</h2>
+      <p>Find editions, articles, and stories across all our publications.</p>
+    </div>
+  </section>
+  <main style="max-width:800px;margin:60px auto;padding:0 24px;font-family:Inter,sans-serif;text-align:center;">
+    <p style="color:#999;margin-bottom:32px;">Use the search bar in the magazine archive to find specific editions, or browse featured stories below.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="magazine.html" class="mag-btn-primary"><i class="fas fa-book-open"></i> Browse Magazines</a>
+      <a href="article.html" class="mag-btn-secondary"><i class="fas fa-feather-alt"></i> Featured Articles</a>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script defer src="../js/include-nav-footer.js"></script>
+  <script defer src="../js/script.js"></script>
 </body>
 </html>

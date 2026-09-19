@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magazine Preview | The Empire Insights</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="separator">/</span>
+      <a href="magazine.html">Magazines</a>
+      <span class="separator">/</span>
+      <span id="mag-breadcrumb-current" class="current">Preview</span>
+    </div>
+  </nav>
+
+  <!-- Magazine Spotlight Section -->
+  <main class="mag-preview-wrapper" id="mag-preview-main">
+    <div class="mag-preview-card-spotlight">
+      <div class="mag-spotlight-grid">
+        
+        <!-- Left: Cover Presentation -->
+        <div class="mag-spotlight-cover-col">
+          <div class="mag-cover-frame">
+            <img id="mag-preview-image" class="mag-preview-image" alt="Magazine Cover" />
+            <div class="mag-cover-gloss"></div>
+          </div>
+          <div class="mag-cover-badges" id="mag-cover-badges"></div>
+        </div>
+
+        <!-- Right: Edition Details -->
+        <div class="mag-spotlight-info-col">
+          <div class="mag-info-meta">
+            <span id="mag-preview-category" class="mag-category-tag"></span>
+            <span id="mag-preview-date" class="mag-date"></span>
+          </div>
+
+          <h1 id="mag-preview-title" class="mag-preview-title"></h1>
+          <h2 id="mag-preview-subtitle" class="mag-preview-subtitle"></h2>
+
+          <div class="mag-exec-summary-box">
+            <h4><i class="fas fa-bookmark"></i> Executive Summary</h4>
+            <p id="mag-preview-summary" class="mag-preview-summary"></p>
+          </div>
+
+          <!-- Quick Issue Specs -->
+          <div class="mag-specs-grid" id="mag-specs-grid">
+            <div class="mag-spec-item">
+              <span class="spec-label">Volume & Issue</span>
+              <span class="spec-val" id="spec-issue">-</span>
+            </div>
+            <div class="mag-spec-item">
+              <span class="spec-label">Reading Time</span>
+              <span class="spec-val" id="spec-reading">-</span>
+            </div>
+            <div class="mag-spec-item">
+              <span class="spec-label">Pages</span>
+              <span class="spec-val" id="spec-pages">-</span>
+            </div>
+            <div class="mag-spec-item">
+              <span class="spec-label">ISSN</span>
+              <span class="spec-val" id="spec-issn">-</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="mag-action-row">
+            <a id="mag-read-more" class="mag-btn-primary" href="#">
+              <i class="fas fa-book-reader"></i> Read Full Edition
+            </a>
+            <a id="mag-download-pdf" class="mag-btn-secondary" href="#" target="_blank" style="display: none;">
+              <i class="fas fa-file-pdf"></i> Read / Download PDF
+            </a>
+            <button id="mag-share-btn" class="mag-btn-share" title="Share this edition">
+              <i class="fas fa-share-alt"></i> Share
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Inside this Edition (Table of Contents) -->
+    <section class="mag-toc-section" id="mag-toc-section" style="display: none;">
+      <div class="mag-section-header">
+        <span class="section-kicker">Curated Highlights</span>
+        <h3>Inside This Edition</h3>
+        <p>Featured articles, exclusive interviews, and analytical reports in this issue.</p>
+      </div>
+      <div class="mag-toc-grid" id="mag-toc-grid"></div>
+    </section>
+
+    <!-- Quotes Spotlight -->
+    <section class="mag-quotes-section" id="mag-quotes-section" style="display: none;">
+      <div class="mag-section-header">
+        <span class="section-kicker">Executive Voices</span>
+        <h3>Words from Visionaries</h3>
+      </div>
+      <div class="mag-quotes-grid" id="mag-quotes-grid"></div>
+    </section>
+
+    <!-- More Editions -->
+    <section class="mag-related-section">
+      <div class="mag-section-header">
+        <span class="section-kicker">Discover More</span>
+        <h3>Other Publications</h3>
+      </div>
+      <div class="mag-related-grid" id="mag-related-grid"></div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  
+  <script defer src="../js/include-nav-footer.js"></script>
+  <script defer src="../js/script.js"></script>
+  <script src="../js/seo-helper.js"></script>
+  <script src="../js/magazine-preview.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+﻿<!-- ══ SITE HEADER ════════════════════════════════════════════════ -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+<header class="site-header" id="site-header">
+
+  <!-- Top strip -->
+  <div class="header-strip">
+    <div class="header-strip-inner">
+      <span class="strip-tagline">From Insight to Impact</span>
+      <div class="strip-right">
+        <div class="strip-socials">
+          <a href="https://www.facebook.com/the_empire_insights" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/The_45Empire?t=alzRMjF1ebX5L0gDwQSacA&s=09" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/the_empire_insights?igsh=dm8wYzdoZng4M3Zr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/the-empire-insights/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="strip-sep"></div>
+        <form class="strip-search" action="magazine.html" method="GET" role="search">
+          <input name="search" type="text" placeholder="Search editions..." aria-label="Search" autocomplete="off" />
+          <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav bar -->
+  <div class="header-main">
+    <div class="header-main-inner">
+
+      <div class="header-logo">
+        <a href="index.html" title="The Empire Insight — From Insight to Impact">
+          <img src="../images/logo.png" alt="The Empire Insight" class="nav-logo-img" />
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="magazine.html">Magazines</a>
+        <a href="article.html">Featured Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-subscribe">Contact</a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-toggle');
+  var nav = document.getElementById('primary-nav');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(e){
+      if(!btn.contains(e.target) && !nav.contains(e.target)){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+  // Active link highlight
+  var cur = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.primary-nav a').forEach(function(a){
+    if(a.getAttribute('href') === cur) a.classList.add('active');
+  });
+})();
+</script>

@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Magazine Editions | The Empire Insights</title>
+  <meta name="description" content="Discover all editions of The Empire Insights Magazine. Uncover transformative perspectives on executive leadership, generative AI, global finance, and sustainability." />
+  <meta name="keywords" content="empire insights, business magazine, leadership magazine, executive insights, tech magazine, finance publication" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="magazine.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Explore Magazine Editions | The Empire Insights" />
+  <meta property="og:description" content="Discover all editions of The Empire Insights Magazine. Uncover transformative perspectives on executive leadership, generative AI, global finance, and sustainability." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="../images/logo.png" />
+  <meta property="og:site_name" content="The Empire Insights" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Explore Magazine Editions | The Empire Insights" />
+  <meta name="twitter:description" content="Discover all editions of The Empire Insights Magazine. Executive leadership, AI, finance, and sustainability." />
+  <meta name="twitter:image" content="../images/logo.png" />
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="separator">/</span>
+      <span class="current">Magazines</span>
+    </div>
+  </nav>
+
+  <!-- Magazine Banner -->
+  <section class="magazine-banner">
+    <div class="magazine-banner-content">
+      <span class="mag-banner-kicker"><i class="fas fa-layer-group"></i> Official Archive</span>
+      <h2>EMPIRE EDITIONS</h2>
+      <p>Curated executive publications spotlighting visionary leaders, artificial intelligence, global finance, sustainability, and transformative enterprise strategies.</p>
+    </div>
+  </section>
+
+  <!-- Filter & Search Controls -->
+  <section class="mag-controls-section">
+    <div class="mag-controls-container">
+      <div class="mag-search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="magazine-search" placeholder="Search editions by title, leader, topic, or keyword..." aria-label="Search magazines" />
+        <button id="clear-search" class="clear-btn" title="Clear search" style="display: none;"><i class="fas fa-times"></i></button>
+      </div>
+      
+      <div class="mag-category-filters" id="category-filters" role="group" aria-label="Magazine categories">
+        <button class="filter-pill active" data-category="all">All Editions</button>
+        <button class="filter-pill" data-category="Leadership & Business">Leadership & Business</button>
+        <button class="filter-pill" data-category="Technology & AI">Technology & AI</button>
+        <button class="filter-pill" data-category="Finance & Markets">Finance & Markets</button>
+        <button class="filter-pill" data-category="Sustainability & ESG">Sustainability & ESG</button>
+        <button class="filter-pill" data-category="Workplace & Culture">Workplace & Culture</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magazine Cards Grid -->
+  <section class="magazine-cards">
+    <div class="mag-header-row">
+      <h2>Explore Our Publication Archive</h2>
+      <span id="results-count" class="mag-count-badge">Loading editions...</span>
+    </div>
+    <div class="magazine-card-grid" id="magazine-list">
+      <!-- Dynamically populated from js/magazines.json -->
+    </div>
+    <div id="no-results" class="mag-empty-state" style="display: none;">
+      <i class="fas fa-book-open empty-icon"></i>
+      <h3>No magazine editions found</h3>
+      <p>Try refining your search terms or selecting a different category filter.</p>
+      <button id="reset-filters-btn" class="mag-preview-button">Reset All Filters</button>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script defer src="../js/include-nav-footer.js"></script>
+  <script defer src="../js/script.js"></script>
+  <script src="../js/seo-helper.js"></script>
+
+  <script>
+    // Centralized Magazines Loader & Search / Filter
+    let allMagazines = [];
+    let currentCategory = "all";
+    let searchQuery = "";
+
+    const listElement = document.getElementById('magazine-list');
+    const searchInput = document.getElementById('magazine-search');
+    const clearBtn = document.getElementById('clear-search');
+    const countBadge = document.getElementById('results-count');
+    const emptyState = document.getElementById('no-results');
+    const resetBtn = document.getElementById('reset-filters-btn');
+    const filterPills = document.querySelectorAll('.filter-pill');
+
+    function renderMagazines(magazines) {
+      listElement.innerHTML = '';
+
+      if (magazines.length === 0) {
+        listElement.style.display = 'none';
+        emptyState.style.display = 'block';
+        countBadge.textContent = '0 editions found';
+        return;
+      }
+
+      listElement.style.display = 'grid';
+      emptyState.style.display = 'none';
+      countBadge.textContent = `Showing ${magazines.length} edition${magazines.length === 1 ? '' : 's'}`;
+
+      magazines.forEach(magazine => {
+        const publishedDateFormatted = magazine.publishedDate 
+          ? new Date(magazine.publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })
+          : (magazine.edition || 'Current Issue');
+
+        const tagsHtml = (magazine.tags || []).slice(0, 3)
+          .map(tag => `<span class="mag-tag">${tag}</span>`)
+          .join('');
+
+        const featuredBadge = magazine.featured 
+          ? `<span class="mag-badge-featured"><i class="fas fa-star"></i> Featured</span>` 
+          : '';
+
+        const issueBadge = magazine.issue 
+          ? `<span class="mag-badge-issue">${magazine.volume ? magazine.volume + ' • ' : ''}${magazine.issue}</span>` 
+          : '';
+
+        const cardHtml = `
+          <article class="magazine-pro-card" itemscope itemtype="https://schema.org/PublicationIssue">
+            <div class="mag-pro-cover-wrap">
+              <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}" aria-label="Preview ${magazine.title}">
+                <img src="${magazine.cover}" alt="${magazine.title} Cover" loading="lazy" class="mag-pro-cover" itemprop="image" />
+                <div class="mag-pro-overlay">
+                  <span><i class="fas fa-eye"></i> Quick Preview</span>
+                </div>
+              </a>
+              <div class="mag-pro-badges">
+                ${featuredBadge}
+                ${issueBadge}
+              </div>
+            </div>
+            
+            <div class="mag-pro-content">
+              <div class="mag-pro-meta">
+                <span class="mag-category-tag">${magazine.category || 'Executive'}</span>
+                <span class="mag-date"><i class="far fa-calendar-alt"></i> ${publishedDateFormatted}</span>
+              </div>
+
+              <h3 class="mag-pro-title" itemprop="name">
+                <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}">${magazine.title}</a>
+              </h3>
+
+              <p class="mag-pro-preview" itemprop="description">
+                ${magazine.preview || magazine.subtitle || ''}
+              </p>
+
+              <div class="mag-pro-tags">${tagsHtml}</div>
+
+              <div class="mag-pro-footer">
+                <div class="mag-read-time">
+                  <i class="far fa-clock"></i> ${magazine.readingTime || '30 min read'}
+                  ${magazine.pageCount ? ` • <span>${magazine.pageCount} pages</span>` : ''}
+                </div>
+                <div class="mag-actions">
+                  <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}" class="mag-btn-secondary" title="View details and contents">
+                    Details
+                  </a>
+                  <a href="magazine-view.html?id=${encodeURIComponent(magazine.id)}" class="mag-btn-primary" title="Read full magazine edition">
+                    Read Online →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+
+        listElement.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    }
+
+    function filterAndRender() {
+      const filtered = allMagazines.filter(mag => {
+        const matchesCategory = currentCategory === 'all' || (mag.category && mag.category.toLowerCase() === currentCategory.toLowerCase());
+        
+        const q = searchQuery.toLowerCase().trim();
+        if (!q) return matchesCategory;
+
+        const titleMatch = (mag.title || '').toLowerCase().includes(q);
+        const subMatch = (mag.subtitle || '').toLowerCase().includes(q);
+        const descMatch = (mag.preview || '').toLowerCase().includes(q);
+        const categoryMatch = (mag.category || '').toLowerCase().includes(q);
+        const tagMatch = (mag.tags || []).some(t => t.toLowerCase().includes(q));
+        const authorMatch = (mag.tableOfContents || []).some(item => (item.author || '').toLowerCase().includes(q) || (item.title || '').toLowerCase().includes(q));
+
+        return matchesCategory && (titleMatch || subMatch || descMatch || categoryMatch || tagMatch || authorMatch);
+      });
+
+      renderMagazines(filtered);
+    }
+
+    // Category filter click
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentCategory = pill.getAttribute('data-category');
+        filterAndRender();
+      });
+    });
+
+    // Real-time search handler
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      clearBtn.style.display = searchQuery.length > 0 ? 'block' : 'none';
+      filterAndRender();
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearBtn.style.display = 'none';
+      filterAndRender();
+      searchInput.focus();
+    });
+
+    resetBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearBtn.style.display = 'none';
+      currentCategory = 'all';
+      filterPills.forEach(p => {
+        p.classList.toggle('active', p.getAttribute('data-category') === 'all');
+      });
+      filterAndRender();
+    });
+
+    // Load centralized magazines JSON
+    fetch('../js/magazines.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Unable to load magazines archive');
+        return response.json();
+      })
+      .then(data => {
+        allMagazines = data;
+        renderMagazines(allMagazines);
+
+        // Inject CollectionPage Schema for SEO
+        const itemListSchema = {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "The Empire Insights Magazine Archive",
+          "description": "Explore all publication editions of The Empire Insights Magazine covering business, technology, finance, and sustainability.",
+          "url": window.location.href,
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": allMagazines.map((mag, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "name": mag.title,
+              "url": new URL(`magazine-preview.html?id=${encodeURIComponent(mag.id)}`, window.location.href).href
+            }))
+          }
+        };
+
+        const schemaScript = document.createElement('script');
+        schemaScript.type = 'application/ld+json';
+        schemaScript.textContent = JSON.stringify(itemListSchema);
+        document.head.appendChild(schemaScript);
+      })
+      .catch(err => {
+        console.error(err);
+        listElement.innerHTML = '<div class="mag-error-msg"><i class="fas fa-exclamation-triangle"></i> We encountered an issue loading our magazine library. Please refresh or try again shortly.</div>';
+        countBadge.textContent = 'Archive temporarily unavailable';
+      });
+  </script>
+</body>
+</html>
+
+

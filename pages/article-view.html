@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article | The Empire Insight</title>
+  <meta name="description" content="In-depth analysis and executive perspectives from The Empire Insight." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <span class="separator">/</span>
+      <a href="article.html">Featured Stories</a>
+      <span class="separator">/</span>
+      <span id="article-breadcrumb-current" class="current">Reading</span>
+    </div>
+  </nav>
+
+  <!-- Article Header Banner -->
+  <section class="ed-article-header">
+    <div class="ed-article-header-inner">
+      <div class="ed-article-meta-pill">
+        <span class="ed-article-cat" id="article-cat-badge">Leadership</span>
+        <span class="ed-article-readtime"><i class="far fa-clock"></i> 6 min read</span>
+      </div>
+      <h1 id="article-title" class="ed-article-headline">Loading Article...</h1>
+      <p id="article-subtitle" class="ed-article-sub"></p>
+    </div>
+  </section>
+
+  <!-- Layout: Main Content + Sidebar -->
+  <div class="ed-article-layout">
+    <!-- Main Article -->
+    <main class="ed-article-main">
+      <div class="ed-article-cover-frame">
+        <img id="article-cover" class="ed-article-hero-img" alt="Article Cover" />
+      </div>
+
+      <div class="ed-article-byline-bar">
+        <div class="ed-byline-info">
+          <strong>The Empire Insight Editorial</strong>
+          <span>Published &bull; Executive Strategy &bull; Leadership Analysis</span>
+        </div>
+        <div class="ed-byline-share">
+          <button class="ed-share-btn" id="share-article-btn" title="Share article">
+            <i class="fas fa-share-alt"></i> Share
+          </button>
+        </div>
+      </div>
+
+      <article id="article-content" class="ed-article-body">
+        <!-- Content injected dynamically -->
+      </article>
+
+      <div class="ed-article-nav-bottom">
+        <a href="article.html" class="btn-ghost-ed">&larr; Back to All Stories</a>
+        <a href="magazine.html" class="btn-primary-ed">Explore Magazine Editions &rarr;</a>
+      </div>
+    </main>
+
+    <!-- Sidebar: More Stories -->
+    <aside class="ed-article-sidebar">
+      <div class="ed-sidebar-box">
+        <h3 class="ed-sidebar-heading">More Featured Stories</h3>
+        <div class="ed-sidebar-list" id="latest-articles-container">
+          <!-- JS injects related stories -->
+        </div>
+      </div>
+
+      <div class="ed-sidebar-box ed-sidebar-cta-box">
+        <h4>The Empire Insight</h4>
+        <p>Curated executive intelligence delivered to modern leaders and innovators.</p>
+        <a href="contact.html" class="ed-sidebar-btn">Subscribe / Connect</a>
+      </div>
+    </aside>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let articleId = urlParams.get('id');
+
+    const categories = {
+      "1": "Transformational Leadership",
+      "2": "Organizational Culture",
+      "3": "Executive Strategy",
+      "4": "Metrics & Governance",
+      "5": "Strategic Agility"
+    };
+
+    fetch('../js/articles.json')
+      .then(res => {
+        if (!res.ok) throw new Error("Could not load articles");
+        return res.json();
+      })
+      .then(data => {
+        if (!data || data.length === 0) throw new Error("No data");
+
+        // Fallback to article 1 if id is missing or invalid
+        let article = data.find(a => a.id === articleId);
+        if (!article) {
+          article = data[0];
+          articleId = article.id;
+        }
+
+        document.title = `${article.title} | The Empire Insight`;
+        document.getElementById('article-title').textContent = article.title;
+        document.getElementById('article-subtitle').textContent = article.subtitle || "";
+        document.getElementById('article-cover').src = article.cover;
+        document.getElementById('article-cover').alt = article.title;
+        document.getElementById('article-content').innerHTML = article.content;
+        document.getElementById('article-breadcrumb-current').textContent = article.title;
+
+        const cat = categories[article.id] || "Leadership";
+        document.getElementById('article-cat-badge').textContent = cat;
+
+        // Populate sidebar with other articles
+        const latestContainer = document.getElementById('latest-articles-container');
+        latestContainer.innerHTML = "";
+        const otherArticles = data.filter(a => a.id !== article.id);
+
+        otherArticles.forEach(a => {
+          const item = document.createElement('a');
+          item.href = `article-view.html?id=${encodeURIComponent(a.id)}`;
+          item.className = 'ed-sidebar-story';
+          item.innerHTML = `
+            <img src="${a.cover}" alt="${a.title}" class="ed-sidebar-story-img" loading="lazy" />
+            <div class="ed-sidebar-story-body">
+              <span class="ed-sidebar-story-cat">${categories[a.id] || "Story"}</span>
+              <p class="ed-sidebar-story-title">${a.title}</p>
+            </div>
+          `;
+          latestContainer.appendChild(item);
+        });
+
+        // Share button
+        const shareBtn = document.getElementById("share-article-btn");
+        if (shareBtn) {
+          shareBtn.addEventListener("click", () => {
+            if (navigator.share) {
+              navigator.share({
+                title: article.title,
+                text: article.subtitle,
+                url: window.location.href
+              }).catch(() => {});
+            } else {
+              navigator.clipboard.writeText(window.location.href).then(() => {
+                alert("Article link copied to clipboard!");
+              }).catch(() => {});
+            }
+          });
+        }
+      })
+      .catch(() => {
+        document.getElementById('article-title').textContent = "Unable to load article";
+        document.getElementById('article-content').innerHTML = "<p>This article is temporarily unavailable. Please browse other stories.</p>";
+      });
+  </script>
+  <script defer src="../js/include-nav-footer.js"></script>
+  <script defer src="../js/script.js"></script>
+</body>
+</html>

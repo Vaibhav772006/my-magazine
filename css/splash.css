@@ -1,0 +1,65 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #abb5cf; /* You can change this */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.splash-container {
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  width: 500px;
+  animation: fall 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+.welcome-text {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* Logo falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Welcome text fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .logo {
+    width: 80px;
+  }
+
+  .welcome-text {
+    font-size: 1.2rem;
+  }
+}

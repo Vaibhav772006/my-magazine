@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("articles-container");
   if (!container) return;
 
@@ -10,7 +10,9 @@
     "5": "Agility"
   };
 
-  fetch("../js/articles.json")
+  const fetchJson = (path) => fetch(new URL(path, document.baseURI));
+  (fetchJson("js/articles.json").then(r => r.ok ? r : Promise.reject()))
+    .catch(() => fetchJson("../js/articles.json"))
     .then(res => {
       if (!res.ok) throw new Error("Could not load articles");
       return res.json();

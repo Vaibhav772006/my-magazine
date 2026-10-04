@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const magazineId = urlParams.get("id");
 
-  fetch("../js/magazines.json")
+  const fetchJson = (path) => fetch(new URL(path, document.baseURI));
+  (fetchJson("js/magazines.json").then(r => r.ok ? r : Promise.reject()))
+    .catch(() => fetchJson("../js/magazines.json"))
     .then(res => {
       if (!res.ok) throw new Error("Could not load magazines data");
       return res.json();

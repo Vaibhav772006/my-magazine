@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
@@ -14,186 +13,19 @@
       "permanent": true
     },
     {
-      "source": "/index.html",
-      "destination": "/",
+      "source": "/pages/:path*",
+      "destination": "/:path*",
       "permanent": true
-    },
-    {
-      "source": "/index",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/pages/magazine.html",
-      "destination": "/magazine",
-      "permanent": true
-    },
-    {
-      "source": "/pages/magazine",
-      "destination": "/magazine",
-      "permanent": true
-    },
-    {
-      "source": "/pages/article.html",
-      "destination": "/article",
-      "permanent": true
-    },
-    {
-      "source": "/pages/article",
-      "destination": "/article",
-      "permanent": true
-    },
-    {
-      "source": "/pages/about.html",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/pages/about",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/pages/contact.html",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
-      "source": "/pages/contact",
-      "destination": "/contact",
-      "permanent": true
-    },
-    {
-      "source": "/pages/search.html",
-      "destination": "/search",
-      "permanent": true
-    },
-    {
-      "source": "/pages/search",
-      "destination": "/search",
-      "permanent": true
-    },
-    {
-      "source": "/pages/magazine-preview.html",
-      "destination": "/magazine-preview",
-      "permanent": true
-    },
-    {
-      "source": "/pages/magazine-preview",
-      "destination": "/magazine-preview",
-      "permanent": true
-    },
-    {
-      "source": "/pages/magazine-view.html",
-      "destination": "/magazine-view",
-      "permanent": true
-    },
-    {
-      "source": "/pages/magazine-view",
-      "destination": "/magazine-view",
-      "permanent": true
-    },
-    {
-      "source": "/pages/article-view.html",
-      "destination": "/article-view",
-      "permanent": true
-    },
-    {
-      "source": "/pages/article-view",
-      "destination": "/article-view",
-      "permanent": true
-    },
-    {
-      "source": "/pages/blog.html",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/pages/blog",
-      "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/pages/blog-view.html",
-      "destination": "/blog-view",
-      "permanent": true
-    },
-    {
-      "source": "/pages/blog-view",
-      "destination": "/blog-view",
-      "permanent": true
-    },
-    {
-      "source": "/pages/splash.html",
-      "destination": "/splash",
-      "permanent": true
-    },
-    {
-      "source": "/pages/splash",
-      "destination": "/splash",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/pages/index.html"
-    },
-    {
-      "source": "/home",
-      "destination": "/pages/index.html"
-    },
-    {
-      "source": "/magazine",
-      "destination": "/pages/magazine.html"
     },
     {
       "source": "/magazines",
-      "destination": "/pages/magazine.html"
-    },
-    {
-      "source": "/article",
-      "destination": "/pages/article.html"
+      "destination": "/magazine",
+      "permanent": true
     },
     {
       "source": "/articles",
-      "destination": "/pages/article.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/pages/about.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/pages/contact.html"
-    },
-    {
-      "source": "/search",
-      "destination": "/pages/search.html"
-    },
-    {
-      "source": "/magazine-preview",
-      "destination": "/pages/magazine-preview.html"
-    },
-    {
-      "source": "/magazine-view",
-      "destination": "/pages/magazine-view.html"
-    },
-    {
-      "source": "/article-view",
-      "destination": "/pages/article-view.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/pages/blog.html"
-    },
-    {
-      "source": "/blog-view",
-      "destination": "/pages/blog-view.html"
-    },
-    {
-      "source": "/splash",
-      "destination": "/pages/splash.html"
+      "destination": "/article",
+      "permanent": true
     }
   ]
 }

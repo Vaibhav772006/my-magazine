@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Sidebar Specs
       document.getElementById("sidebar-edition").textContent = mag.edition || "Current Edition";
-      document.getElementById("sidebar-date").textContent = mag.publishedDate || "2025";
+      document.getElementById("sidebar-date").textContent = mag.publishedDate || "2026";
       document.getElementById("sidebar-volume").textContent = `${mag.volume || "Vol. 1"}, ${mag.issue || "Issue 1"}`;
       document.getElementById("sidebar-issn").textContent = mag.issn || "2834-9121";
       document.getElementById("sidebar-pages").textContent = mag.pageCount ? `${mag.pageCount} Pages` : "48 Pages";

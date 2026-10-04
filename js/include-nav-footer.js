@@ -1,34 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const loadPartial = (selector, path) => {
+  const loadPartial = (selector, filename) => {
     const placeholder = document.querySelector(selector);
     if (!placeholder) return Promise.resolve();
 
-    return fetch(new URL(path, document.baseURI))
-      .then(response => {
-        if (!response.ok) throw new Error(`Unable to load ${path}`);
-        return response.text();
-      })
-      .then(data => {
-        placeholder.innerHTML = data;
-      });
+    const candidates = [
+      `../pages/${filename}`,
+      `pages/${filename}`,
+      `/pages/${filename}`,
+      filename,
+      `/${filename}`
+    ];
+
+    const tryFetch = (index) => {
+      if (index >= candidates.length) {
+        return Promise.reject(new Error(`Unable to load partial ${filename}`));
+      }
+      return fetch(new URL(candidates[index], document.baseURI))
+        .then(response => {
+          if (!response.ok) return tryFetch(index + 1);
+          return response.text();
+        })
+        .catch(() => tryFetch(index + 1));
+    };
+
+    return tryFetch(0).then(data => {
+      placeholder.innerHTML = data;
+    });
   };
 
   // Load navbar
-  loadPartial("#navbar-placeholder", "../pages/navbar.html")
+  loadPartial("#navbar-placeholder", "navbar.html")
     .then(() => {
-      // Highlight active link
-      const currentPage = window.location.pathname.split("/").pop() || "index.html";
-      const sectionMap = {
-        "magazine-preview.html": "magazine.html",
-        "magazine-view.html": "magazine.html",
-        "article-view.html": "article.html"
+      // Highlight active link with clean URL normalization
+      const normalize = (p) => {
+        if (!p) return "index";
+        let clean = p.split("?")[0].split("#")[0].replace(/\.html$/, "").replace(/^\/+|\/+$/g, "").split("/").pop() || "index";
+        if (clean === "magazines") clean = "magazine";
+        if (clean === "articles") clean = "article";
+        return clean;
       };
-      const targetPage = sectionMap[currentPage] || currentPage;
+
+      const currentNorm = normalize(window.location.pathname);
+      const sectionMap = {
+        "magazine-preview": "magazine",
+        "magazine-view": "magazine",
+        "article-view": "article"
+      };
+      const target = sectionMap[currentNorm] || currentNorm;
 
       const links = document.querySelectorAll(".primary-nav a, #nav-links a");
       links.forEach(link => {
-        const linkPage = new URL(link.href, document.baseURI).pathname.split("/").pop() || "index.html";
-        if (linkPage === targetPage) {
+        const linkNorm = normalize(new URL(link.href, document.baseURI).pathname);
+        if (linkNorm === target) {
           link.classList.add("active");
         } else {
           link.classList.remove("active");
@@ -57,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error("Error loading navbar:", error));
 
   // Load footer
-  loadPartial("#footer-placeholder", "../pages/footer.html")
+  loadPartial("#footer-placeholder", "footer.html")
     .catch(error => console.error("Error loading footer:", error));
 });
 

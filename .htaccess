@@ -1,24 +1,24 @@
 # Apache configuration for clean routing & DirectoryIndex
-DirectoryIndex pages/index.html index.html
+DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Serve pages/index.html for root directory
-  RewriteRule ^$ pages/index.html [L]
+  # Serve index.html for root directory
+  RewriteRule ^$ index.html [L]
 
   # Clean URLs rewrites
-  RewriteRule ^magazine/?$ pages/magazine.html [L,QSA]
-  RewriteRule ^magazines/?$ pages/magazine.html [L,QSA]
-  RewriteRule ^article/?$ pages/article.html [L,QSA]
-  RewriteRule ^articles/?$ pages/article.html [L,QSA]
-  RewriteRule ^about/?$ pages/about.html [L,QSA]
-  RewriteRule ^contact/?$ pages/contact.html [L,QSA]
-  RewriteRule ^search/?$ pages/search.html [L,QSA]
-  RewriteRule ^magazine-preview/?$ pages/magazine-preview.html [L,QSA]
-  RewriteRule ^magazine-view/?$ pages/magazine-view.html [L,QSA]
-  RewriteRule ^article-view/?$ pages/article-view.html [L,QSA]
-  RewriteRule ^blog/?$ pages/blog.html [L,QSA]
-  RewriteRule ^blog-view/?$ pages/blog-view.html [L,QSA]
-  RewriteRule ^splash/?$ pages/splash.html [L,QSA]
+  RewriteRule ^magazine/?$ magazine.html [L,QSA]
+  RewriteRule ^magazines/?$ magazine.html [L,QSA]
+  RewriteRule ^article/?$ article.html [L,QSA]
+  RewriteRule ^articles/?$ article.html [L,QSA]
+  RewriteRule ^about/?$ about.html [L,QSA]
+  RewriteRule ^contact/?$ contact.html [L,QSA]
+  RewriteRule ^search/?$ search.html [L,QSA]
+  RewriteRule ^magazine-preview/?$ magazine-preview.html [L,QSA]
+  RewriteRule ^magazine-view/?$ magazine-view.html [L,QSA]
+  RewriteRule ^article-view/?$ article-view.html [L,QSA]
+  RewriteRule ^blog/?$ blog.html [L,QSA]
+  RewriteRule ^blog-view/?$ blog-view.html [L,QSA]
+  RewriteRule ^splash/?$ splash.html [L,QSA]
 </IfModule>

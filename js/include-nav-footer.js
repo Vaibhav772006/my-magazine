@@ -4,11 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!placeholder) return Promise.resolve();
 
     const candidates = [
-      `../pages/${filename}`,
-      `pages/${filename}`,
-      `/pages/${filename}`,
       filename,
-      `/${filename}`
+      `/${filename}`,
+      `pages/${filename}`
     ];
 
     const tryFetch = (index) => {

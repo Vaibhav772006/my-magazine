@@ -1,0 +1,8 @@
+# robots.txt for The Empire Insight
+# https://www.theempireinsight.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.theempireinsight.com/sitemap.xml

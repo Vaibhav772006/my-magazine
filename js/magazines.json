@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "business-woman-2026",
     "slug": "business-woman-of-the-year-2026",
@@ -10,7 +10,13 @@
     "edition": "Annual Edition 2026",
     "publishedDate": "2026-03-01",
     "category": "Leadership & Business",
-    "tags": ["Women in Leadership", "Executive Impact", "Visionary Leaders", "Empowerment", "Strategy"],
+    "tags": [
+      "Women in Leadership",
+      "Executive Impact",
+      "Visionary Leaders",
+      "Empowerment",
+      "Strategy"
+    ],
     "cover": "../images/Magazine-cover/cover-2026-business-woman.jpg",
     "pdfUrl": "../images/article-pdf&cover/Article No 1.pdf",
     "featured": true,
@@ -55,9 +61,20 @@
       }
     ],
     "seo": {
-      "metaTitle": "Business Woman of the Year 2026 | The Empire Insight",
-      "metaDescription": "Explore Business Woman of the Year 2026 in The Empire Insight. Read executive profiles on inspiring women shaping a stronger tomorrow with vision, leadership, and impact.",
-      "keywords": ["business woman of the year", "women in leadership", "the empire insight", "female executives 2026"]
+      "metaTitle": "Business Woman of the Year 2026 | Inspiring Business Leaders | The Empire Insight",
+      "metaDescription": "Explore Business Woman of the Year 2026 in The Empire Insight. Read executive profiles of inspiring business leaders, influential CEOs, and visionary women shaping global commerce.",
+      "keywords": [
+        "Global Business Leaders",
+        "Inspiring business leaders",
+        "Influential CEOs and entrepreneurs",
+        "Global Business Magazine",
+        "Business Leadership Magazine",
+        "Business Magazine for Entrepreneurs",
+        "Successful CEO stories",
+        "Global business success stories",
+        "International Leadership Magazine",
+        "Women in Leadership"
+      ]
     },
     "content": "<div class=\"editorial-intro\"><h3>Inspiring Women Shaping a Stronger Tomorrow</h3><p>True leadership is not measured solely by quarterly balance sheets, but by the doors opened and the ecosystems elevated. In this flagship 2026 edition, <strong>The Empire Insight</strong> honors the executives who combine bold vision, unyielding integrity, and high-impact mentorship.</p></div>"
   },
@@ -72,7 +89,13 @@
     "edition": "Executive Edition 2026",
     "publishedDate": "2026-02-15",
     "category": "Leadership & Business",
-    "tags": ["CEO Insights", "Enterprise Strategy", "Global Leadership", "Sustainable Growth", "Execution"],
+    "tags": [
+      "CEO Insights",
+      "Enterprise Strategy",
+      "Global Leadership",
+      "Sustainable Growth",
+      "Execution"
+    ],
     "cover": "../images/Magazine-cover/cover-2026-ceo-of-the-year.jpg",
     "pdfUrl": "../images/article-pdf&cover/Article No 2.pdf",
     "featured": true,
@@ -110,9 +133,22 @@
       }
     ],
     "seo": {
-      "metaTitle": "CEO of the Year 2026 â€” Executive Edition | The Empire Insight",
-      "metaDescription": "Discover CEO of the Year 2026 in The Empire Insight. Frameworks for vision, execution, sustainable growth, and global influence.",
-      "keywords": ["ceo of the year 2026", "executive strategy", "empire insight ceo", "sustainable growth leadership"]
+      "metaTitle": "CEO of the Year 2026 Executive Edition | Global CEO Magazine | The Empire Insight",
+      "metaDescription": "Discover CEO of the Year 2026 in The Empire Insight. In-depth CEO leadership stories, global CEO interviews, executive strategy, and business leadership insights.",
+      "keywords": [
+        "Global CEO Magazine",
+        "Best CEO Magazine",
+        "CEO Leadership Magazine",
+        "Business Magazine for CEOs",
+        "Top CEO and leadership magazine",
+        "Global CEO interviews",
+        "CEO leadership stories",
+        "Global business leader profiles",
+        "Successful CEO stories",
+        "Business leadership insights",
+        "Global business leadership insights",
+        "Top business leaders around the world"
+      ]
     },
     "content": "<div class=\"editorial-intro\"><h3>Vision, Leadership, Impact</h3><p>At the highest levels of enterprise leadership, clarity of execution is paramount. This edition analyzes the decisive actions of chief executives building enduring organizations across global markets.</p></div>"
   },
@@ -127,7 +163,13 @@
     "edition": "Spring Edition 2026",
     "publishedDate": "2026-04-01",
     "category": "Workplace & Culture",
-    "tags": ["Brand Strategy", "CMO Insights", "Market Disruption", "Purpose-Driven Brands", "Culture"],
+    "tags": [
+      "Brand Strategy",
+      "CMO Insights",
+      "Market Disruption",
+      "Purpose-Driven Brands",
+      "Culture"
+    ],
     "cover": "../images/Magazine-cover/cover-2026-marketing-leaders.jpg",
     "pdfUrl": "../images/article-pdf&cover/Article No 3.pdf",
     "featured": true,
@@ -165,9 +207,19 @@
       }
     ],
     "seo": {
-      "metaTitle": "Most Influential Marketing Leaders 2026 | The Empire Insight",
-      "metaDescription": "Read about the top marketing leaders shaping 2026. Insights on brand growth, consumer psychology, and purpose-driven marketing.",
-      "keywords": ["marketing leaders 2026", "cmo insights", "brand strategy", "empire insight marketing"]
+      "metaTitle": "Most Influential Marketing Leaders 2026 | Global Business Leaders | The Empire Insight",
+      "metaDescription": "Meet the most influential marketing leaders shaping 2026 in The Empire Insight. Strategic insights on brand growth, visionary business leaders, and global market expansion.",
+      "keywords": [
+        "Global Business Leaders",
+        "Influential CEOs and entrepreneurs",
+        "Visionary business leaders",
+        "Business leadership insights",
+        "International Business Magazine",
+        "Global Executive Magazine",
+        "Business Leaders Magazine",
+        "Best magazine for business leaders",
+        "Marketing leaders 2026"
+      ]
     },
     "content": "<div class=\"editorial-intro\"><h3>Brands That Move the World</h3><p>Marketing at its zenith does not merely sell products; it articulates human aspiration and sparks cultural transformation. This issue celebrates the marketing leaders redefining global brand equity in 2026.</p></div>"
   },
@@ -182,7 +234,13 @@
     "edition": "Tech Frontier 2026",
     "publishedDate": "2026-05-01",
     "category": "Technology & AI",
-    "tags": ["Frontier Tech", "AI Architecture", "Engineering Leadership", "Digital Transformation", "Innovation"],
+    "tags": [
+      "Frontier Tech",
+      "AI Architecture",
+      "Engineering Leadership",
+      "Digital Transformation",
+      "Innovation"
+    ],
     "cover": "../images/Magazine-cover/cover-2026-tech-leaders.jpg",
     "pdfUrl": "../images/article-pdf&cover/Article No 4.pdf",
     "featured": true,
@@ -220,9 +278,19 @@
       }
     ],
     "seo": {
-      "metaTitle": "Tech Leaders to Watch in 2026 | The Empire Insight",
-      "metaDescription": "Meet the tech leaders to watch in 2026. In-depth analysis of AI, enterprise compute, and engineering pioneers shaping global industry.",
-      "keywords": ["tech leaders 2026", "ai frontiers", "technology magazine", "cto insights 2026"]
+      "metaTitle": "Tech Leaders to Watch in 2026 | Global CEO & Business Magazine | The Empire Insight",
+      "metaDescription": "Discover tech leaders to watch in 2026 in The Empire Insight. In-depth analysis of AI frontiers, visionary business leaders, and global entrepreneur stories.",
+      "keywords": [
+        "Global Business Leaders",
+        "Visionary business leaders",
+        "Business Magazine for Entrepreneurs",
+        "Global magazine for CEOs and entrepreneurs",
+        "Global CEO interviews",
+        "Global entrepreneur stories",
+        "Business leadership insights",
+        "International Business Magazine",
+        "Tech leaders 2026"
+      ]
     },
     "content": "<div class=\"editorial-intro\"><h3>Technology for People</h3><p>Innovation without empathy is mere computation. In this edition, we showcase the engineers, researchers, and tech executives proving that cutting-edge software and hardware can expand human capability and build a more inclusive future.</p></div>"
   },
@@ -237,7 +305,13 @@
     "edition": "Global Edition 2026",
     "publishedDate": "2026-06-01",
     "category": "Sustainability & ESG",
-    "tags": ["Purpose Leadership", "ESG Strategy", "Inclusive Enterprise", "Executive Vision", "Sustainability"],
+    "tags": [
+      "Purpose Leadership",
+      "ESG Strategy",
+      "Inclusive Enterprise",
+      "Executive Vision",
+      "Sustainability"
+    ],
     "cover": "../images/Magazine-cover/cover-2026-ceo-visionary.jpg",
     "pdfUrl": "../images/article-pdf&cover/Article no 5.pdf",
     "featured": true,
@@ -275,9 +349,20 @@
       }
     ],
     "seo": {
-      "metaTitle": "CEO of the Year 2026 â€” Visionary Edition | The Empire Insight",
-      "metaDescription": "Explore CEO of the Year 2026 Visionary Edition in The Empire Insight. Leadership beyond business: purpose, people, and progress.",
-      "keywords": ["ceo of the year visionary", "esg leadership", "sustainable enterprise", "purpose-driven ceo 2026"]
+      "metaTitle": "CEO of the Year Visionary Edition | Global Leadership Magazine | The Empire Insight",
+      "metaDescription": "Explore CEO of the Year 2026 Visionary Edition in The Empire Insight. Leadership beyond business: purpose, inspiring business leaders, and sustainable enterprise.",
+      "keywords": [
+        "Global Leadership Magazine",
+        "Global CEO Magazine",
+        "Best CEO Magazine",
+        "CEO Leadership Magazine",
+        "Visionary business leaders",
+        "Inspiring business leaders",
+        "Global business success stories",
+        "Top CEO and leadership magazine",
+        "Business Magazine for CEOs",
+        "CEO leadership stories"
+      ]
     },
     "content": "<div class=\"editorial-intro\"><h3>Leadership Beyond Business</h3><p>In a world facing complex environmental, social, and economic questions, executive courage requires broadening the definition of corporate success. This edition celebrates the visionaries constructing sustainable and enduring global legacies.</p></div>"
   }

@@ -57,7 +57,7 @@ function updateMagazineSEO(mag, options = {}) {
   const metaDesc = mag.seo?.metaDescription || mag.preview || mag.subtitle;
   const keywords = Array.isArray(mag.seo?.keywords) 
     ? mag.seo.keywords.join(", ") 
-    : (mag.tags ? mag.tags.join(", ") : "magazine, business, leadership");
+    : (mag.tags ? mag.tags.join(", ") : "Global Business Magazine, Business Leadership Magazine, Global CEO Magazine, Best CEO Magazine, Global Business Leaders, CEO Leadership Magazine, International Business Magazine, Business Magazine for CEOs, CEO Insights Magazine, Global business leader profiles, Successful CEO stories, Inspiring business leaders, Business leadership insights");
   const coverUrl = toAbsoluteUrl(mag.cover || "../images/logo.png");
 
   // Document Title

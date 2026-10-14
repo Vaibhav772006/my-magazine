@@ -1,6 +1,16 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/magazine/:id/read",
+      "destination": "/magazine-view.html?id=:id"
+    },
+    {
+      "source": "/magazine/:id",
+      "destination": "/magazine-preview.html?id=:id"
+    }
+  ],
   "redirects": [
     {
       "source": "/pages/index.html",

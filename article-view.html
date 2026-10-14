@@ -736,12 +736,14 @@
       })
       .then(data => {
         if (!Array.isArray(data) || data.length === 0) throw new Error("No data");
+        const visibleArticles = data.filter(a => a.visible !== false);
+        if (visibleArticles.length === 0) throw new Error("No visible articles");
 
         // Lookup by ID or Slug (case-insensitive)
         let article = null;
         if (articleId) {
           const target = decodeURIComponent(articleId).toLowerCase().trim();
-          article = data.find(a => 
+          article = visibleArticles.find(a =>
             (a.id && a.id.toString().toLowerCase() === target) ||
             (a.slug && a.slug.toLowerCase() === target)
           );
@@ -749,7 +751,7 @@
 
         // Fallback to premier article if not found
         if (!article) {
-          article = data[0];
+          article = visibleArticles[0];
           articleId = article.id;
         }
 
@@ -850,7 +852,7 @@
         // Populate sidebar with other articles
         const latestContainer = document.getElementById('latest-articles-container');
         latestContainer.innerHTML = "";
-        const otherArticles = data.filter(a => a.id !== article.id && a.slug !== article.slug);
+        const otherArticles = visibleArticles.filter(a => a.id !== article.id && a.slug !== article.slug);
 
         otherArticles.slice(0, 5).forEach(a => {
           const item = document.createElement('a');

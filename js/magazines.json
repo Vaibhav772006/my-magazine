@@ -1,6 +1,7 @@
 [
   {
     "id": "alejandro-calle-october-2026",
+    "visible": true,
     "slug": "the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026",
     "title": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
     "shortTitle": "The Visionary Tech Entrepreneur",
@@ -25,9 +26,9 @@
     "coverAlt": "Official October 2026 Cover of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux",
     "featured": true,
     "status": "Published",
-    "readingTime": "40 min read",
-    "pageCount": 64,
-    "issn": "2834-9121",
+    "readingTime": "",
+    "pageCount": "",
+    "issn": "",
     "editor": {
       "name": "David Sterling",
       "role": "Editor-in-Chief"
@@ -36,28 +37,28 @@
     "executiveSummary": "This landmark October 2026 edition spotlights Alejandro Calle, Founder & CEO of Tech In A Tux. We explore how human empathy, accessible pricing models, and 60M+ online views are redefining corporate technology support across North America and the world.",
     "tableOfContents": [
       {
-        "page": 4,
+        "page": "",
         "title": "Curiosity Before Credentials: The Self-Taught Mindset",
         "author": "David Sterling",
         "category": "Cover Story",
         "snippet": "How relentless problem-solving without formal blueprints shaped an unconventional tech founder."
       },
       {
-        "page": 16,
+        "page": "",
         "title": "The Pay-What-You-Can Model: Economics of Compassion",
         "author": "Elena Sterling",
         "category": "Business Strategy",
         "snippet": "Why profitability and generosity are mutually reinforcing pillars of enterprise durability."
       },
       {
-        "page": 28,
+        "page": "",
         "title": "Educating 200,000+ Minds: Technology Without Intimidation",
         "author": "Julian Montgomery",
         "category": "Digital Reach",
         "snippet": "Demystifying hardware, cybersecurity, and artificial intelligence for a global community."
       },
       {
-        "page": 42,
+        "page": "",
         "title": "The Secret to Living is Giving",
         "author": "Alejandro Calle",
         "category": "Executive Op-Ed",
@@ -94,6 +95,7 @@
   },
   {
     "id": "business-woman-2026",
+    "visible": true,
     "slug": "business-woman-of-the-year-2026",
     "title": "Business Woman of the Year: Inspiring Women Shaping a Stronger Tomorrow",
     "shortTitle": "Business Woman of the Year",
@@ -286,6 +288,7 @@
   },
   {
     "id": "ceo-of-the-year-2026",
+    "visible": true,
     "slug": "ceo-of-the-year-executive-edition-2026",
     "title": "CEO of the Year: Vision, Execution & Sustainable Growth",
     "shortTitle": "CEO of the Year (Executive)",
@@ -471,6 +474,7 @@
   },
   {
     "id": "marketing-leaders-2026",
+    "visible": true,
     "slug": "influential-marketing-leaders-2026",
     "title": "The Most Influential Marketing Leaders Shaping 2026",
     "shortTitle": "Marketing Leaders 2026",
@@ -656,6 +660,7 @@
   },
   {
     "id": "tech-leaders-2026",
+    "visible": true,
     "slug": "tech-leaders-to-watch-2026",
     "title": "Tech Leaders to Watch in 2026: Innovation, People & Impact",
     "shortTitle": "Tech Leaders 2026",
@@ -841,6 +846,7 @@
   },
   {
     "id": "ceo-visionary-2026",
+    "visible": true,
     "slug": "ceo-of-the-year-visionary-edition-2026",
     "title": "CEO of the Year: Leadership Beyond Business - Purpose, People, Progress",
     "shortTitle": "CEO of the Year (Visionary)",

@@ -35,14 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      const visibleData = data.filter(a => a.visible !== false);
+
       // Update count badge if present
       const countEl = document.querySelector(".ed-stories-wrap .ed-section-link");
       if (countEl) {
-        countEl.textContent = `${data.length} Article${data.length === 1 ? "" : "s"}`;
+        countEl.textContent = `${visibleData.length} Article${visibleData.length === 1 ? "" : "s"}`;
       }
 
       container.innerHTML = "";
-      data.forEach(article => {
+      visibleData.forEach(article => {
         const cat = article.category || fallbackCategories[article.id] || "Executive Insight";
         const coverSrc = resolveCover(article.cover);
         const readTime = article.readingTime || "5 min read";

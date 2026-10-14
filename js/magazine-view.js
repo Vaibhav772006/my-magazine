@@ -15,14 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error("Empty magazine repository");
       }
+      const visibleMagazines = data.filter(m => m.visible !== false);
+      if (visibleMagazines.length === 0) {
+        throw new Error("No visible magazines available");
+      }
 
       // Find magazine by id or slug; default to first
       let mag = null;
       if (magId) {
-        mag = data.find(m => m.id === magId || m.slug === magId);
+        mag = visibleMagazines.find(m => m.id === magId || m.slug === magId);
       }
       if (!mag) {
-        mag = data[0];
+        mag = visibleMagazines[0];
       }
 
       // Update SEO and Schema.org Structured Data
@@ -181,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const latestContainer = document.getElementById("mag-latest-container");
       if (latestContainer) {
         latestContainer.innerHTML = "";
-        const latestMags = data.filter(m => m.id !== mag.id).slice(0, 5);
+        const latestMags = visibleMagazines.filter(m => m.id !== mag.id).slice(0, 5);
 
         latestMags.forEach(m => {
           const card = document.createElement("a");

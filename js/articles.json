@@ -1,6 +1,7 @@
 [
   {
     "id": "alejandro-calle-2026",
+    "visible": true,
     "slug": "the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026",
     "title": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
     "shortTitle": "Bridging the Digital Divide",
@@ -53,6 +54,7 @@
   },
   {
     "id": "1",
+    "visible": true,
     "slug": "empower-to-elevate",
     "title": "Empower to Elevate",
     "subtitle": "The New Standard for Transformational Leadership",
@@ -73,6 +75,7 @@
   },
   {
     "id": "2",
+    "visible": true,
     "slug": "performance-cultures-start-with-people",
     "title": "Performance Cultures Start with People",
     "subtitle": "The Leadership Equation That Works",
@@ -93,6 +96,7 @@
   },
   {
     "id": "3",
+    "visible": true,
     "slug": "unlocking-human-potential",
     "title": "Unlocking Human Potential",
     "subtitle": "The Real Key to Organizational Excellence",
@@ -113,6 +117,7 @@
   },
   {
     "id": "4",
+    "visible": true,
     "slug": "metrics-that-matter",
     "title": "Metrics that Matter",
     "subtitle": "Redefining Success in the Age of Purpose and People",
@@ -133,6 +138,7 @@
   },
   {
     "id": "5",
+    "visible": true,
     "slug": "from-stability-to-agility",
     "title": "From Stability to Agility",
     "subtitle": "Rethinking Strategic Planning in an Era of Constant Change",

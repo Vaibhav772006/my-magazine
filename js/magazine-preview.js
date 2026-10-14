@@ -15,14 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!Array.isArray(data) || data.length === 0) {
         throw new Error("No magazine data available");
       }
+      const visibleMagazines = data.filter(m => m.visible !== false);
+      if (visibleMagazines.length === 0) {
+        throw new Error("No visible magazines available");
+      }
 
       // Find magazine by id or slug; default to first if unspecified
       let magazine = null;
       if (magazineId) {
-        magazine = data.find(m => m.id === magazineId || m.slug === magazineId);
+        magazine = visibleMagazines.find(m => m.id === magazineId || m.slug === magazineId);
       }
       if (!magazine) {
-        magazine = data[0];
+        magazine = visibleMagazines[0];
       }
 
       // Update SEO and Schema
@@ -173,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const relatedGrid = document.getElementById("mag-related-grid");
       if (relatedGrid) {
         relatedGrid.innerHTML = "";
-        const others = data.filter(m => m.id !== magazine.id).slice(0, 4);
+        const others = visibleMagazines.filter(m => m.id !== magazine.id).slice(0, 4);
         others.forEach(m => {
           const category = m.category ? `<span class="mag-tag">${m.category}</span>` : "";
           const preview = m.preview

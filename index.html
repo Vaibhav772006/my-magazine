@@ -337,7 +337,7 @@
         var grid = document.getElementById('editions-grid');
         if (!grid) return;
         grid.innerHTML = '';
-        mags.forEach(function(m) {
+        mags.filter(function(m){ return m.visible !== false; }).forEach(function(m) {
           var card = document.createElement('a');
           card.href = 'magazine-preview.html?id=' + encodeURIComponent(m.id);
           card.className = 'ed-edition-card';

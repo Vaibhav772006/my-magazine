@@ -154,7 +154,7 @@
       <div class="ed-features-grid" id="features-grid">
 
         <!-- Main feature (Alejandro Calle flagship feature) -->
-        <a href="article-view.html?id=alejandro-calle-2026" class="ed-feature-main" aria-label="Read: The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026">
+        <a href="article-view.html?id=alejandro-calle-2026" class="ed-feature-main" data-article-id="alejandro-calle-2026" aria-label="Read: The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026">
           <img
             class="ed-feature-main-img"
             src="images/article-pdf&cover/alejandro-calle-cover.jpg"
@@ -172,7 +172,7 @@
 
         <!-- Sidebar articles -->
         <div class="ed-features-sidebar" id="features-sidebar">
-          <a href="article-view.html?id=1" class="ed-feature-row">
+          <a href="article-view.html?id=1" class="ed-feature-row" data-article-id="1">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article1.jpg" alt="Empower to Elevate" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Leadership</span>
@@ -180,7 +180,7 @@
               <p class="ed-feature-row-sub">The new standard for transformational leadership in modern organizations.</p>
             </div>
           </a>
-          <a href="article-view.html?id=2" class="ed-feature-row">
+          <a href="article-view.html?id=2" class="ed-feature-row" data-article-id="2">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article2.jpg" alt="Performance Cultures" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Culture</span>
@@ -188,7 +188,7 @@
               <p class="ed-feature-row-sub">The leadership equation that balances high trust with peak performance.</p>
             </div>
           </a>
-          <a href="article-view.html?id=3" class="ed-feature-row">
+          <a href="article-view.html?id=3" class="ed-feature-row" data-article-id="3">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article3.jpg" alt="Unlocking Human Potential" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Strategy</span>
@@ -196,7 +196,7 @@
               <p class="ed-feature-row-sub">The real key to organizational excellence and long-term durability.</p>
             </div>
           </a>
-          <a href="article-view.html?id=4" class="ed-feature-row">
+          <a href="article-view.html?id=4" class="ed-feature-row" data-article-id="4">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article4.jpg" alt="Metrics that Matter" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Finance</span>
@@ -329,6 +329,30 @@
   <script defer src="js/include-nav-footer.js"></script>
 
   <script>
+  /* Keep manually curated featured cards aligned with article visibility. */
+  (function filterHiddenFeaturedArticles() {
+    fetch('js/articles.json')
+      .then(function(response) {
+        if (!response.ok) throw new Error('Unable to load article visibility');
+        return response.json();
+      })
+      .then(function(articles) {
+        var visibility = {};
+        articles.forEach(function(article) {
+          visibility[String(article.id)] = article.visible !== false;
+          if (article.slug) visibility[article.slug] = article.visible !== false;
+        });
+
+        document.querySelectorAll('[data-article-id]').forEach(function(card) {
+          if (visibility[card.getAttribute('data-article-id')] === false) {
+            card.remove();
+          }
+        });
+      })
+      .catch(function(error) {
+        console.error('Could not apply article visibility:', error);
+      });
+  })();
   /* â”€â”€ Load Editions from magazines.json â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   (function loadEditions() {
     fetch('js/magazines.json')
@@ -664,5 +688,3 @@
 
 </body>
 </html>
-
-

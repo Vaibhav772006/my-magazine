@@ -1,5 +1,98 @@
 [
   {
+    "id": "alejandro-calle-october-2026",
+    "slug": "the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026",
+    "title": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
+    "shortTitle": "The Visionary Tech Entrepreneur",
+    "subtitle": "“The Future of Technology Shouldn't Just Be Smarter. It Should Be More Human.”",
+    "volume": "Vol. 01",
+    "issue": "October Edition 2026",
+    "edition": "October 2026",
+    "publishedDate": "2026-10-14",
+    "modifiedDate": "2026-10-14",
+    "inLanguage": "en",
+    "category": "Technology & AI",
+    "tags": [
+      "Tech Entrepreneurship",
+      "Digital Divide",
+      "Tech In A Tux",
+      "AI & Humanity",
+      "Visionary Leaders",
+      "Accessible Tech Support",
+      "Canadian Leaders"
+    ],
+    "cover": "../images/Magazine-cover/cover-2026-alejandro-calle.jpg",
+    "coverAlt": "Official October 2026 Cover of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux",
+    "featured": true,
+    "status": "Published",
+    "readingTime": "40 min read",
+    "pageCount": 64,
+    "issn": "2834-9121",
+    "editor": {
+      "name": "David Sterling",
+      "role": "Editor-in-Chief"
+    },
+    "preview": "How Alejandro Calle turned curiosity, compassion, and a pay-what-you-can mindset into Tech In A Tux — an accessible tech powerhouse that leaves no one behind.",
+    "executiveSummary": "This landmark October 2026 edition spotlights Alejandro Calle, Founder & CEO of Tech In A Tux. We explore how human empathy, accessible pricing models, and 60M+ online views are redefining corporate technology support across North America and the world.",
+    "tableOfContents": [
+      {
+        "page": 4,
+        "title": "Curiosity Before Credentials: The Self-Taught Mindset",
+        "author": "David Sterling",
+        "category": "Cover Story",
+        "snippet": "How relentless problem-solving without formal blueprints shaped an unconventional tech founder."
+      },
+      {
+        "page": 16,
+        "title": "The Pay-What-You-Can Model: Economics of Compassion",
+        "author": "Elena Sterling",
+        "category": "Business Strategy",
+        "snippet": "Why profitability and generosity are mutually reinforcing pillars of enterprise durability."
+      },
+      {
+        "page": 28,
+        "title": "Educating 200,000+ Minds: Technology Without Intimidation",
+        "author": "Julian Montgomery",
+        "category": "Digital Reach",
+        "snippet": "Demystifying hardware, cybersecurity, and artificial intelligence for a global community."
+      },
+      {
+        "page": 42,
+        "title": "The Secret to Living is Giving",
+        "author": "Alejandro Calle",
+        "category": "Executive Op-Ed",
+        "snippet": "Why true leadership means accepting responsibility, sharing knowledge, and humanizing innovation."
+      }
+    ],
+    "featuredQuotes": [
+      {
+        "quote": "Let's make tech support accessible to all, regardless of their financial situation.",
+        "author": "Alejandro Calle",
+        "role": "Founder & CEO, Tech In A Tux"
+      },
+      {
+        "quote": "The future of technology shouldn't just be smarter. It should be more human.",
+        "author": "Alejandro Calle",
+        "role": "Founder & CEO, Tech In A Tux"
+      }
+    ],
+    "seo": {
+      "metaTitle": "The Visionary Tech Entrepreneur 2026: Alejandro Calle | The Empire Insight",
+      "metaDescription": "Discover the October 2026 edition of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux. Bridging the digital divide with curiosity and compassion.",
+      "keywords": [
+        "Alejandro Calle",
+        "Tech In A Tux",
+        "Global Business Magazine",
+        "Global CEO Magazine",
+        "Visionary Tech Entrepreneur",
+        "Digital Divide",
+        "October 2026 Edition",
+        "Best CEO Magazine"
+      ]
+    },
+    "content": "\n    <div class=\"editorial-intro\">\n      <h3>The Visionary Tech Entrepreneur: Alejandro Calle</h3>\n      <p class=\"mag-intro-lead\">\n        Most people only think about their computer when it stops working. For Alejandro Calle, that moment of panic is where the real work begins. Behind every broken system is a person who needs patience, honesty, and respect.\n      </p>\n      <p>\n        In this flagship October 2026 issue, <strong>The Empire Insight</strong> examines how Alejandro Calle turned curiosity, compassion, and a pay-what-you-can mindset into <strong>Tech In A Tux</strong> &mdash; a company proving that sustainable enterprise growth and heartfelt generosity are not opposing ideas, but the twin engines of modern technological leadership.\n      </p>\n    </div>\n  "
+  },
+  {
     "id": "business-woman-2026",
     "slug": "business-woman-of-the-year-2026",
     "title": "Business Woman of the Year: Inspiring Women Shaping a Stronger Tomorrow",
@@ -90,10 +183,22 @@
       "influential-marketing-leaders-2026"
     ],
     "breadcrumbs": [
-      { "name": "Home", "url": "https://www.theempireinsight.com/" },
-      { "name": "Magazine", "url": "https://www.theempireinsight.com/magazine" },
-      { "name": "Leadership & Business", "url": "https://www.theempireinsight.com/magazine/category/leadership-business" },
-      { "name": "Business Woman of the Year 2026", "url": "https://www.theempireinsight.com/magazine/business-woman-of-the-year-2026" }
+      {
+        "name": "Home",
+        "url": "https://www.theempireinsight.com/"
+      },
+      {
+        "name": "Magazine",
+        "url": "https://www.theempireinsight.com/magazine"
+      },
+      {
+        "name": "Leadership & Business",
+        "url": "https://www.theempireinsight.com/magazine/category/leadership-business"
+      },
+      {
+        "name": "Business Woman of the Year 2026",
+        "url": "https://www.theempireinsight.com/magazine/business-woman-of-the-year-2026"
+      }
     ],
     "faq": [
       {
@@ -263,10 +368,22 @@
       "tech-leaders-to-watch-2026"
     ],
     "breadcrumbs": [
-      { "name": "Home", "url": "https://www.theempireinsight.com/" },
-      { "name": "Magazine", "url": "https://www.theempireinsight.com/magazine" },
-      { "name": "Leadership & Business", "url": "https://www.theempireinsight.com/magazine/category/leadership-business" },
-      { "name": "CEO of the Year Executive Edition 2026", "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-executive-edition-2026" }
+      {
+        "name": "Home",
+        "url": "https://www.theempireinsight.com/"
+      },
+      {
+        "name": "Magazine",
+        "url": "https://www.theempireinsight.com/magazine"
+      },
+      {
+        "name": "Leadership & Business",
+        "url": "https://www.theempireinsight.com/magazine/category/leadership-business"
+      },
+      {
+        "name": "CEO of the Year Executive Edition 2026",
+        "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-executive-edition-2026"
+      }
     ],
     "faq": [
       {
@@ -436,10 +553,22 @@
       "ceo-of-the-year-executive-edition-2026"
     ],
     "breadcrumbs": [
-      { "name": "Home", "url": "https://www.theempireinsight.com/" },
-      { "name": "Magazine", "url": "https://www.theempireinsight.com/magazine" },
-      { "name": "Workplace & Culture", "url": "https://www.theempireinsight.com/magazine/category/workplace-culture" },
-      { "name": "Most Influential Marketing Leaders 2026", "url": "https://www.theempireinsight.com/magazine/influential-marketing-leaders-2026" }
+      {
+        "name": "Home",
+        "url": "https://www.theempireinsight.com/"
+      },
+      {
+        "name": "Magazine",
+        "url": "https://www.theempireinsight.com/magazine"
+      },
+      {
+        "name": "Workplace & Culture",
+        "url": "https://www.theempireinsight.com/magazine/category/workplace-culture"
+      },
+      {
+        "name": "Most Influential Marketing Leaders 2026",
+        "url": "https://www.theempireinsight.com/magazine/influential-marketing-leaders-2026"
+      }
     ],
     "faq": [
       {
@@ -609,10 +738,22 @@
       "ceo-of-the-year-visionary-edition-2026"
     ],
     "breadcrumbs": [
-      { "name": "Home", "url": "https://www.theempireinsight.com/" },
-      { "name": "Magazine", "url": "https://www.theempireinsight.com/magazine" },
-      { "name": "Technology & AI", "url": "https://www.theempireinsight.com/magazine/category/technology-ai" },
-      { "name": "Tech Leaders to Watch in 2026", "url": "https://www.theempireinsight.com/magazine/tech-leaders-to-watch-2026" }
+      {
+        "name": "Home",
+        "url": "https://www.theempireinsight.com/"
+      },
+      {
+        "name": "Magazine",
+        "url": "https://www.theempireinsight.com/magazine"
+      },
+      {
+        "name": "Technology & AI",
+        "url": "https://www.theempireinsight.com/magazine/category/technology-ai"
+      },
+      {
+        "name": "Tech Leaders to Watch in 2026",
+        "url": "https://www.theempireinsight.com/magazine/tech-leaders-to-watch-2026"
+      }
     ],
     "faq": [
       {
@@ -722,7 +863,6 @@
     ],
     "cover": "../images/Magazine-cover/cover-2026-ceo-visionary.jpg",
     "coverAlt": "Cover of The Empire Insight CEO of the Year Visionary Edition 2026 on purpose-driven leadership",
-
     "featured": true,
     "status": "Published",
     "readingTime": "38 min read",
@@ -782,10 +922,22 @@
       "tech-leaders-to-watch-2026"
     ],
     "breadcrumbs": [
-      { "name": "Home", "url": "https://www.theempireinsight.com/" },
-      { "name": "Magazine", "url": "https://www.theempireinsight.com/magazine" },
-      { "name": "Sustainability & ESG", "url": "https://www.theempireinsight.com/magazine/category/sustainability-esg" },
-      { "name": "CEO of the Year Visionary Edition 2026", "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-visionary-edition-2026" }
+      {
+        "name": "Home",
+        "url": "https://www.theempireinsight.com/"
+      },
+      {
+        "name": "Magazine",
+        "url": "https://www.theempireinsight.com/magazine"
+      },
+      {
+        "name": "Sustainability & ESG",
+        "url": "https://www.theempireinsight.com/magazine/category/sustainability-esg"
+      },
+      {
+        "name": "CEO of the Year Visionary Edition 2026",
+        "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-visionary-edition-2026"
+      }
     ],
     "faq": [
       {

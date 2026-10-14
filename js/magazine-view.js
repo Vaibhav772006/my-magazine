@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const magId = urlParams.get("id");
+  const assetBaseUrl = new URL("js/magazines.json", document.baseURI);
 
   const fetchJson = (path) => fetch(new URL(path, document.baseURI));
+  const resolveMagazineAsset = (path) => path ? new URL(path, assetBaseUrl).href : "";
   (fetchJson("js/magazines.json").then(r => r.ok ? r : Promise.reject()))
     .catch(() => fetchJson("../js/magazines.json"))
     .then(res => {
@@ -37,16 +39,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Banner Elements
       document.getElementById("mag-view-title").textContent = mag.title;
-      document.getElementById("mag-view-subtitle").textContent = mag.subtitle || "";
+      const subtitleEl = document.getElementById("mag-view-subtitle");
+      if (subtitleEl) {
+        subtitleEl.textContent = mag.subtitle || "";
+        subtitleEl.style.display = mag.subtitle ? "" : "none";
+      }
 
       const issueBadge = document.getElementById("mag-view-badge-issue");
-      if (issueBadge && mag.issue) {
-        issueBadge.textContent = `${mag.volume ? mag.volume + " • " : ""}${mag.issue}`;
+      if (issueBadge) {
+        issueBadge.textContent = mag.volume || mag.issue
+          ? `${mag.volume || ""}${mag.volume && mag.issue ? " • " : ""}${mag.issue || ""}`
+          : "";
+        issueBadge.style.display = issueBadge.textContent ? "" : "none";
       }
 
       const catBadge = document.getElementById("mag-view-category");
       if (catBadge) {
-        catBadge.textContent = mag.category || "Executive Edition";
+        catBadge.textContent = mag.category || "";
+        catBadge.style.display = mag.category ? "" : "none";
       }
 
       const dateBadge = document.getElementById("mag-view-date");
@@ -55,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ? new Date(mag.publishedDate).toLocaleDateString("en-US", { year: "numeric", month: "long" })
           : (mag.edition || "");
         dateBadge.innerHTML = `<i class="far fa-calendar-alt"></i> ${formatted}`;
+        dateBadge.style.display = formatted ? "" : "none";
       }
 
       // Top Toolbar Buttons
@@ -70,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const pdfTopBtn = document.getElementById("mag-view-pdf-btn");
       if (pdfTopBtn) {
         if (mag.pdfUrl) {
-          pdfTopBtn.href = mag.pdfUrl;
+          pdfTopBtn.href = resolveMagazineAsset(mag.pdfUrl);
           pdfTopBtn.style.display = "inline-flex";
         } else {
           pdfTopBtn.style.display = "none";
@@ -80,13 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cover & Editorial Content
       const coverEl = document.getElementById("mag-view-cover");
       if (coverEl) {
-        coverEl.src = mag.cover;
+        coverEl.src = resolveMagazineAsset(mag.cover);
         coverEl.alt = `${mag.title} Official Feature Cover`;
       }
 
       const contentEl = document.getElementById("mag-view-content");
       if (contentEl) {
-        contentEl.innerHTML = mag.content || `<p>${mag.preview || ""}</p>`;
+        const content = mag.content || (mag.preview ? `<p>${mag.preview}</p>` : "");
+        contentEl.innerHTML = content;
+        contentEl.style.display = content ? "" : "none";
       }
 
       // Reader Table of Contents
@@ -129,30 +142,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Editor Byline
-      if (mag.editor) {
-        const editorName = document.getElementById("mag-editor-name");
-        const editorRole = document.getElementById("mag-editor-role");
-        if (editorName) editorName.textContent = mag.editor.name;
-        if (editorRole) editorRole.textContent = mag.editor.role;
-      }
-
-      // Tags
-      const tagsContainer = document.getElementById("mag-view-tags");
-      if (tagsContainer && Array.isArray(mag.tags)) {
-        tagsContainer.innerHTML = "";
-        mag.tags.forEach(t => {
-          tagsContainer.insertAdjacentHTML("beforeend", `<span class="mag-tag">${t}</span>`);
-        });
-      }
-
       // Sidebar Specs
-      document.getElementById("sidebar-edition").textContent = mag.edition || "Current Edition";
-      document.getElementById("sidebar-date").textContent = mag.publishedDate || "2026";
-      document.getElementById("sidebar-volume").textContent = `${mag.volume || "Vol. 1"}, ${mag.issue || "Issue 1"}`;
-      document.getElementById("sidebar-issn").textContent = mag.issn || "2834-9121";
-      document.getElementById("sidebar-pages").textContent = mag.pageCount ? `${mag.pageCount} Pages` : "48 Pages";
-      document.getElementById("sidebar-reading").textContent = mag.readingTime || "30 min read";
+      const sidebarSpecs = [
+        ["sidebar-edition", mag.edition],
+        ["sidebar-date", mag.publishedDate],
+        ["sidebar-volume", mag.volume || mag.issue ? `${mag.volume || ""}${mag.volume && mag.issue ? ", " : ""}${mag.issue || ""}` : ""],
+        ["sidebar-issn", mag.issn],
+        ["sidebar-pages", mag.pageCount ? `${mag.pageCount} Pages` : ""],
+        ["sidebar-reading", mag.readingTime]
+      ];
+      sidebarSpecs.forEach(([id, value]) => {
+        const valueEl = document.getElementById(id);
+        const row = valueEl ? valueEl.closest("li") : null;
+        if (valueEl) valueEl.textContent = value || "";
+        if (row) row.style.display = value ? "" : "none";
+      });
+      const sidebarMetaList = document.querySelector(".mag-sidebar-meta-list");
+      const sidebarDetailsCard = sidebarMetaList
+        ? sidebarMetaList.closest(".mag-sidebar-card")
+        : null;
+      if (sidebarDetailsCard) {
+        sidebarDetailsCard.style.display = sidebarSpecs.some(([, value]) => value) ? "" : "none";
+      }
 
       // Sidebar PDF Download
       const sidebarPdfCard = document.getElementById("sidebar-pdf-card");
@@ -160,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (sidebarPdfCard && sidebarPdfLink) {
         if (mag.pdfUrl) {
           sidebarPdfCard.style.display = "block";
-          sidebarPdfLink.href = mag.pdfUrl;
+          sidebarPdfLink.href = resolveMagazineAsset(mag.pdfUrl);
         } else {
           sidebarPdfCard.style.display = "none";
         }
@@ -177,11 +188,11 @@ document.addEventListener("DOMContentLoaded", () => {
           card.href = `magazine-preview.html?id=${encodeURIComponent(m.id)}`;
           card.className = "mag-latest-card";
           card.innerHTML = `
-            <img src="${m.cover}" alt="${m.title}" class="mag-latest-img" loading="lazy" />
+            <img src="${resolveMagazineAsset(m.cover)}" alt="${m.title}" class="mag-latest-img" loading="lazy" />
             <div class="mag-latest-info">
-              <span class="mag-tag-micro">${m.category || "Issue"}</span>
+              ${m.category ? `<span class="mag-tag-micro">${m.category}</span>` : ""}
               <h4>${m.shortTitle || m.title}</h4>
-              <p>${m.edition || ""}</p>
+              ${m.edition ? `<p>${m.edition}</p>` : ""}
             </div>
           `;
           latestContainer.appendChild(card);
@@ -204,4 +215,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
-

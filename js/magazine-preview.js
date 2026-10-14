@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const magazineId = urlParams.get("id");
+  const assetBaseUrl = new URL("js/magazines.json", document.baseURI);
 
   const fetchJson = (path) => fetch(new URL(path, document.baseURI));
+  const resolveMagazineAsset = (path) => path ? new URL(path, assetBaseUrl).href : "";
   (fetchJson("js/magazines.json").then(r => r.ok ? r : Promise.reject()))
     .catch(() => fetchJson("../js/magazines.json"))
     .then(res => {
@@ -36,28 +38,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Hero Elements
       document.getElementById("mag-preview-title").textContent = magazine.title;
-      document.getElementById("mag-preview-subtitle").textContent = magazine.subtitle || "";
+      const subtitleEl = document.getElementById("mag-preview-subtitle");
+      if (subtitleEl) {
+        subtitleEl.textContent = magazine.subtitle || "";
+        subtitleEl.style.display = magazine.subtitle ? "" : "none";
+      }
       
       const coverImg = document.getElementById("mag-preview-image");
-      coverImg.src = magazine.cover;
+      coverImg.src = resolveMagazineAsset(magazine.cover);
       coverImg.alt = `${magazine.title} Official Cover`;
 
       // Category & Date
       const catEl = document.getElementById("mag-preview-category");
-      if (catEl) catEl.textContent = magazine.category || "Publication";
+      if (catEl) {
+        catEl.textContent = magazine.category || "";
+        catEl.style.display = magazine.category ? "" : "none";
+      }
 
       const dateEl = document.getElementById("mag-preview-date");
       if (dateEl) {
         const formattedDate = magazine.publishedDate
           ? new Date(magazine.publishedDate).toLocaleDateString("en-US", { year: "numeric", month: "long" })
-          : (magazine.edition || "");
+          : magazine.edition || "";
         dateEl.innerHTML = `<i class="far fa-calendar-alt"></i> ${formattedDate}`;
+        dateEl.style.display = formattedDate ? "" : "none";
       }
 
       // Summary
       const summaryEl = document.getElementById("mag-preview-summary");
+      const summaryBox = summaryEl ? summaryEl.closest(".mag-exec-summary-box") : null;
       if (summaryEl) {
-        summaryEl.textContent = magazine.executiveSummary || magazine.preview || "";
+        const summary = magazine.executiveSummary || magazine.preview || "";
+        summaryEl.textContent = summary;
+        if (summaryBox) summaryBox.style.display = summary ? "" : "none";
       }
 
       // Badges
@@ -72,18 +85,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Quick Specs
-      const specIssue = document.getElementById("spec-issue");
-      if (specIssue) specIssue.textContent = `${magazine.volume || "Vol. 1"}, ${magazine.issue || "Issue 1"}`;
-
-      const specReading = document.getElementById("spec-reading");
-      if (specReading) specReading.textContent = magazine.readingTime || "30 min read";
-
-      const specPages = document.getElementById("spec-pages");
-      if (specPages) specPages.textContent = magazine.pageCount ? `${magazine.pageCount} Pages` : "48 Pages";
-
-      const specIssn = document.getElementById("spec-issn");
-      if (specIssn) specIssn.textContent = magazine.issn || "2834-9121";
+      // Quick Specs: hide each item when its source data is unavailable.
+      const specs = [
+        ["spec-issue", magazine.volume || magazine.issue ? `${magazine.volume || ""}${magazine.volume && magazine.issue ? ", " : ""}${magazine.issue || ""}` : ""],
+        ["spec-reading", magazine.readingTime || ""],
+        ["spec-pages", magazine.pageCount ? `${magazine.pageCount} Pages` : ""],
+        ["spec-issn", magazine.issn || ""]
+      ];
+      specs.forEach(([id, value]) => {
+        const valueEl = document.getElementById(id);
+        const item = valueEl ? valueEl.closest(".mag-spec-item") : null;
+        if (valueEl) valueEl.textContent = value;
+        if (item) item.style.display = value ? "" : "none";
+      });
+      const specsGrid = document.getElementById("mag-specs-grid");
+      if (specsGrid) {
+        specsGrid.style.display = specs.some(([, value]) => value) ? "" : "none";
+      }
 
       // Buttons
       const readMoreBtn = document.getElementById("mag-read-more");
@@ -94,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const pdfBtn = document.getElementById("mag-download-pdf");
       if (pdfBtn) {
         if (magazine.pdfUrl) {
-          pdfBtn.href = magazine.pdfUrl;
+          pdfBtn.href = resolveMagazineAsset(magazine.pdfUrl);
           pdfBtn.style.display = "inline-flex";
         } else {
           pdfBtn.style.display = "none";
@@ -157,13 +175,17 @@ document.addEventListener("DOMContentLoaded", () => {
         relatedGrid.innerHTML = "";
         const others = data.filter(m => m.id !== magazine.id).slice(0, 4);
         others.forEach(m => {
+          const category = m.category ? `<span class="mag-tag">${m.category}</span>` : "";
+          const preview = m.preview
+            ? `<p>${m.preview.substring(0, 90)}...</p>`
+            : "";
           relatedGrid.insertAdjacentHTML("beforeend", `
             <a href="magazine-preview.html?id=${encodeURIComponent(m.id)}" class="mag-related-card">
-              <img src="${m.cover}" alt="${m.title} Cover" loading="lazy" />
+              <img src="${resolveMagazineAsset(m.cover)}" alt="${m.title} Cover" loading="lazy" />
               <div class="mag-related-info">
-                <span class="mag-tag">${m.category || "Edition"}</span>
+                ${category}
                 <h4>${m.title}</h4>
-                <p>${m.preview ? m.preview.substring(0, 90) + "..." : ""}</p>
+                ${preview}
               </div>
             </a>
           `);
@@ -186,4 +208,3 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
-

@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="HI4F3xJNEMNANtPi0ggxT1XeK7OUKcplKlHCj5J67Gg" />
-
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact & Editorial Desk | The Empire Insight — Global Business Magazine</title>
   <meta name="description" content="Connect with The Empire Insight editorial desk. Inquire about global CEO interviews, executive feature placements, visionary business leader profiles, corporate sponsorships, and magazine partnerships." />
@@ -68,8 +70,9 @@
             </p>
           </div>
 
-          <form id="editorial-contact-form" class="ed-form" novalidate>
+          <form id="editorial-contact-form" class="ed-form" novalidate action="https://api.web3forms.com/submit" method="POST">
             <div class="ed-form-row">
+              <input type="hidden" name="access_key" value="39b0c93c-b855-4f74-b15c-afd32cfaf8f8">
               <div class="ed-form-group">
                 <label for="contact-name">Full Name <span class="required-star">*</span></label>
                 <input type="text" id="contact-name" name="name" placeholder="e.g. David Sterling" required />
@@ -82,53 +85,14 @@
               </div>
             </div>
 
-            <div class="ed-form-row">
-              <div class="ed-form-group">
-                <label for="contact-org">Organization / Title</label>
-                <input type="text" id="contact-org" name="organization" placeholder="e.g. Managing Director, Horizon Capital" />
-              </div>
-              <div class="ed-form-group">
-                <label for="contact-phone">Phone / WhatsApp</label>
-                <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000" />
-              </div>
-            </div>
-
-            <!-- Inquiry Department Selector -->
             <div class="ed-form-group">
-              <label>Inquiry Classification <span class="required-star">*</span></label>
-              <div class="ed-topic-pills" role="radiogroup">
-                <label class="ed-topic-chip">
-                  <input type="radio" name="topic" value="Executive Spotlight" checked />
-                  <span>Executive Spotlight</span>
-                </label>
-                <label class="ed-topic-chip">
-                  <input type="radio" name="topic" value="Story Pitch" />
-                  <span>Story / Article Pitch</span>
-                </label>
-                <label class="ed-topic-chip">
-                  <input type="radio" name="topic" value="Sponsorship & Advertising" />
-                  <span>Advertising &amp; Sponsor</span>
-                </label>
-                <label class="ed-topic-chip">
-                  <input type="radio" name="topic" value="Subscriptions" />
-                  <span>Subscriptions</span>
-                </label>
-                <label class="ed-topic-chip">
-                  <input type="radio" name="topic" value="General Inquiry" />
-                  <span>General Inquiry</span>
-                </label>
-              </div>
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="+1 (555) 000-0000" />
             </div>
 
             <div class="ed-form-group">
-              <label for="contact-subject">Subject Line <span class="required-star">*</span></label>
-              <input type="text" id="contact-subject" name="subject" placeholder="Summary of proposal or message topic" required />
-              <span class="field-error" id="subject-error">Please provide a subject line.</span>
-            </div>
-
-            <div class="ed-form-group">
-              <label for="contact-message">Proposal / Message <span class="required-star">*</span></label>
-              <textarea id="contact-message" name="message" rows="5" placeholder="Provide background on the executive, story angle, or partnership scope (minimum 20 words)..." required></textarea>
+              <label for="contact-message">Message <span class="required-star">*</span></label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Write your message..." required></textarea>
               <span class="field-error" id="message-error">Please enter your message.</span>
             </div>
 
@@ -141,6 +105,7 @@
                 <i class="fas fa-lock"></i> Communications are confidential and protected by editorial privilege.
               </span>
             </div>
+            <p id="form-status" role="status" aria-live="polite"></p>
           </form>
 
           <!-- Success State Card (hidden by default) -->
@@ -165,43 +130,26 @@
       <!-- Right Column: Media Desk & Contacts -->
       <div class="ed-contact-info-col">
 
-        <!-- Desk 1: Editorial -->
+        <!-- Contact Us -->
         <div class="ed-desk-card">
           <div class="ed-desk-header">
-            <div class="ed-desk-icon"><i class="fas fa-pen-nib"></i></div>
+            <div class="ed-desk-icon"><i class="fas fa-envelope"></i></div>
             <div>
-              <span class="ed-desk-label">Submissions</span>
-              <h4>Editorial &amp; Features</h4>
+              <span class="ed-desk-label">Contact Us</span>
+              <h4>Get in Touch</h4>
             </div>
           </div>
-          <p class="ed-desk-desc">Send pitches, author manuscripts, and interview candidate recommendations.</p>
+          <p class="ed-desk-desc">For general questions, feedback, and collaboration inquiries, email us at:</p>
           <div class="ed-desk-action-row">
-            <span class="ed-desk-email">editorial@theempireinsight.com</span>
-            <button type="button" class="ed-copy-btn" data-copy="editorial@theempireinsight.com" title="Copy email address">
+            <a class="ed-desk-email" href="mailto:theempireinsights@gmail.com">theempireinsights@gmail.com</a>
+            <button type="button" class="ed-copy-btn" data-copy="theempireins@gmail.com" title="Copy email address">
               <i class="far fa-copy"></i>
             </button>
           </div>
         </div>
 
-        <!-- Desk 2: Corporate & Commercial -->
-        <div class="ed-desk-card">
-          <div class="ed-desk-header">
-            <div class="ed-desk-icon"><i class="fas fa-chart-pie"></i></div>
-            <div>
-              <span class="ed-desk-label">Commercial</span>
-              <h4>Brand Partnerships</h4>
-            </div>
-          </div>
-          <p class="ed-desk-desc">Executive thought leadership sponsorships, edition placements, and bespoke events.</p>
-          <div class="ed-desk-action-row">
-            <span class="ed-desk-email">editorial@theempireinsight.com</span>
-            <button type="button" class="ed-copy-btn" data-copy="editorial@theempireinsight.com" title="Copy email address">
-              <i class="far fa-copy"></i>
-            </button>
-          </div>
-        </div>
+        <!-- Headquarters & Bureaus -->
 
-        <!-- Desk 3: Headquarters & Bureaus -->
         <div class="ed-desk-card">
           <div class="ed-desk-header">
             <div class="ed-desk-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -290,14 +238,15 @@
     const resetBtn = document.getElementById("reset-form-btn");
 
     if (form) {
-      form.addEventListener("submit", (e) => {
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         // Simple validation
         const nameInput = document.getElementById("contact-name");
         const emailInput = document.getElementById("contact-email");
-        const subjectInput = document.getElementById("contact-subject");
         const messageInput = document.getElementById("contact-message");
+        const submitBtn = document.getElementById("submit-btn");
+        const status = document.getElementById("form-status");
 
         let valid = true;
 
@@ -318,14 +267,6 @@
           document.getElementById("email-error").style.display = "none";
         }
 
-        if (!subjectInput.value.trim()) {
-          document.getElementById("subject-error").style.display = "block";
-          if (valid) subjectInput.focus();
-          valid = false;
-        } else {
-          document.getElementById("subject-error").style.display = "none";
-        }
-
         if (!messageInput.value.trim()) {
           document.getElementById("message-error").style.display = "block";
           if (valid) messageInput.focus();
@@ -335,15 +276,38 @@
         }
 
         if (valid) {
-          // Generate realistic reference ID
-          const ref = "TEI-" + Math.floor(1000 + Math.random() * 9000);
-          document.getElementById("success-ref").textContent = "#" + ref;
+          submitBtn.disabled = true;
+          status.textContent = "Sending your inquiry...";
+          status.style.color = "";
 
-          // Hide form, show success state smoothly
-          form.style.display = "none";
-          document.querySelector(".ed-form-header").style.display = "none";
-          successCard.style.display = "block";
-          successCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          try {
+            const response = await fetch(form.action, {
+              method: form.method || "POST",
+              body: new FormData(form),
+              headers: {
+                Accept: "application/json"
+              }
+            });
+            const result = await response.json().catch(() => ({}));
+
+            if (!response.ok || result.success !== true) {
+              throw new Error(result.message || "The inquiry could not be submitted.");
+            }
+
+            // Generate a reference only after Web3Forms confirms delivery.
+            const ref = "TEI-" + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById("success-ref").textContent = "#" + ref;
+            status.textContent = "";
+
+            form.style.display = "none";
+            document.querySelector(".ed-form-header").style.display = "none";
+            successCard.style.display = "block";
+            successCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          } catch (error) {
+            status.textContent = error.message || "Unable to submit the inquiry. Please try again.";
+            status.style.color = "#b42318";
+            submitBtn.disabled = false;
+          }
         }
       });
     }
@@ -354,6 +318,8 @@
         form.style.display = "flex";
         document.querySelector(".ed-form-header").style.display = "block";
         successCard.style.display = "none";
+        document.getElementById("form-status").textContent = "";
+        document.getElementById("submit-btn").disabled = false;
       });
     }
 
@@ -381,4 +347,3 @@
   <script defer src="js/script.js"></script>
 </body>
 </html>
-

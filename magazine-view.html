@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="HI4F3xJNEMNANtPi0ggxT1XeK7OUKcplKlHCj5J67Gg" />
-
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Read Magazine Online | The Empire Insights</title>
   <link rel="stylesheet" href="css/style.css" />
@@ -11,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="magazine-reader-page">
   <div id="navbar-placeholder"></div>
 
   <!-- Breadcrumb Navigation -->
@@ -26,19 +28,6 @@
       <span class="current">Reader View</span>
     </div>
   </nav>
-
-  <!-- Banner Section -->
-  <section class="mag-view-banner">
-    <div class="mag-view-banner-inner">
-      <div class="mag-view-meta-top">
-        <span id="mag-view-badge-issue" class="mag-badge-issue"></span>
-        <span id="mag-view-category" class="mag-category-tag"></span>
-        <span id="mag-view-date" class="mag-date"><i class="far fa-calendar-alt"></i> </span>
-      </div>
-      <h1 id="mag-view-title" class="mag-view-title"></h1>
-      <h2 id="mag-view-subtitle" class="mag-view-subtitle"></h2>
-    </div>
-  </section>
 
   <!-- Main Layout -->
   <div class="mag-view-layout" id="mag-view-main-layout">
@@ -64,6 +53,17 @@
         <img id="mag-view-cover" class="mag-view-cover" alt="Magazine Cover" itemprop="image" />
       </figure>
 
+      <!-- Edition Title and Description -->
+      <header class="mag-view-heading">
+        <div class="mag-view-meta-top">
+          <span id="mag-view-badge-issue" class="mag-badge-issue"></span>
+          <span id="mag-view-category" class="mag-category-tag"></span>
+          <span id="mag-view-date" class="mag-date"><i class="far fa-calendar-alt"></i> </span>
+        </div>
+        <h1 id="mag-view-title" class="mag-view-title"></h1>
+        <h2 id="mag-view-subtitle" class="mag-view-subtitle"></h2>
+      </header>
+
       <!-- Editorial / Cover Story Body -->
       <article class="mag-view-text" id="mag-view-content" itemprop="articleBody">
         <!-- Injected from JSON -->
@@ -81,18 +81,6 @@
         <div id="mag-reader-quote-container"></div>
       </div>
 
-      <!-- Editor Byline Box -->
-      <div class="mag-editor-box" id="mag-editor-box">
-        <div class="mag-editor-avatar"><i class="fas fa-feather-alt"></i></div>
-        <div class="mag-editor-info">
-          <h4 id="mag-editor-name">The Empire Insights Editorial Board</h4>
-          <p id="mag-editor-role">Executive Publication Team</p>
-          <small>Committed to curating high-impact leadership journalism, market intelligence, and sustainable innovation.</small>
-        </div>
-      </div>
-
-      <!-- Tag Cloud -->
-      <div class="mag-view-tags" id="mag-view-tags"></div>
     </main>
 
     <!-- Sidebar -->
@@ -137,6 +125,3 @@
   <script src="js/magazine-view.js"></script>
 </body>
 </html>
-
-
-

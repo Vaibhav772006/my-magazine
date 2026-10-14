@@ -33,4 +33,8 @@ There are no build or install steps. The site uses CDN-hosted Font Awesome, Goog
 
 ## Contact form
 
-The contact form uses a `mailto:` action and therefore works on static hosting by opening the visitor's configured email client. A PHP mail handler can be added later for server-side delivery; `pages/sendmail.php` is kept as the optional backend entry point for PHP hosting.
+The contact form submits to Web3Forms using the access key configured in
+`contact.html`. It works on static hosting as long as the deployed domain is
+enabled in the Web3Forms project settings. The form shows a success message
+only after Web3Forms confirms delivery and displays an error if the request
+fails.

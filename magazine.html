@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="HI4F3xJNEMNANtPi0ggxT1XeK7OUKcplKlHCj5J67Gg" />
-
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Global CEO Magazine & Business Leadership Editions | The Empire Insight</title>
   <meta name="description" content="Explore official publication editions of The Empire Insight — the international business magazine for CEOs, entrepreneurs, and global business leaders. Featuring CEO insights, global business leader profiles, and inspiring leadership stories." />
@@ -102,6 +104,11 @@
     const emptyState = document.getElementById('no-results');
     const resetBtn = document.getElementById('reset-filters-btn');
     const filterPills = document.querySelectorAll('.filter-pill');
+    const assetBaseUrl = new URL('js/magazines.json', document.baseURI);
+
+    function resolveMagazineAsset(path) {
+      return path ? new URL(path, assetBaseUrl).href : '';
+    }
 
     function renderMagazines(magazines) {
       listElement.innerHTML = '';
@@ -118,64 +125,26 @@
       countBadge.textContent = `Showing ${magazines.length} edition${magazines.length === 1 ? '' : 's'}`;
 
       magazines.forEach(magazine => {
-        const publishedDateFormatted = magazine.publishedDate 
-          ? new Date(magazine.publishedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })
-          : (magazine.edition || 'Current Issue');
-
-        const tagsHtml = (magazine.tags || []).slice(0, 3)
-          .map(tag => `<span class="mag-tag">${tag}</span>`)
-          .join('');
-
-        const featuredBadge = magazine.featured 
-          ? `<span class="mag-badge-featured"><i class="fas fa-star"></i> Featured</span>` 
-          : '';
-
-        const issueBadge = magazine.issue 
-          ? `<span class="mag-badge-issue">${magazine.volume ? magazine.volume + ' â€¢ ' : ''}${magazine.issue}</span>` 
-          : '';
-
         const cardHtml = `
           <article class="magazine-pro-card" itemscope itemtype="https://schema.org/PublicationIssue">
             <div class="mag-pro-cover-wrap">
               <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}" aria-label="Preview ${magazine.title}">
-                <img src="${magazine.cover}" alt="${magazine.title} Cover" loading="lazy" class="mag-pro-cover" itemprop="image" />
-                <div class="mag-pro-overlay">
-                  <span><i class="fas fa-eye"></i> Quick Preview</span>
-                </div>
+                <img src="${resolveMagazineAsset(magazine.cover)}" alt="${magazine.title} Cover" loading="lazy" class="mag-pro-cover" itemprop="image" />
               </a>
-              <div class="mag-pro-badges">
-                ${featuredBadge}
-                ${issueBadge}
-              </div>
             </div>
             
             <div class="mag-pro-content">
-              <div class="mag-pro-meta">
-                <span class="mag-category-tag">${magazine.category || 'Executive'}</span>
-                <span class="mag-date"><i class="far fa-calendar-alt"></i> ${publishedDateFormatted}</span>
-              </div>
-
               <h3 class="mag-pro-title" itemprop="name">
                 <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}">${magazine.title}</a>
               </h3>
 
-              <p class="mag-pro-preview" itemprop="description">
-                ${magazine.preview || magazine.subtitle || ''}
-              </p>
-
-              <div class="mag-pro-tags">${tagsHtml}</div>
-
               <div class="mag-pro-footer">
-                <div class="mag-read-time">
-                  <i class="far fa-clock"></i> ${magazine.readingTime || '30 min read'}
-                  ${magazine.pageCount ? ` â€¢ <span>${magazine.pageCount} pages</span>` : ''}
-                </div>
                 <div class="mag-actions">
                   <a href="magazine-preview.html?id=${encodeURIComponent(magazine.id)}" class="mag-btn-secondary" title="View details and contents">
                     Details
                   </a>
                   <a href="magazine-view.html?id=${encodeURIComponent(magazine.id)}" class="mag-btn-primary" title="Read full magazine edition">
-                    Read Online â†’
+                    Read Online &rarr;
                   </a>
                 </div>
               </div>
@@ -284,6 +253,3 @@
   </script>
 </body>
 </html>
-
-
-

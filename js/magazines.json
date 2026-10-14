@@ -1,7 +1,7 @@
 [
   {
     "id": "alejandro-calle-october-2026",
-    "visible": true,
+    "visible": false,
     "slug": "the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026",
     "title": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
     "shortTitle": "The Visionary Tech Entrepreneur",
@@ -24,7 +24,7 @@
     ],
     "cover": "../images/Magazine-cover/cover-2026-alejandro-calle.jpg",
     "coverAlt": "Official October 2026 Cover of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux",
-    "featured": true,
+    "featured": false,
     "status": "Published",
     "readingTime": "",
     "pageCount": "",

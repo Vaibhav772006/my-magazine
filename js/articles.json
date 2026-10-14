@@ -1,7 +1,7 @@
 [
   {
     "id": "alejandro-calle-2026",
-    "visible": true,
+    "visible": false,
     "slug": "the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026",
     "title": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
     "shortTitle": "Bridging the Digital Divide",
@@ -13,7 +13,7 @@
     "location": "City, Province, Canada",
     "publishedDate": "2026-10-14",
     "readingTime": "8 min read",
-    "featured": true,
+    "featured": false,
     "cover": "images/article-pdf&cover/alejandro-calle-cover.jpg",
     "gallery": [
       "images/article-pdf&cover/alejandro-calle-team.png"

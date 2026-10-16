@@ -48,7 +48,7 @@ section {
 .main-menu {
   background-color: #000;
   padding: 10px 0;
-  border-radius: 12px;
+  border-radius: 4px;
   margin: 0 auto;
   width: fit-content;
   padding: 10px 25px;
@@ -291,7 +291,7 @@ section {
   color: #000e2f;
   text-decoration: none;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 800;
   position: relative;
   padding-bottom: 6px;
   transition: all 0.3s ease;
@@ -911,6 +911,14 @@ section {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+.mag-cover-pdf-link {
+  display: block;
+  cursor: zoom-in;
+}
+.mag-cover-pdf-link:focus-visible {
+  outline: 3px solid #b5892a;
+  outline-offset: -3px;
 }
 
 .profile-card {
@@ -3820,7 +3828,7 @@ body {
   width: min(100%, 620px);
   margin: 0 auto 32px;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
   background: #ffffff;
@@ -3853,6 +3861,171 @@ body {
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   font-weight: 500;
   line-height: 1.5;
+}
+.mag-inline-pdf {
+  margin: 20px 0 0;
+}
+.mag-inline-pdf .mag-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.magazine-reader-page .magazine-reader-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 26px 20px 70px;
+}
+.magazine-reader-page .mag-reader-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 34%) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 70px);
+  min-height: min(590px, calc(100vh - 190px));
+  padding: clamp(24px, 5vw, 58px);
+  overflow: hidden;
+  border: 1px solid #e6ded3;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fffdf9 0%, #f4eadc 100%);
+  box-shadow: 0 18px 45px rgba(76, 61, 45, 0.12);
+}
+.magazine-reader-page .mag-reader-hero::before {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(181, 137, 42, 0.12);
+  content: "";
+  filter: blur(8px);
+  transform: translate(-100px, -170px);
+}
+.magazine-reader-page .mag-reader-hero > * {
+  position: relative;
+  z-index: 1;
+}
+.magazine-reader-page .mag-reader-hero .mag-view-figure {
+  width: min(100%, 330px);
+  margin: 0 auto;
+  animation: magazine-cover-float 5s ease-in-out infinite;
+}
+.magazine-reader-page .mag-reader-hero .mag-view-cover {
+  margin: 0;
+}
+.mag-reader-hero-content {
+  text-align: left;
+}
+.mag-reader-hero-content .mag-view-meta-top {
+  justify-content: flex-start;
+}
+.mag-reader-hero-content .mag-view-title {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+.mag-reader-hero-content .mag-view-subtitle {
+  margin-bottom: 18px;
+}
+.mag-reader-hero-description {
+  max-width: 680px;
+  margin: 0 0 24px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.mag-reader-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.mag-reader-section-heading {
+  margin-bottom: 18px;
+}
+.mag-reader-section-heading h2 {
+  color: #111827;
+  font-size: 1.65rem;
+}
+.mag-reader-featured,
+.magazine-reader-page .mag-reader-articles {
+  margin: 48px 0 0;
+}
+.mag-reader-featured-card {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  align-items: center;
+  gap: 26px;
+  padding: 18px;
+  border: 1px solid #e6ded3;
+  border-radius: 16px;
+  background: #fffdf9;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(76, 61, 45, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.mag-reader-featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(76, 61, 45, 0.14);
+}
+.mag-reader-featured-card img {
+  width: 100%;
+  height: 170px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.mag-reader-featured-card span,
+.mag-reader-article-card span {
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.mag-reader-featured-card h3 {
+  margin: 6px 0;
+  color: #111827;
+  font-size: 1.4rem;
+}
+.mag-reader-featured-card p {
+  margin-bottom: 12px;
+  color: #64748b;
+  line-height: 1.55;
+}
+.mag-reader-featured-card strong,
+.mag-reader-article-card strong {
+  color: #92400e;
+  font-size: 0.85rem;
+}
+.magazine-reader-page .mag-reader-articles-grid {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  scroll-snap-type: x proximity;
+}
+.magazine-reader-page .mag-reader-article-card {
+  flex: 0 0 min(290px, 82vw);
+  scroll-snap-align: start;
+}
+.magazine-reader-page .mag-reader-articles-grid {
+  list-style: none;
+  margin: 0;
+}
+@keyframes magazine-cover-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-9px) rotate(1deg); }
+}
+@media (max-width: 720px) {
+  .magazine-reader-page .mag-reader-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .mag-reader-hero-content {
+    text-align: center;
+  }
+  .mag-reader-hero-content .mag-view-meta-top,
+  .mag-reader-hero-actions {
+    justify-content: center;
+  }
+  .mag-reader-featured-card {
+    grid-template-columns: 1fr;
+  }
 }
 .mag-view-text {
   max-width: 820px;
@@ -3927,6 +4100,69 @@ body {
 }
 .mag-reader-quotes {
   margin: 35px 0;
+}
+.mag-reader-articles {
+  margin: 35px 0;
+}
+.mag-reader-articles h3 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+.mag-reader-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+.mag-reader-article-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.mag-reader-article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+.mag-reader-article-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.mag-reader-article-card > div {
+  padding: 15px;
+}
+.mag-reader-article-card span {
+  color: #92400e;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.mag-reader-article-card h4 {
+  margin: 6px 0;
+  color: #111827;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+.mag-reader-article-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-bottom: 12px;
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.mag-reader-article-card strong {
+  color: #92400e;
+  font-size: 0.86rem;
+  font-weight: 800;
 }
 .mag-reader-quotes h3 {
   font-size: 1.25rem;
@@ -7681,4 +7917,3 @@ img, video, iframe, svg, canvas {
     .ed-dossier-mantra strong {
       color: #0D0D0D !important;
     }
-

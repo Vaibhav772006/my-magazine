@@ -132,47 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Table of Contents
-      const tocSection = document.getElementById("mag-toc-section");
-      const tocGrid = document.getElementById("mag-toc-grid");
-      if (tocSection && tocGrid && Array.isArray(magazine.tableOfContents) && magazine.tableOfContents.length > 0) {
-        tocSection.style.display = "block";
-        tocGrid.innerHTML = "";
-        magazine.tableOfContents.forEach(item => {
-          tocGrid.insertAdjacentHTML("beforeend", `
-            <div class="mag-toc-card">
-              <div class="mag-toc-page">Page ${item.page || "•"}</div>
-              <div class="mag-toc-details">
-                <span class="mag-toc-cat">${item.category || "Feature"}</span>
-                <h4>${item.title}</h4>
-                <p class="mag-toc-snippet">${item.snippet || ""}</p>
-                <span class="mag-toc-author"><i class="fas fa-pen-nib"></i> By ${item.author || "Editorial Team"}</span>
-              </div>
-            </div>
-          `);
-        });
-      }
-
-      // Visionary Quotes
-      const quotesSection = document.getElementById("mag-quotes-section");
-      const quotesGrid = document.getElementById("mag-quotes-grid");
-      if (quotesSection && quotesGrid && Array.isArray(magazine.featuredQuotes) && magazine.featuredQuotes.length > 0) {
-        quotesSection.style.display = "block";
-        quotesGrid.innerHTML = "";
-        magazine.featuredQuotes.forEach(q => {
-          quotesGrid.insertAdjacentHTML("beforeend", `
-            <blockquote class="mag-quote-card">
-              <div class="mag-quote-mark">“</div>
-              <p class="mag-quote-text">${q.quote}</p>
-              <footer class="mag-quote-author">
-                <strong>${q.author}</strong>
-                <span>${q.role || ""}</span>
-              </footer>
-            </blockquote>
-          `);
-        });
-      }
-
       // Related / Other Editions
       const relatedGrid = document.getElementById("mag-related-grid");
       if (relatedGrid) {

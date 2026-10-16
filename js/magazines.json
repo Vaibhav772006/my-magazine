@@ -10,8 +10,6 @@
     "issue": "October Edition 2026",
     "edition": "October 2026",
     "publishedDate": "2026-10-14",
-    "modifiedDate": "2026-10-14",
-    "inLanguage": "en",
     "category": "Technology & AI",
     "tags": [
       "Tech Entrepreneurship",
@@ -23,9 +21,7 @@
       "Canadian Leaders"
     ],
     "cover": "../images/Magazine-cover/cover-2026-alejandro-calle.jpg",
-    "coverAlt": "Official October 2026 Cover of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux",
     "featured": false,
-    "status": "Published",
     "readingTime": "",
     "pageCount": "",
     "issn": "",
@@ -35,48 +31,6 @@
     },
     "preview": "How Alejandro Calle turned curiosity, compassion, and a pay-what-you-can mindset into Tech In A Tux — an accessible tech powerhouse that leaves no one behind.",
     "executiveSummary": "This landmark October 2026 edition spotlights Alejandro Calle, Founder & CEO of Tech In A Tux. We explore how human empathy, accessible pricing models, and 60M+ online views are redefining corporate technology support across North America and the world.",
-    "tableOfContents": [
-      {
-        "page": "",
-        "title": "Curiosity Before Credentials: The Self-Taught Mindset",
-        "author": "David Sterling",
-        "category": "Cover Story",
-        "snippet": "How relentless problem-solving without formal blueprints shaped an unconventional tech founder."
-      },
-      {
-        "page": "",
-        "title": "The Pay-What-You-Can Model: Economics of Compassion",
-        "author": "Elena Sterling",
-        "category": "Business Strategy",
-        "snippet": "Why profitability and generosity are mutually reinforcing pillars of enterprise durability."
-      },
-      {
-        "page": "",
-        "title": "Educating 200,000+ Minds: Technology Without Intimidation",
-        "author": "Julian Montgomery",
-        "category": "Digital Reach",
-        "snippet": "Demystifying hardware, cybersecurity, and artificial intelligence for a global community."
-      },
-      {
-        "page": "",
-        "title": "The Secret to Living is Giving",
-        "author": "Alejandro Calle",
-        "category": "Executive Op-Ed",
-        "snippet": "Why true leadership means accepting responsibility, sharing knowledge, and humanizing innovation."
-      }
-    ],
-    "featuredQuotes": [
-      {
-        "quote": "Let's make tech support accessible to all, regardless of their financial situation.",
-        "author": "Alejandro Calle",
-        "role": "Founder & CEO, Tech In A Tux"
-      },
-      {
-        "quote": "The future of technology shouldn't just be smarter. It should be more human.",
-        "author": "Alejandro Calle",
-        "role": "Founder & CEO, Tech In A Tux"
-      }
-    ],
     "seo": {
       "metaTitle": "The Visionary Tech Entrepreneur 2026: Alejandro Calle | The Empire Insight",
       "metaDescription": "Discover the October 2026 edition of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux. Bridging the digital divide with curiosity and compassion.",
@@ -90,8 +44,7 @@
         "October 2026 Edition",
         "Best CEO Magazine"
       ]
-    },
-    "content": "\n    <div class=\"editorial-intro\">\n      <h3>The Visionary Tech Entrepreneur: Alejandro Calle</h3>\n      <p class=\"mag-intro-lead\">\n        Most people only think about their computer when it stops working. For Alejandro Calle, that moment of panic is where the real work begins. Behind every broken system is a person who needs patience, honesty, and respect.\n      </p>\n      <p>\n        In this flagship October 2026 issue, <strong>The Empire Insight</strong> examines how Alejandro Calle turned curiosity, compassion, and a pay-what-you-can mindset into <strong>Tech In A Tux</strong> &mdash; a company proving that sustainable enterprise growth and heartfelt generosity are not opposing ideas, but the twin engines of modern technological leadership.\n      </p>\n    </div>\n  "
+    }
   },
   {
     "id": "business-woman-2026",
@@ -104,8 +57,6 @@
     "issue": "Special Edition 2026",
     "edition": "Annual Edition 2026",
     "publishedDate": "2026-03-01",
-    "modifiedDate": "2026-10-14",
-    "inLanguage": "en",
     "category": "Leadership & Business",
     "tags": [
       "Women in Leadership",
@@ -117,10 +68,7 @@
       "Mentorship"
     ],
     "cover": "../images/Magazine-cover/cover-2026-business-woman.jpg",
-    "coverAlt": "Cover of The Empire Insight Business Woman of the Year 2026 Special Edition featuring women business leaders",
-    "pdfUrl": "../images/article-pdf&cover/Article No 1.pdf",
     "featured": true,
-    "status": "Published",
     "readingTime": "45 min read",
     "pageCount": 68,
     "issn": "2834-9121",
@@ -128,94 +76,8 @@
       "name": "Elena Sterling",
       "role": "Executive Editor"
     },
-    "publisher": {
-      "name": "The Empire Insight",
-      "type": "Organization",
-      "url": "https://www.theempireinsight.com",
-      "logo": "https://www.theempireinsight.com/images/logo.png"
-    },
     "preview": "Celebrating trailblazing female founders, CEOs, and innovators breaking glass ceilings and redefining global leadership with vision, purpose, and enduring impact.",
     "executiveSummary": "This landmark 2026 edition spotlights the women reshaping corporate governance, venture capital, and frontier innovation. Through exclusive profiles and data-driven insights, we examine how inclusive executive cultures drive sustainable enterprise growth.",
-    "longDescription": "Business Woman of the Year 2026 is the flagship annual issue of The Empire Insight, dedicated to women who lead with vision, integrity, and purpose. Across 68 pages, readers will find executive profiles of female CEOs and founders, expert analysis of how venture capital is changing for women-led startups, and practical lessons on mentorship, board governance, and scaling a company internationally. Written for entrepreneurs, executives, investors, and aspiring leaders, this edition shows how collaborative leadership builds resilient companies and stronger communities.",
-    "keyTakeaways": [
-      "Collaborative leadership and peer mentorship build resilient, market-leading companies.",
-      "Venture investors are rethinking how they evaluate and fund female founders.",
-      "Scaling internationally requires strong governance, supply chain planning, and board support.",
-      "Inclusive executive cultures support sustainable, long-term enterprise growth."
-    ],
-    "targetAudience": [
-      "Female founders and entrepreneurs",
-      "CEOs and senior executives",
-      "Venture capital and private equity investors",
-      "Aspiring leaders and business students"
-    ],
-    "tableOfContents": [
-      {
-        "page": 4,
-        "title": "The Power of Collaborative Leadership",
-        "author": "Elena Sterling",
-        "category": "Cover Story",
-        "snippet": "How lifting peers and mentoring next-generation leaders builds resilient market champions."
-      },
-      {
-        "page": 18,
-        "title": "Venture Capital Reimagined: Investing in Female Founders",
-        "author": "Dr. Sarah Chen",
-        "category": "Venture & Finance",
-        "snippet": "Unlocking outsized returns through high-conviction diversity strategies."
-      },
-      {
-        "page": 32,
-        "title": "From Founder to Global Icon",
-        "author": "Maya Lin",
-        "category": "Executive Profile",
-        "snippet": "Navigating international scaling, supply chain pressures, and board governance."
-      }
-    ],
-    "featuredQuotes": [
-      {
-        "quote": "Success looks better when women lift each other higher.",
-        "author": "Victoria Adams",
-        "role": "CEO, Adams Global Partners"
-      }
-    ],
-    "relatedSlugs": [
-      "ceo-of-the-year-visionary-edition-2026",
-      "ceo-of-the-year-executive-edition-2026",
-      "influential-marketing-leaders-2026"
-    ],
-    "breadcrumbs": [
-      {
-        "name": "Home",
-        "url": "https://www.theempireinsight.com/"
-      },
-      {
-        "name": "Magazine",
-        "url": "https://www.theempireinsight.com/magazine"
-      },
-      {
-        "name": "Leadership & Business",
-        "url": "https://www.theempireinsight.com/magazine/category/leadership-business"
-      },
-      {
-        "name": "Business Woman of the Year 2026",
-        "url": "https://www.theempireinsight.com/magazine/business-woman-of-the-year-2026"
-      }
-    ],
-    "faq": [
-      {
-        "question": "What is Business Woman of the Year 2026?",
-        "answer": "It is the annual special edition of The Empire Insight that profiles women founders, CEOs, and innovators who are redefining global business leadership."
-      },
-      {
-        "question": "Who is this issue written for?",
-        "answer": "Entrepreneurs, executives, investors, and aspiring leaders who want insight into women-led businesses, mentorship, and inclusive leadership."
-      },
-      {
-        "question": "How long is the issue and can I download it?",
-        "answer": "The issue runs 68 pages with an estimated 45-minute read, and a PDF edition is available to read or download."
-      }
-    ],
     "seo": {
       "metaTitle": "Business Woman of the Year 2026 | The Empire Insight",
       "metaDescription": "Read profiles of inspiring women CEOs and founders shaping global business in 2026. Leadership insights, venture capital trends and mentorship stories.",
@@ -284,7 +146,21 @@
         }
       }
     },
-    "content": "<div class=\"editorial-intro\"><h3>Inspiring Women Shaping a Stronger Tomorrow</h3><p>True leadership is not measured solely by quarterly balance sheets, but by the doors opened and the ecosystems elevated. In this flagship 2026 edition, <strong>The Empire Insight</strong> honors the executives who combine bold vision, unyielding integrity, and high-impact mentorship.</p></div><section><h2>The Power of Collaborative Leadership</h2><p>The women featured in this issue share a common belief: growth accelerates when leaders invest in other leaders. From peer networks to formal mentorship programs, collaboration emerges as a core strategy for building resilient organizations and strong market positions.</p></section><section><h2>Venture Capital and Female Founders</h2><p>Investors are looking again at how they back women-led companies. Our finance section explores conviction-led strategies, due diligence practices, and the opportunity in funding founders who have historically been overlooked.</p></section><section><h2>From Founder to Global Icon</h2><p>Scaling beyond a home market brings new challenges, including supply chain pressure, regulatory complexity, and board governance. Our executive profiles share how women leaders navigate each stage of international growth.</p></section><section><h2>Who Should Read This Issue</h2><p>Whether you are launching a startup, leading a team, or investing in the next generation of businesses, this edition offers practical lessons and inspiration from leaders who are shaping a stronger tomorrow.</p></section>"
+    "pdfUrl": "../images/article-pdf&cover/Article No 1.pdf",
+    "featuredArticle": {
+      "id": "1",
+      "url": "article-view.html?id=1"
+    },
+    "relatedArticles": [
+      {
+        "id": "1",
+        "url": "article-view.html?id=1"
+      },
+      {
+        "id": "2",
+        "url": "article-view.html?id=2"
+      }
+    ]
   },
   {
     "id": "ceo-of-the-year-2026",
@@ -297,8 +173,6 @@
     "issue": "Executive Edition 2026",
     "edition": "Executive Edition 2026",
     "publishedDate": "2026-02-15",
-    "modifiedDate": "2026-10-14",
-    "inLanguage": "en",
     "category": "Leadership & Business",
     "tags": [
       "CEO Insights",
@@ -310,10 +184,7 @@
       "Corporate Strategy"
     ],
     "cover": "../images/Magazine-cover/cover-2026-ceo-of-the-year.jpg",
-    "coverAlt": "Cover of The Empire Insight CEO of the Year Executive Edition 2026 featuring global chief executives",
-    "pdfUrl": "../images/article-pdf&cover/Article No 2.pdf",
     "featured": true,
-    "status": "Published",
     "readingTime": "50 min read",
     "pageCount": 76,
     "issn": "2834-9121",
@@ -321,87 +192,8 @@
       "name": "David Sterling",
       "role": "Editor-in-Chief"
     },
-    "publisher": {
-      "name": "The Empire Insight",
-      "type": "Organization",
-      "url": "https://www.theempireinsight.com",
-      "logo": "https://www.theempireinsight.com/images/logo.png"
-    },
     "preview": "An in-depth study of the world's most decisive chief executives leading sustainable growth, stakeholder value, and high-trust organizational excellence.",
     "executiveSummary": "Examining the strategic playbook of top chief executives navigating macroeconomic uncertainty, digital disruption, and the imperative for long-term sustainable growth.",
-    "longDescription": "CEO of the Year Executive Edition 2026 is a 76-page study of how leading chief executives make decisions under pressure. The issue explores how CEOs balance quarterly performance with decade-long strategy, build operational frameworks that scale, and earn the trust of employees, investors, and customers. It is written for senior executives, board members, and business leaders who want a practical view of modern enterprise leadership and sustainable growth.",
-    "keyTakeaways": [
-      "Decisive CEOs balance short-term results with long-term strategic vision.",
-      "Operational frameworks separate resilient organizations from fragile competitors.",
-      "High-trust cultures support execution during economic uncertainty.",
-      "Sustainable growth creates value for shareholders and stakeholders alike."
-    ],
-    "targetAudience": [
-      "CEOs and C-suite executives",
-      "Board members and corporate directors",
-      "Investors and analysts",
-      "Business school students and emerging leaders"
-    ],
-    "tableOfContents": [
-      {
-        "page": 6,
-        "title": "The Decisive Executive: Leading in Volatility",
-        "author": "Julian Montgomery",
-        "category": "Cover Story",
-        "snippet": "How modern CEOs balance short-term quarterly pressures with decade-long strategic visions."
-      },
-      {
-        "page": 22,
-        "title": "Lead, Build, Scale: Blueprint for Market Dominance",
-        "author": "Arthur Pendelton",
-        "category": "Strategy",
-        "snippet": "The operational frameworks separating resilient organizations from fragile competitors."
-      }
-    ],
-    "featuredQuotes": [
-      {
-        "quote": "Great CEOs don't just build companies, they build a better tomorrow.",
-        "author": "Marcus Sterling",
-        "role": "Chief Executive Officer"
-      }
-    ],
-    "relatedSlugs": [
-      "ceo-of-the-year-visionary-edition-2026",
-      "business-woman-of-the-year-2026",
-      "tech-leaders-to-watch-2026"
-    ],
-    "breadcrumbs": [
-      {
-        "name": "Home",
-        "url": "https://www.theempireinsight.com/"
-      },
-      {
-        "name": "Magazine",
-        "url": "https://www.theempireinsight.com/magazine"
-      },
-      {
-        "name": "Leadership & Business",
-        "url": "https://www.theempireinsight.com/magazine/category/leadership-business"
-      },
-      {
-        "name": "CEO of the Year Executive Edition 2026",
-        "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-executive-edition-2026"
-      }
-    ],
-    "faq": [
-      {
-        "question": "What does the CEO of the Year Executive Edition cover?",
-        "answer": "It covers how top chief executives lead through volatility, build scalable operations, and pursue sustainable growth and stakeholder value."
-      },
-      {
-        "question": "Who should read this edition?",
-        "answer": "CEOs, senior executives, board members, investors, and anyone interested in enterprise strategy and leadership."
-      },
-      {
-        "question": "How many pages is this issue?",
-        "answer": "The issue has 76 pages with an estimated reading time of 50 minutes, and a PDF edition is available."
-      }
-    ],
     "seo": {
       "metaTitle": "CEO of the Year 2026 Executive Edition | The Empire Insight",
       "metaDescription": "Explore CEO leadership stories, global CEO interviews and executive strategy for sustainable growth in the CEO of the Year 2026 Executive Edition.",
@@ -470,7 +262,21 @@
         }
       }
     },
-    "content": "<div class=\"editorial-intro\"><h3>Vision, Leadership, Impact</h3><p>At the highest levels of enterprise leadership, clarity of execution is paramount. This edition analyzes the decisive actions of chief executives building enduring organizations across global markets.</p></div><section><h2>The Decisive Executive: Leading in Volatility</h2><p>Economic uncertainty, rapid technology change, and shifting customer expectations test every leadership team. Our cover story explores how CEOs hold a long-term vision while still delivering against quarterly commitments.</p></section><section><h2>Lead, Build, Scale</h2><p>Strong strategy is only as good as the operating model behind it. This section examines the frameworks, KPIs, and organizational habits that help companies scale without losing focus.</p></section><section><h2>Sustainable Growth and Stakeholder Value</h2><p>The leaders profiled here treat employees, customers, investors, and communities as partners in growth. Their experience shows that trust and transparency are competitive advantages.</p></section><section><h2>Who Should Read This Issue</h2><p>If you lead a company, sit on a board, or are preparing for your first executive role, this edition offers a clear, practical view of modern CEO leadership.</p></section>"
+    "pdfUrl": "../images/article-pdf&cover/Article No 2.pdf",
+    "featuredArticle": {
+      "id": "3",
+      "url": "article-view.html?id=3"
+    },
+    "relatedArticles": [
+      {
+        "id": "3",
+        "url": "article-view.html?id=3"
+      },
+      {
+        "id": "4",
+        "url": "article-view.html?id=4"
+      }
+    ]
   },
   {
     "id": "marketing-leaders-2026",
@@ -483,8 +289,6 @@
     "issue": "Spring Edition 2026",
     "edition": "Spring Edition 2026",
     "publishedDate": "2026-04-01",
-    "modifiedDate": "2026-10-14",
-    "inLanguage": "en",
     "category": "Workplace & Culture",
     "tags": [
       "Brand Strategy",
@@ -496,10 +300,7 @@
       "Customer Experience"
     ],
     "cover": "../images/Magazine-cover/cover-2026-marketing-leaders.jpg",
-    "coverAlt": "Cover of The Empire Insight Most Influential Marketing Leaders 2026 Spring Edition",
-    "pdfUrl": "../images/article-pdf&cover/Article No 3.pdf",
     "featured": true,
-    "status": "Published",
     "readingTime": "42 min read",
     "pageCount": 64,
     "issn": "2834-9121",
@@ -507,87 +308,8 @@
       "name": "Harrison Cole",
       "role": "Senior Editor"
     },
-    "publisher": {
-      "name": "The Empire Insight",
-      "type": "Organization",
-      "url": "https://www.theempireinsight.com",
-      "logo": "https://www.theempireinsight.com/images/logo.png"
-    },
     "preview": "Discover the visionary brand builders and chief marketing officers harmonizing emotional resonance, performance data, and cultural movements.",
     "executiveSummary": "In an era of hyper-personalized media and algorithmic fatigue, the most influential CMOs are turning to authentic purpose, human resonance, and community-first storytelling.",
-    "longDescription": "The Most Influential Marketing Leaders Shaping 2026 profiles the chief marketing officers and brand strategists who are redefining how companies connect with people. Across 64 pages, the issue looks at why emotional loyalty outlasts ad spend, how the CMO is becoming a chief growth officer, and how purpose-driven storytelling builds communities rather than just campaigns. It is a valuable read for marketers, brand managers, founders, and executives responsible for growth.",
-    "keyTakeaways": [
-      "Emotional brand loyalty delivers durable returns beyond short-term ad performance.",
-      "The CMO is evolving into a chief growth officer aligned with product and revenue.",
-      "Authentic purpose and community-first storytelling cut through algorithmic fatigue.",
-      "Performance data and creative resonance work best when used together."
-    ],
-    "targetAudience": [
-      "Chief marketing officers and marketing directors",
-      "Brand managers and growth leaders",
-      "Founders and entrepreneurs",
-      "Marketing students and agency professionals"
-    ],
-    "tableOfContents": [
-      {
-        "page": 8,
-        "title": "Brands, People, Strategies That Move the World",
-        "author": "Clara Dubois",
-        "category": "Cover Story",
-        "snippet": "Why emotional brand loyalty outperforms algorithmic ad spending over the long haul."
-      },
-      {
-        "page": 24,
-        "title": "The CMO as Chief Growth Officer",
-        "author": "Harrison Cole",
-        "category": "Executive Strategy",
-        "snippet": "Aligning customer experience, product narrative, and enterprise revenue."
-      }
-    ],
-    "featuredQuotes": [
-      {
-        "quote": "Great marketing builds a better tomorrow by connecting human purpose with commercial progress.",
-        "author": "Christian Vance",
-        "role": "Global Brand Strategist"
-      }
-    ],
-    "relatedSlugs": [
-      "tech-leaders-to-watch-2026",
-      "business-woman-of-the-year-2026",
-      "ceo-of-the-year-executive-edition-2026"
-    ],
-    "breadcrumbs": [
-      {
-        "name": "Home",
-        "url": "https://www.theempireinsight.com/"
-      },
-      {
-        "name": "Magazine",
-        "url": "https://www.theempireinsight.com/magazine"
-      },
-      {
-        "name": "Workplace & Culture",
-        "url": "https://www.theempireinsight.com/magazine/category/workplace-culture"
-      },
-      {
-        "name": "Most Influential Marketing Leaders 2026",
-        "url": "https://www.theempireinsight.com/magazine/influential-marketing-leaders-2026"
-      }
-    ],
-    "faq": [
-      {
-        "question": "What is the Most Influential Marketing Leaders 2026 issue about?",
-        "answer": "It profiles CMOs and brand builders who combine purpose, data, and storytelling to build lasting brands and cultural movements."
-      },
-      {
-        "question": "Is this issue useful for non-marketers?",
-        "answer": "Yes. Founders, executives, and product leaders will find practical insight on aligning brand, customer experience, and revenue growth."
-      },
-      {
-        "question": "How long is this edition?",
-        "answer": "It is 64 pages with an estimated 42-minute reading time, and a PDF version is available."
-      }
-    ],
     "seo": {
       "metaTitle": "Most Influential Marketing Leaders 2026 | The Empire Insight",
       "metaDescription": "Meet the CMOs and brand builders shaping 2026. Insights on brand growth, purpose-driven marketing, customer experience and global market expansion.",
@@ -656,7 +378,21 @@
         }
       }
     },
-    "content": "<div class=\"editorial-intro\"><h3>Brands That Move the World</h3><p>Marketing at its zenith does not merely sell products; it articulates human aspiration and sparks cultural transformation. This issue celebrates the marketing leaders redefining global brand equity in 2026.</p></div><section><h2>Brands, People, Strategies That Move the World</h2><p>As feeds fill with personalized content, audiences respond to brands that feel real. Our cover story explores why emotional connection and shared values create loyalty that paid reach alone cannot buy.</p></section><section><h2>The CMO as Chief Growth Officer</h2><p>Marketing leaders are taking on broader responsibility for customer experience, product narrative, and revenue. This section shows how aligning these areas helps companies grow with clarity and consistency.</p></section><section><h2>Purpose, Community, and Culture</h2><p>The most influential brands invest in communities and cultural conversations, not just campaigns. Leaders in this issue share how purpose-led storytelling earns attention and trust.</p></section><section><h2>Who Should Read This Issue</h2><p>Marketers, brand strategists, founders, and executives will find ideas to apply to their own brand and growth strategy.</p></section>"
+    "pdfUrl": "../images/article-pdf&cover/Article No 3.pdf",
+    "featuredArticle": {
+      "id": "2",
+      "url": "article-view.html?id=2"
+    },
+    "relatedArticles": [
+      {
+        "id": "2",
+        "url": "article-view.html?id=2"
+      },
+      {
+        "id": "5",
+        "url": "article-view.html?id=5"
+      }
+    ]
   },
   {
     "id": "tech-leaders-2026",
@@ -669,8 +405,6 @@
     "issue": "Tech Frontier 2026",
     "edition": "Tech Frontier 2026",
     "publishedDate": "2026-05-01",
-    "modifiedDate": "2026-10-14",
-    "inLanguage": "en",
     "category": "Technology & AI",
     "tags": [
       "Frontier Tech",
@@ -682,10 +416,7 @@
       "CTO Insights"
     ],
     "cover": "../images/Magazine-cover/cover-2026-tech-leaders.jpg",
-    "coverAlt": "Cover of The Empire Insight Tech Leaders to Watch in 2026 Tech Frontier Edition",
-    "pdfUrl": "../images/article-pdf&cover/Article No 4.pdf",
     "featured": true,
-    "status": "Published",
     "readingTime": "48 min read",
     "pageCount": 72,
     "issn": "2834-9121",
@@ -693,87 +424,8 @@
       "name": "Sophia Lin",
       "role": "Technology Editor"
     },
-    "publisher": {
-      "name": "The Empire Insight",
-      "type": "Organization",
-      "url": "https://www.theempireinsight.com",
-      "logo": "https://www.theempireinsight.com/images/logo.png"
-    },
     "preview": "Spotlighting the elite technologists, CTOs, and AI pioneers translating breakthroughs in compute and intelligent agents into transformative human progress.",
     "executiveSummary": "A definitive chronicle of 2026's tech vanguard - engineering founders and technology chiefs solving fundamental infrastructure bottlenecks, autonomous intelligence, and human-centric computing.",
-    "longDescription": "Tech Leaders to Watch in 2026 is a 72-page look at the CTOs, engineering founders, and AI pioneers driving the next wave of innovation. The issue covers the shift of multi-agent AI systems from prototypes to critical enterprise infrastructure, the engineering mindset behind high-velocity teams, and the human-centric thinking that turns technology into real impact. It is written for technology executives, engineers, investors, and business leaders planning their digital transformation.",
-    "keyTakeaways": [
-      "Multi-agent AI systems are moving from experiments to mission-critical infrastructure.",
-      "Elite engineering teams combine technical depth with a bias for solving and scaling.",
-      "Human-centric design determines whether technology creates real impact.",
-      "Infrastructure bottlenecks remain a defining challenge for frontier technology."
-    ],
-    "targetAudience": [
-      "CTOs, CIOs and technology executives",
-      "Engineers and engineering managers",
-      "AI researchers and product leaders",
-      "Investors and digital transformation teams"
-    ],
-    "tableOfContents": [
-      {
-        "page": 6,
-        "title": "Autonomous Agents and the Cognitive Enterprise",
-        "author": "Dr. Rajan Patel",
-        "category": "Cover Story",
-        "snippet": "How multi-agent systems are shifting from experimental prototypes to mission-critical infrastructure."
-      },
-      {
-        "page": 20,
-        "title": "Build, Solve, Scale, Repeat: The Engineering Mindset",
-        "author": "Sophia Lin",
-        "category": "Deep Tech",
-        "snippet": "Cultivating elite technical teams capable of high-velocity innovation."
-      }
-    ],
-    "featuredQuotes": [
-      {
-        "quote": "Technology creates opportunities. People turn them into impact.",
-        "author": "Nadia Rayan",
-        "role": "Chief Technology Officer"
-      }
-    ],
-    "relatedSlugs": [
-      "influential-marketing-leaders-2026",
-      "ceo-of-the-year-executive-edition-2026",
-      "ceo-of-the-year-visionary-edition-2026"
-    ],
-    "breadcrumbs": [
-      {
-        "name": "Home",
-        "url": "https://www.theempireinsight.com/"
-      },
-      {
-        "name": "Magazine",
-        "url": "https://www.theempireinsight.com/magazine"
-      },
-      {
-        "name": "Technology & AI",
-        "url": "https://www.theempireinsight.com/magazine/category/technology-ai"
-      },
-      {
-        "name": "Tech Leaders to Watch in 2026",
-        "url": "https://www.theempireinsight.com/magazine/tech-leaders-to-watch-2026"
-      }
-    ],
-    "faq": [
-      {
-        "question": "Which tech leaders are featured in this issue?",
-        "answer": "The issue spotlights CTOs, engineering founders, and AI pioneers working on autonomous intelligence, infrastructure, and human-centric computing."
-      },
-      {
-        "question": "Does this issue cover AI agents?",
-        "answer": "Yes. The cover story examines how multi-agent systems are becoming critical enterprise infrastructure."
-      },
-      {
-        "question": "How can I read the full issue?",
-        "answer": "The 72-page issue has an estimated 48-minute read and is available as a PDF edition."
-      }
-    ],
     "seo": {
       "metaTitle": "Tech Leaders to Watch in 2026 | The Empire Insight",
       "metaDescription": "Discover the CTOs, AI pioneers and engineering founders to watch in 2026. Insights on autonomous agents, deep tech and digital transformation.",
@@ -842,7 +494,21 @@
         }
       }
     },
-    "content": "<div class=\"editorial-intro\"><h3>Technology for People</h3><p>Innovation without empathy is mere computation. In this edition, we showcase the engineers, researchers, and tech executives proving that cutting-edge software and hardware can expand human capability and build a more inclusive future.</p></div><section><h2>Autonomous Agents and the Cognitive Enterprise</h2><p>Multi-agent systems are moving beyond pilot projects and into core business operations. Our cover story explores what it takes to deploy them reliably, securely, and responsibly at scale.</p></section><section><h2>The Engineering Mindset</h2><p>High-performing technical teams share a habit of building, solving, scaling, and repeating. This section looks at how leaders hire, mentor, and structure teams for fast, sustainable innovation.</p></section><section><h2>Human-Centric Computing</h2><p>The technologists in this issue design with people in mind, from accessibility to trust and transparency. Their work shows that impact depends on how well technology serves real needs.</p></section><section><h2>Who Should Read This Issue</h2><p>Technology executives, engineers, investors, and business leaders planning digital transformation will find insights and inspiration here.</p></section>"
+    "pdfUrl": "../images/article-pdf&cover/Article No 4.pdf",
+    "featuredArticle": {
+      "id": "alejandro-calle-2026",
+      "url": "article-view.html?id=alejandro-calle-2026"
+    },
+    "relatedArticles": [
+      {
+        "id": "alejandro-calle-2026",
+        "url": "article-view.html?id=alejandro-calle-2026"
+      },
+      {
+        "id": "4",
+        "url": "article-view.html?id=4"
+      }
+    ]
   },
   {
     "id": "ceo-visionary-2026",
@@ -855,8 +521,6 @@
     "issue": "Visionary Edition 2026",
     "edition": "Global Edition 2026",
     "publishedDate": "2026-06-01",
-    "modifiedDate": "2026-10-14",
-    "inLanguage": "en",
     "category": "Sustainability & ESG",
     "tags": [
       "Purpose Leadership",
@@ -868,9 +532,7 @@
       "Corporate Governance"
     ],
     "cover": "../images/Magazine-cover/cover-2026-ceo-visionary.jpg",
-    "coverAlt": "Cover of The Empire Insight CEO of the Year Visionary Edition 2026 on purpose-driven leadership",
     "featured": true,
-    "status": "Published",
     "readingTime": "38 min read",
     "pageCount": 60,
     "issn": "2834-9121",
@@ -878,87 +540,8 @@
       "name": "Greta Thorne",
       "role": "Sustainability & Governance Editor"
     },
-    "publisher": {
-      "name": "The Empire Insight",
-      "type": "Organization",
-      "url": "https://www.theempireinsight.com",
-      "logo": "https://www.theempireinsight.com/images/logo.png"
-    },
     "preview": "Examining how empathetic chief executives bridge long-term shareholder return with societal stewardship, inclusive culture, and fearless ethical ambition.",
     "executiveSummary": "Leadership beyond business represents the highest echelon of modern corporate stewardship. We profile CEOs proving that sustainable principles and ethical culture generate unmatched resilience and competitive moats.",
-    "longDescription": "CEO of the Year Visionary Edition 2026 explores leadership beyond business: how chief executives balance shareholder returns with responsibility to people and the planet. Across 60 pages, the issue introduces the Purpose, People, Progress framework, shares practical approaches to decarbonization and stakeholder capitalism, and profiles CEOs who build inclusive, ethical cultures. It is written for executives, board members, ESG professionals, and investors focused on long-term, sustainable enterprise value.",
-    "keyTakeaways": [
-      "Mission-driven companies show greater resilience during macroeconomic disruption.",
-      "Purpose, People, and Progress form a practical framework for corporate longevity.",
-      "Actionable decarbonization and stakeholder frameworks turn ESG goals into results.",
-      "Ethical, inclusive culture builds trust and a lasting competitive advantage."
-    ],
-    "targetAudience": [
-      "CEOs and board directors",
-      "ESG, sustainability and governance professionals",
-      "Impact and institutional investors",
-      "Leaders building purpose-driven organizations"
-    ],
-    "tableOfContents": [
-      {
-        "page": 4,
-        "title": "Purpose, People, Progress: The New Triad of Corporate Longevity",
-        "author": "Greta Thorne",
-        "category": "Cover Story",
-        "snippet": "Why mission-driven companies outperform peers during macro disruptions."
-      },
-      {
-        "page": 18,
-        "title": "Building a More Inclusive and Sustainable World",
-        "author": "Carlos Morales",
-        "category": "Governance",
-        "snippet": "Actionable decarbonization and stakeholder capitalism frameworks."
-      }
-    ],
-    "featuredQuotes": [
-      {
-        "quote": "Great CEOs don't just build companies, they build a better tomorrow for everyone they touch.",
-        "author": "Gabriel Santos",
-        "role": "Executive Chairman & CEO"
-      }
-    ],
-    "relatedSlugs": [
-      "ceo-of-the-year-executive-edition-2026",
-      "business-woman-of-the-year-2026",
-      "tech-leaders-to-watch-2026"
-    ],
-    "breadcrumbs": [
-      {
-        "name": "Home",
-        "url": "https://www.theempireinsight.com/"
-      },
-      {
-        "name": "Magazine",
-        "url": "https://www.theempireinsight.com/magazine"
-      },
-      {
-        "name": "Sustainability & ESG",
-        "url": "https://www.theempireinsight.com/magazine/category/sustainability-esg"
-      },
-      {
-        "name": "CEO of the Year Visionary Edition 2026",
-        "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-visionary-edition-2026"
-      }
-    ],
-    "faq": [
-      {
-        "question": "What is the CEO of the Year Visionary Edition?",
-        "answer": "It is a 2026 issue of The Empire Insight on purpose-driven CEOs who combine long-term returns with social and environmental responsibility."
-      },
-      {
-        "question": "What is the Purpose, People, Progress framework?",
-        "answer": "It is the issue's cover-story framework describing how mission, inclusive culture, and sustainable progress support long-term corporate resilience."
-      },
-      {
-        "question": "Is this issue relevant to investors and ESG teams?",
-        "answer": "Yes. It includes governance, decarbonization, and stakeholder capitalism frameworks relevant to investors, boards, and ESG professionals."
-      }
-    ],
     "seo": {
       "metaTitle": "CEO of the Year 2026 Visionary Edition | The Empire Insight",
       "metaDescription": "Leadership beyond business: purpose-driven CEOs, ESG strategy and sustainable enterprise in the CEO of the Year 2026 Visionary Edition.",
@@ -1029,6 +612,20 @@
         }
       }
     },
-    "content": "<div class=\"editorial-intro\"><h3>Leadership Beyond Business</h3><p>In a world facing complex environmental, social, and economic questions, executive courage requires broadening the definition of corporate success. This edition celebrates the visionaries constructing sustainable and enduring global legacies.</p></div><section><h2>Purpose, People, Progress</h2><p>Our cover story introduces a triad for corporate longevity. Companies with a clear mission, an inclusive culture, and a commitment to progress tend to navigate disruption with greater confidence.</p></section><section><h2>Building a More Inclusive and Sustainable World</h2><p>Governance and sustainability are now core executive responsibilities. This section shares actionable approaches to decarbonization and stakeholder capitalism that leaders can adapt to their own organizations.</p></section><section><h2>Ethical Ambition</h2><p>The CEOs profiled here pursue ambitious goals without compromising integrity. Their stories show how ethical culture strengthens trust with employees, customers, and investors.</p></section><section><h2>Who Should Read This Issue</h2><p>Executives, board members, ESG professionals, and investors who want to build resilient, responsible, and purpose-driven organizations.</p></section>"
+    "pdfUrl": "../images/article-pdf&cover/Article no 5.pdf",
+    "featuredArticle": {
+      "id": "4",
+      "url": "article-view.html?id=4"
+    },
+    "relatedArticles": [
+      {
+        "id": "4",
+        "url": "article-view.html?id=4"
+      },
+      {
+        "id": "5",
+        "url": "article-view.html?id=5"
+      }
+    ]
   }
 ]

@@ -4,35 +4,35 @@
   "rewrites": [
     {
       "source": "/article/:slug",
-      "destination": "/article-view.html?slug=:slug"
+      "destination": "/article-view?slug=:slug"
     },
     {
       "source": "/magazine/business-woman-2026/read",
-      "destination": "/magazine-view.html?id=business-woman-2026"
+      "destination": "/magazine-view?id=business-woman-2026"
     },
     {
       "source": "/magazine/ceo-of-the-year-2026/read",
-      "destination": "/magazine-view.html?id=ceo-of-the-year-2026"
+      "destination": "/magazine-view?id=ceo-of-the-year-2026"
     },
     {
       "source": "/magazine/marketing-leaders-2026/read",
-      "destination": "/magazine-view.html?id=marketing-leaders-2026"
+      "destination": "/magazine-view?id=marketing-leaders-2026"
     },
     {
       "source": "/magazine/tech-leaders-2026/read",
-      "destination": "/magazine-view.html?id=tech-leaders-2026"
+      "destination": "/magazine-view?id=tech-leaders-2026"
     },
     {
       "source": "/magazine/ceo-visionary-2026/read",
-      "destination": "/magazine-view.html?id=ceo-visionary-2026"
+      "destination": "/magazine-view?id=ceo-visionary-2026"
     },
     {
       "source": "/magazine/:id/read",
-      "destination": "/magazine-view.html?id=:id"
+      "destination": "/magazine-view?id=:id"
     },
     {
       "source": "/magazine/:id",
-      "destination": "/magazine-view.html?id=:id"
+      "destination": "/magazine-view?id=:id"
     }
   ],
   "redirects": [

@@ -55,7 +55,7 @@
             <span class="ed-hero-badge ed-hero-badge-cat" id="hero-cat"><i class="fas fa-layer-group"></i> Leadership &amp; Business</span>
           </div>
           <div class="ed-hero-actions">
-            <a href="magazine-preview.html?id=business-woman-2026" class="btn-primary-ed" id="hero-cta">Read This Edition &rarr;</a>
+            <a href="magazine/business-woman-2026/read" class="btn-primary-ed" id="hero-cta">Read This Edition &rarr;</a>
             <a href="magazine.html" class="btn-ghost-ed">Browse All Editions</a>
           </div>
         </div>
@@ -154,7 +154,7 @@
       <div class="ed-features-grid" id="features-grid">
 
         <!-- Main feature (Alejandro Calle flagship feature) -->
-        <a href="article-view.html?id=alejandro-calle-2026" class="ed-feature-main" data-article-id="alejandro-calle-2026" aria-label="Read: The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026">
+        <a href="article/the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026" class="ed-feature-main" data-article-id="alejandro-calle-2026" aria-label="Read: The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026">
           <img
             class="ed-feature-main-img"
             src="images/article-pdf&cover/alejandro-calle-cover.jpg"
@@ -172,7 +172,7 @@
 
         <!-- Sidebar articles -->
         <div class="ed-features-sidebar" id="features-sidebar">
-          <a href="article-view.html?id=1" class="ed-feature-row" data-article-id="1">
+          <a href="article/empower-to-elevate" class="ed-feature-row" data-article-id="1">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article1.jpg" alt="Empower to Elevate" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Leadership</span>
@@ -180,7 +180,7 @@
               <p class="ed-feature-row-sub">The new standard for transformational leadership in modern organizations.</p>
             </div>
           </a>
-          <a href="article-view.html?id=2" class="ed-feature-row" data-article-id="2">
+          <a href="article/performance-cultures-start-with-people" class="ed-feature-row" data-article-id="2">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article2.jpg" alt="Performance Cultures" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Culture</span>
@@ -188,7 +188,7 @@
               <p class="ed-feature-row-sub">The leadership equation that balances high trust with peak performance.</p>
             </div>
           </a>
-          <a href="article-view.html?id=3" class="ed-feature-row" data-article-id="3">
+          <a href="article/unlocking-human-potential" class="ed-feature-row" data-article-id="3">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article3.jpg" alt="Unlocking Human Potential" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Strategy</span>
@@ -196,7 +196,7 @@
               <p class="ed-feature-row-sub">The real key to organizational excellence and long-term durability.</p>
             </div>
           </a>
-          <a href="article-view.html?id=4" class="ed-feature-row" data-article-id="4">
+          <a href="article/metrics-that-matter" class="ed-feature-row" data-article-id="4">
             <img class="ed-feature-row-img" src="images/article-pdf&cover/article4.jpg" alt="Metrics that Matter" loading="lazy" />
             <div class="ed-feature-row-body">
               <span class="ed-feature-row-cat">Finance</span>
@@ -363,7 +363,7 @@
         grid.innerHTML = '';
         mags.filter(function(m){ return m.visible !== false; }).forEach(function(m) {
           var card = document.createElement('a');
-          card.href = 'magazine-preview.html?id=' + encodeURIComponent(m.id);
+          card.href = 'magazine/' + encodeURIComponent(m.id) + '/read';
           card.className = 'ed-edition-card';
           card.setAttribute('aria-label', 'Read ' + m.title);
           card.innerHTML =
@@ -521,7 +521,7 @@
       if (el('hero-pages'))    el('hero-pages').innerHTML    = '<i class="fas fa-book-open"></i> ' + item.pages;
       if (el('hero-read'))     el('hero-read').innerHTML     = '<i class="far fa-clock"></i> ' + item.readingTime;
       if (el('hero-cat'))      el('hero-cat').innerHTML      = '<i class="fas fa-layer-group"></i> ' + item.category;
-      if (el('hero-cta'))      el('hero-cta').href           = 'magazine-preview.html?id=' + encodeURIComponent(item.id);
+      if (el('hero-cta'))      el('hero-cta').href           = 'magazine/' + encodeURIComponent(item.id) + '/read';
       if (el('hero-caption'))  el('hero-caption').innerHTML  = item.caption;
       if (counterEl)           counterEl.textContent         = formatNumber(index + 1) + ' / ' + formatNumber(total);
 

@@ -12,6 +12,7 @@
   <meta name="description" content="In-depth analysis and executive perspectives from The Empire Insight." />
   <meta name="keywords" content="Business leadership insights, Global business leadership insights, CEO leadership stories, Successful CEO stories, Global business leader profiles, Top business leaders around the world, Inspiring business leaders, Global entrepreneur stories, Global CEO interviews, The Empire Insight" />
   <meta name="robots" content="index, follow" />
+  <base href="../" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Article | The Empire Insight" />
@@ -636,9 +637,9 @@
   <!-- Breadcrumb Navigation -->
   <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
     <div class="mag-breadcrumb-container">
-      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="/"><i class="fas fa-home"></i> Home</a>
       <span class="separator">/</span>
-      <a href="article.html">Featured Stories</a>
+      <a href="article">Featured Stories</a>
       <span class="separator">/</span>
       <span id="article-breadcrumb-current" class="current">Reading</span>
     </div>
@@ -683,8 +684,8 @@
       </article>
 
       <div class="ed-article-nav-bottom">
-        <a href="article.html" class="btn-ghost-ed">&larr; Back to All Stories</a>
-        <a href="magazine.html" class="btn-primary-ed">Explore Magazine Archive &rarr;</a>
+        <a href="article" class="btn-ghost-ed">&larr; Back to All Stories</a>
+        <a href="magazine" class="btn-primary-ed">Explore Magazine Archive &rarr;</a>
       </div>
     </main>
 
@@ -700,7 +701,7 @@
       <div class="ed-sidebar-box ed-sidebar-cta-box">
         <h4>The Empire Insight</h4>
         <p>Curated executive intelligence delivered to modern leaders, innovators, and entrepreneurs.</p>
-        <a href="contact.html" class="ed-sidebar-btn">Subscribe / Connect</a>
+        <a href="contact" class="ed-sidebar-btn">Subscribe / Connect</a>
       </div>
     </aside>
   </div>
@@ -709,7 +710,7 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    let articleId = urlParams.get('id') || urlParams.get('slug');
+    let articleId = urlParams.get('slug') || urlParams.get('id');
 
     const fallbackCategories = {
       "1": "Transformational Leadership",
@@ -754,6 +755,19 @@
           article = visibleArticles[0];
           articleId = article.id;
         }
+
+        const cleanArticlePath = `article/${encodeURIComponent(article.slug)}`;
+        const cleanArticleUrl = new URL(cleanArticlePath, document.baseURI);
+        if (window.location.pathname !== cleanArticleUrl.pathname || window.location.search) {
+          window.history.replaceState({}, "", cleanArticleUrl.pathname);
+        }
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+          canonical = document.createElement("link");
+          canonical.rel = "canonical";
+          document.head.appendChild(canonical);
+        }
+        canonical.href = cleanArticleUrl.href;
 
         const cat = article.category || fallbackCategories[article.id] || "Leadership Insight";
         const coverSrc = resolveCover(article.cover);
@@ -856,7 +870,7 @@
 
         otherArticles.slice(0, 5).forEach(a => {
           const item = document.createElement('a');
-          item.href = `article-view.html?id=${encodeURIComponent(a.id)}`;
+          item.href = `article/${encodeURIComponent(a.slug)}`;
           item.className = 'ed-sidebar-story';
           const otherCat = a.category || fallbackCategories[a.id] || "Story";
           const otherCover = resolveCover(a.cover);

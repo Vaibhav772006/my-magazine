@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   const articleUrl = (article, customUrl) =>
-    customUrl || `article-view.html?id=${encodeURIComponent(article.id)}`;
+    customUrl || `article/${encodeURIComponent(article.slug)}`;
 
   /* ---------- cover: wrap image in a PDF link ---------- */
   function setupCover(mag, pdfUrl) {
@@ -187,8 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Breadcrumb
       const crumb = $("mag-breadcrumb-preview");
       if (crumb) {
-        crumb.href = `magazine-preview.html?id=${encodeURIComponent(mag.id)}`;
-        crumb.textContent = mag.shortTitle || "Edition Preview";
+        crumb.href = "magazine";
+        crumb.textContent = mag.shortTitle || "Edition Archive";
       }
 
       // Title, subtitle, description

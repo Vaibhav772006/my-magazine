@@ -25,12 +25,15 @@
   <header id="navbar-placeholder"></header>
 
   <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
-    <ol class="mag-breadcrumb-container">
-      <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
-      <li><a href="magazine.html">Magazines</a></li>
-      <li><a id="mag-breadcrumb-preview" href="magazine-preview.html">Edition Preview</a></li>
-      <li aria-current="page">Reader View</li>
-    </ol>
+    <div class="mag-breadcrumb-container">
+      <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+      <span class="separator">/</span>
+      <a href="magazine.html">Magazines</a>
+      <span class="separator">/</span>
+      <a id="mag-breadcrumb-preview" href="magazine">Edition Archive</a>
+      <span class="separator">/</span>
+      <span class="current" aria-current="page">Reader View</span>
+    </div>
   </nav>
 
   <main class="magazine-reader-shell" id="mag-view-main-layout">

@@ -25,7 +25,7 @@ This website uses a **centralized JSON architecture** (`magazine/js/articles.jso
 When you add or update an article in `js/articles.json`:
 1. **Homepage (`index.html`)**: Automatically displays the newest article as the flagship hero feature in the "Featured Stories" section, and updates the sidebar stories dynamically.
 2. **All Articles Archive (`article.html`)**: Instantly adds the story to the grid, displays its cover, category pill, reading time, published date, and auto-updates the article count badge.
-3. **Reading Experience (`article-view.html?id=YOUR_ID`)**:
+3. **Reading Experience (`/article/YOUR_SLUG`)**:
    - Shows the **full, uncropped vertical magazine cover** framed as an official cover feature.
    - Renders the executive byline, reading time, author, and date.
    - Formats pull quotes, inline photo galleries, and visionary quote cards.
@@ -124,6 +124,6 @@ To add an article, open `magazine/js/articles.json` and paste this block at the 
 2. Open `magazine/js/articles.json`.
 3. Add as many article objects as you want to the JSON array.
 4. That's it!
-   - Every article is immediately readable at `article-view.html?id=YOUR_ID`.
+   - Every article is immediately readable at `/article/YOUR_SLUG`.
    - The archive page `article.html` automatically renders all articles and updates the total counter.
    - The homepage `index.html` automatically presents the latest article in the featured hero spotlight.

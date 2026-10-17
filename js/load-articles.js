@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
           : "";
 
         card.innerHTML = `
-          <a href="article-view.html?id=${encodeURIComponent(article.id)}" class="ed-story-cover-link" aria-label="Read ${article.title}">
+          <a href="article/${encodeURIComponent(article.slug)}" class="ed-story-cover-link" aria-label="Read ${article.title}">
             <img src="${coverSrc}" alt="${article.title}" class="ed-story-cover" loading="lazy" onerror="this.onerror=null;this.src='images/assets/bg.jpg';" />
           </a>
           <div class="ed-story-body">
@@ -70,12 +70,12 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             ${leaderBadge}
             <h3 class="ed-story-title">
-              <a href="article-view.html?id=${encodeURIComponent(article.id)}">${article.title}</a>
+              <a href="article/${encodeURIComponent(article.slug)}">${article.title}</a>
             </h3>
             <p class="ed-story-subtitle">${article.subtitle || article.excerpt || ""}</p>
             <div class="ed-story-footer">
               <span class="ed-story-readtime"><i class="far fa-clock"></i> ${readTime}</span>
-              <a href="article-view.html?id=${encodeURIComponent(article.id)}" class="ed-story-link">
+              <a href="article/${encodeURIComponent(article.slug)}" class="ed-story-link">
                 Read Story &rarr;
               </a>
             </div>

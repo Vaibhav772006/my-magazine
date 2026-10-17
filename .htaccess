@@ -4,10 +4,20 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Redirect legacy article URLs to their clean route when a slug is supplied.
+  RewriteCond %{THE_REQUEST} \s/+article-view\.html(?:[?\s]) [NC]
+  RewriteCond %{QUERY_STRING} (^|&)slug=([^&]+) [NC]
+  RewriteRule ^article-view\.html$ /article/%2? [R=301,L,NE]
+
+  # Article detail pages use the article's stable slug.
+  RewriteRule ^article/([^/]+)/?$ article-view.html?slug=$1 [L,QSA,NE]
+
   # Serve index.html for root directory
   RewriteRule ^$ index.html [L]
 
   # Clean URLs rewrites
+  RewriteRule ^magazine/([^/]+)/read/?$ magazine-view.html?id=$1 [L,QSA,NE]
+  RewriteRule ^magazine/([^/]+)/?$ magazine-view.html?id=$1 [L,QSA,NE]
   RewriteRule ^magazine/?$ magazine.html [L,QSA]
   RewriteRule ^magazines/?$ magazine.html [L,QSA]
   RewriteRule ^article/?$ article.html [L,QSA]
@@ -15,7 +25,6 @@ DirectoryIndex index.html
   RewriteRule ^about/?$ about.html [L,QSA]
   RewriteRule ^contact/?$ contact.html [L,QSA]
   RewriteRule ^search/?$ search.html [L,QSA]
-  RewriteRule ^magazine-preview/?$ magazine-preview.html [L,QSA]
   RewriteRule ^magazine-view/?$ magazine-view.html [L,QSA]
   RewriteRule ^article-view/?$ article-view.html [L,QSA]
   RewriteRule ^blog/?$ blog.html [L,QSA]

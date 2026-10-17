@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentNorm = normalize(window.location.pathname);
       const sectionMap = {
-        "magazine-preview": "magazine",
         "magazine-view": "magazine",
         "article-view": "article"
       };
@@ -81,4 +80,3 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPartial("#footer-placeholder", "footer.html")
     .catch(error => console.error("Error loading footer:", error));
 });
-

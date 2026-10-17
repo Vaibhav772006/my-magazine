@@ -3,15 +3,31 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/article/:slug",
+      "destination": "/article-view.html?slug=:slug"
+    },
+    {
       "source": "/magazine/:id/read",
       "destination": "/magazine-view.html?id=:id"
     },
     {
       "source": "/magazine/:id",
-      "destination": "/magazine-preview.html?id=:id"
+      "destination": "/magazine-view.html?id=:id"
     }
   ],
   "redirects": [
+    {
+      "source": "/article-view.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "(?<slug>[^&]+)"
+        }
+      ],
+      "destination": "/article/:slug",
+      "permanent": true
+    },
     {
       "source": "/pages/index.html",
       "destination": "/",

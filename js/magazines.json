@@ -149,16 +149,16 @@
     "pdfUrl": "../images/article-pdf&cover/Article No 1.pdf",
     "featuredArticle": {
       "id": "1",
-      "url": "article-view.html?id=1"
+      "url": "article/empower-to-elevate"
     },
     "relatedArticles": [
       {
         "id": "1",
-        "url": "article-view.html?id=1"
+        "url": "article/empower-to-elevate"
       },
       {
         "id": "2",
-        "url": "article-view.html?id=2"
+        "url": "article/performance-cultures-start-with-people"
       }
     ]
   },
@@ -265,16 +265,16 @@
     "pdfUrl": "../images/article-pdf&cover/Article No 2.pdf",
     "featuredArticle": {
       "id": "3",
-      "url": "article-view.html?id=3"
+      "url": "article/unlocking-human-potential"
     },
     "relatedArticles": [
       {
         "id": "3",
-        "url": "article-view.html?id=3"
+        "url": "article/unlocking-human-potential"
       },
       {
         "id": "4",
-        "url": "article-view.html?id=4"
+        "url": "article/metrics-that-matter"
       }
     ]
   },
@@ -381,16 +381,16 @@
     "pdfUrl": "../images/article-pdf&cover/Article No 3.pdf",
     "featuredArticle": {
       "id": "2",
-      "url": "article-view.html?id=2"
+      "url": "article/performance-cultures-start-with-people"
     },
     "relatedArticles": [
       {
         "id": "2",
-        "url": "article-view.html?id=2"
+        "url": "article/performance-cultures-start-with-people"
       },
       {
         "id": "5",
-        "url": "article-view.html?id=5"
+        "url": "article/from-stability-to-agility"
       }
     ]
   },
@@ -497,16 +497,16 @@
     "pdfUrl": "../images/article-pdf&cover/Article No 4.pdf",
     "featuredArticle": {
       "id": "alejandro-calle-2026",
-      "url": "article-view.html?id=alejandro-calle-2026"
+      "url": "article/the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026"
     },
     "relatedArticles": [
       {
         "id": "alejandro-calle-2026",
-        "url": "article-view.html?id=alejandro-calle-2026"
+        "url": "article/the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026"
       },
       {
         "id": "4",
-        "url": "article-view.html?id=4"
+        "url": "article/metrics-that-matter"
       }
     ]
   },
@@ -615,16 +615,16 @@
     "pdfUrl": "../images/article-pdf&cover/Article no 5.pdf",
     "featuredArticle": {
       "id": "4",
-      "url": "article-view.html?id=4"
+      "url": "article/metrics-that-matter"
     },
     "relatedArticles": [
       {
         "id": "4",
-        "url": "article-view.html?id=4"
+        "url": "article/metrics-that-matter"
       },
       {
         "id": "5",
-        "url": "article-view.html?id=5"
+        "url": "article/from-stability-to-agility"
       }
     ]
   }

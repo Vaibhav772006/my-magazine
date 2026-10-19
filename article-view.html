@@ -711,6 +711,10 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     let articleId = urlParams.get('slug') || urlParams.get('id');
+    if (!articleId) {
+      const articlePathMatch = window.location.pathname.match(/\/article\/([^/]+)\/?$/i);
+      if (articlePathMatch) articleId = decodeURIComponent(articlePathMatch[1]);
+    }
 
     const fallbackCategories = {
       "1": "Transformational Leadership",
@@ -870,7 +874,7 @@
 
         otherArticles.slice(0, 5).forEach(a => {
           const item = document.createElement('a');
-          item.href = `article/${encodeURIComponent(a.slug)}`;
+          item.href = `/article/${encodeURIComponent(a.slug)}`;
           item.className = 'ed-sidebar-story';
           const otherCat = a.category || fallbackCategories[a.id] || "Story";
           const otherCover = resolveCover(a.cover);

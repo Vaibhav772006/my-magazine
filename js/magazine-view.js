@@ -25,8 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "Unable to fetch related articles"
   );
 
-  const articleUrl = (article, customUrl) =>
-    customUrl || `article/${encodeURIComponent(article.slug)}`;
+  const articleUrl = (article, customUrl) => {
+    const path = customUrl || `article/${encodeURIComponent(article.slug)}`;
+    return path.startsWith("/") ? path : `/${path}`;
+  };
 
   /* ---------- cover: wrap image in a PDF link ---------- */
   function setupCover(mag, pdfUrl) {

@@ -1,3 +1,14 @@
+// Google Analytics
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", "G-LQD1PB867E");
+
+const analyticsScript = document.createElement("script");
+analyticsScript.async = true;
+analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=G-LQD1PB867E";
+document.head.appendChild(analyticsScript);
+
 document.addEventListener("DOMContentLoaded", () => {
   const loadPartial = (selector, filename) => {
     const placeholder = document.querySelector(selector);

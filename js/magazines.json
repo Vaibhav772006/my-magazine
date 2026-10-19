@@ -43,7 +43,61 @@
         "October 2026 Edition",
         "Best CEO Magazine"
       ]
-    }
+      ,
+      "openGraph": {
+        "type": "article",
+        "title": "The Visionary Tech Entrepreneur 2026: Alejandro Calle | The Empire Insight",
+        "description": "Discover the October 2026 edition of The Empire Insight featuring Alejandro Calle, Founder & CEO of Tech In A Tux. Bridging the digital divide with curiosity and compassion.",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-business-woman.jpg",
+        "imageAlt": "Cover of The Empire Insight Business Woman of the Year 2026",
+        "siteName": "The Empire Insight",
+        "locale": "en_US",
+        "publishedTime": "2026-03-01",
+        "modifiedTime": "2026-10-14",
+        "section": "Leadership & Business"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Business Woman of the Year 2026",
+        "description": "Profiles of inspiring women leaders shaping a stronger tomorrow.",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-alejandro-calle.jpg"
+      },
+      "structuredData": {
+        "@context": "https://schema.org",
+        "@type": "PublicationIssue",
+        "name": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
+        "description": "Executive profiles and insights on women shaping global business leadership in 2026.",
+        "issueNumber": "Special Edition 2026",
+        "volumeNumber": "1",
+        "datePublished": "2026-03-01",
+        "dateModified": "2026-10-14",
+        "inLanguage": "en",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-alejandro-calle.jpg",
+        "url": "https://www.theempireinsight.com/magazine/alejandro-calle-tech-in-a-tux-accessible-tech-support",
+        "isPartOf": {
+          "@type": "Periodical",
+          "name": "The Empire Insight"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Empire Insight",
+          "url": "https://www.theempireinsight.com"
+        },
+        "editor": {
+          "@type": "Person",
+          "name": "Elena Sterling",
+          "jobTitle": "Executive Editor"
+        }
+      }
+    },
+
+    "relatedArticles": [
+      {
+        "id": "1",
+        "url": "article/alejandro-calle-tech-in-a-tux-accessible-tech-support"
+      }
+
+    ]
   },
   {
     "id": "business-woman-2026",

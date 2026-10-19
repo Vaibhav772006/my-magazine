@@ -1,7 +1,7 @@
 [
   {
     "id": "alejandro-calle-october-2026",
-    "visible": false,
+    "visible": true,
     "slug": "the-visionary-tech-entrepreneur-bridging-the-digital-divide-2026",
     "title": "The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026",
     "shortTitle": "The Visionary Tech Entrepreneur",
@@ -10,7 +10,6 @@
     "issue": "October Edition 2026",
     "edition": "October 2026",
     "publishedDate": "2026-10-14",
-    "category": "Technology & AI",
     "tags": [
       "Tech Entrepreneurship",
       "Digital Divide",

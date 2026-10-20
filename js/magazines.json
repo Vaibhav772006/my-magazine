@@ -100,6 +100,103 @@
     ]
   },
   {
+  "id": "eman-al-mannai-october-2026",
+  "visible": true,
+  "slug": "the-most-inspiring-female-personality-to-watch-2026",
+  "title": "The Most Inspiring Female Personality to Watch in 2026: Eman Mohammed Al Mannai",
+  "shortTitle": "The Most Inspiring Female Personality",
+  "subtitle": "“Being the first is never the goal. The goal is to make sure I am not the last.”",
+  "volume": "Vol. 01",
+  "issue": "October Edition 2026",
+  "edition": "October 2026",
+  "publishedDate": "2026-10-20",
+  "tags": [
+    "Women in Leadership",
+    "Real Estate",
+    "Bahrain",
+    "Infracorp",
+    "Female Executives",
+    "GCC Business",
+    "Inspiring Women"
+  ],
+  "cover": "../images/Magazine-cover/cover-2026-eman-al-mannai.jpg",
+  "featured": false,
+  "readingTime": "",
+  "pageCount": "",
+  "issn": "",
+  "editor": {
+    "name": "David Sterling",
+    "role": "Editor-in-Chief"
+  },
+  "preview": "How Eman Mohammed Al Mannai turned two decades of disciplined leadership, constant learning and belief in others into a pioneering career shaping Bahrain's skyline.",
+  "executiveSummary": "This October 2026 edition spotlights Eman Mohammed Al Mannai, Certified International Real Estate Expert & Trainer and Head of Sales at Infracorp. We explore how more than 20 years of experience, over 7,000 apartments and villas delivered, and a string of regional firsts are redefining women's leadership in Bahrain and the Gulf.",
+  "seo": {
+    "metaTitle": "The Most Inspiring Female Personality 2026: Eman Mohammed Al Mannai | The Empire Insight",
+    "metaDescription": "Discover the October 2026 edition of The Empire Insight featuring Eman Mohammed Al Mannai, Head of Sales at Infracorp and the first Bahraini woman to earn the CIPS credential.",
+    "keywords": [
+      "Eman Mohammed Al Mannai",
+      "Infracorp",
+      "Global Business Magazine",
+      "Global CEO Magazine",
+      "Inspiring Female Personality",
+      "Bahrain Real Estate",
+      "October 2026 Edition",
+      "Best CEO Magazine"
+    ],
+    "openGraph": {
+      "type": "article",
+      "title": "The Most Inspiring Female Personality 2026: Eman Mohammed Al Mannai | The Empire Insight",
+      "description": "Discover the October 2026 edition of The Empire Insight featuring Eman Mohammed Al Mannai, Head of Sales at Infracorp and the first Bahraini woman to earn the CIPS credential.",
+      "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-eman-al-mannai.jpg",
+      "imageAlt": "Cover of The Empire Insight October 2026 featuring Eman Mohammed Al Mannai",
+      "siteName": "The Empire Insight",
+      "locale": "en_US",
+      "publishedTime": "2026-10-20",
+      "modifiedTime": "2026-10-20",
+      "section": "Leadership & Business"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "The Most Inspiring Female Personality to Watch in 2026: Eman Mohammed Al Mannai",
+      "description": "A profile of the Bahraini real estate leader shaping skylines and opening doors for the next generation of women.",
+      "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-eman-al-mannai.jpg"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "PublicationIssue",
+      "name": "The Most Inspiring Female Personality to Watch in 2026: Eman Mohammed Al Mannai",
+      "description": "Executive profile of Eman Mohammed Al Mannai, Head of Sales at Infracorp, and her impact on real estate leadership in Bahrain and the GCC.",
+      "issueNumber": "October Edition 2026",
+      "volumeNumber": "1",
+      "datePublished": "2026-10-20",
+      "dateModified": "2026-10-20",
+      "inLanguage": "en",
+      "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-eman-al-mannai.jpg",
+      "url": "https://www.theempireinsight.com/magazine/the-most-inspiring-female-personality-to-watch-2026",
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "The Empire Insight"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Empire Insight",
+        "url": "https://www.theempireinsight.com"
+      },
+      "editor": {
+        "@type": "Person",
+        "name": "David Sterling",
+        "jobTitle": "Editor-in-Chief"
+      }
+    }
+  },
+  "relatedArticles": [
+    {
+      "id": "eman-al-mannai-2026",
+      "url": "article/eman-mohammed-al-mannai-infracorp-inspiring-female-personality-2026"
+    }
+  ]
+},
+  {
     "id": "business-woman-2026",
     "visible": true,
     "slug": "business-woman-of-the-year-2026",
@@ -215,123 +312,7 @@
       }
     ]
   },
-  {
-    "id": "ceo-of-the-year-2026",
-    "visible": true,
-    "slug": "ceo-of-the-year-executive-edition-2026",
-    "title": "CEO of the Year: Vision, Execution & Sustainable Growth",
-    "shortTitle": "CEO of the Year (Executive)",
-    "subtitle": "\"Great CEOs Don't Just Build Companies, They Build a Better Tomorrow\"",
-    "volume": "Vol. 01",
-    "issue": "Executive Edition 2026",
-    "edition": "Executive Edition 2026",
-    "publishedDate": "2026-02-15",
-    "category": "Leadership & Business",
-    "tags": [
-      "CEO Insights",
-      "Enterprise Strategy",
-      "Global Leadership",
-      "Sustainable Growth",
-      "Execution",
-      "Stakeholder Value",
-      "Corporate Strategy"
-    ],
-    "cover": "../images/Magazine-cover/cover-2026-ceo-of-the-year.jpg",
-    "featured": true,
-    "readingTime": "50 min read",
-    "pageCount": 76,
-    "issn": "2834-9121",
-    "editor": {
-      "name": "David Sterling",
-      "role": "Editor-in-Chief"
-    },
-    "preview": "An in-depth study of the world's most decisive chief executives leading sustainable growth, stakeholder value, and high-trust organizational excellence.",
-    "executiveSummary": "Examining the strategic playbook of top chief executives navigating macroeconomic uncertainty, digital disruption, and the imperative for long-term sustainable growth.",
-    "seo": {
-      "metaTitle": "CEO of the Year 2026 Executive Edition | The Empire Insight",
-      "metaDescription": "Explore CEO leadership stories, global CEO interviews and executive strategy for sustainable growth in the CEO of the Year 2026 Executive Edition.",
-      "canonicalUrl": "https://www.theempireinsight.com/magazine/ceo-of-the-year-executive-edition-2026",
-      "robots": "index, follow, max-image-preview:large",
-      "primaryKeyword": "CEO of the Year 2026",
-      "keywords": [
-        "CEO of the Year 2026",
-        "Global CEO Magazine",
-        "Best CEO Magazine",
-        "CEO Leadership Magazine",
-        "Business Magazine for CEOs",
-        "Top CEO and leadership magazine",
-        "Global CEO interviews",
-        "CEO leadership stories",
-        "Global business leader profiles",
-        "Successful CEO stories",
-        "Business leadership insights",
-        "Top business leaders around the world"
-      ],
-      "openGraph": {
-        "type": "article",
-        "title": "CEO of the Year 2026 Executive Edition | The Empire Insight",
-        "description": "How the world's most decisive CEOs lead sustainable growth and stakeholder value.",
-        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-ceo-of-the-year.jpg",
-        "imageAlt": "Cover of The Empire Insight CEO of the Year Executive Edition 2026",
-        "siteName": "The Empire Insight",
-        "locale": "en_US",
-        "publishedTime": "2026-02-15",
-        "modifiedTime": "2026-10-14",
-        "section": "Leadership & Business"
-      },
-      "twitter": {
-        "card": "summary_large_image",
-        "title": "CEO of the Year 2026: Executive Edition",
-        "description": "Vision, execution and sustainable growth from the world's leading CEOs.",
-        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-ceo-of-the-year.jpg"
-      },
-      "structuredData": {
-        "@context": "https://schema.org",
-        "@type": "PublicationIssue",
-        "name": "CEO of the Year 2026: Executive Edition",
-        "description": "In-depth study of chief executives leading sustainable growth and stakeholder value.",
-        "issueNumber": "Executive Edition 2026",
-        "volumeNumber": "1",
-        "datePublished": "2026-02-15",
-        "dateModified": "2026-10-14",
-        "inLanguage": "en",
-        "numberOfPages": 76,
-        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-ceo-of-the-year.jpg",
-        "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-executive-edition-2026",
-        "isPartOf": {
-          "@type": "Periodical",
-          "name": "The Empire Insight",
-          "issn": "2834-9121"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "The Empire Insight",
-          "url": "https://www.theempireinsight.com"
-        },
-        "editor": {
-          "@type": "Person",
-          "name": "David Sterling",
-          "jobTitle": "Editor-in-Chief"
-        }
-      }
-    },
-    "pdfUrl": "../images/article-pdf&cover/Article No 2.pdf",
-    "featuredArticle": {
-      "id": "3",
-      "url": "article/unlocking-human-potential"
-    },
-    "relatedArticles": [
-      {
-        "id": "3",
-        "url": "article/unlocking-human-potential"
-      },
-      {
-        "id": "4",
-        "url": "article/metrics-that-matter"
-      }
-    ]
-  },
-  {
+    {
     "id": "marketing-leaders-2026",
     "visible": true,
     "slug": "influential-marketing-leaders-2026",
@@ -562,123 +543,6 @@
         "url": "article/metrics-that-matter"
       }
     ]
-  },
-  {
-    "id": "ceo-visionary-2026",
-    "visible": true,
-    "slug": "ceo-of-the-year-visionary-edition-2026",
-    "title": "CEO of the Year: Leadership Beyond Business - Purpose, People, Progress",
-    "shortTitle": "CEO of the Year (Visionary)",
-    "subtitle": "\"Great CEOs Don't Just Build Companies, They Build a Better Tomorrow\"",
-    "volume": "Vol. 01",
-    "issue": "Visionary Edition 2026",
-    "edition": "Global Edition 2026",
-    "publishedDate": "2026-06-01",
-    "category": "Sustainability & ESG",
-    "tags": [
-      "Purpose Leadership",
-      "ESG Strategy",
-      "Inclusive Enterprise",
-      "Executive Vision",
-      "Sustainability",
-      "Stakeholder Capitalism",
-      "Corporate Governance"
-    ],
-    "cover": "../images/Magazine-cover/cover-2026-ceo-visionary.jpg",
-    "featured": true,
-    "readingTime": "38 min read",
-    "pageCount": 60,
-    "issn": "2834-9121",
-    "editor": {
-      "name": "Greta Thorne",
-      "role": "Sustainability & Governance Editor"
-    },
-    "preview": "Examining how empathetic chief executives bridge long-term shareholder return with societal stewardship, inclusive culture, and fearless ethical ambition.",
-    "executiveSummary": "Leadership beyond business represents the highest echelon of modern corporate stewardship. We profile CEOs proving that sustainable principles and ethical culture generate unmatched resilience and competitive moats.",
-    "seo": {
-      "metaTitle": "CEO of the Year 2026 Visionary Edition | The Empire Insight",
-      "metaDescription": "Leadership beyond business: purpose-driven CEOs, ESG strategy and sustainable enterprise in the CEO of the Year 2026 Visionary Edition.",
-      "canonicalUrl": "https://www.theempireinsight.com/magazine/ceo-of-the-year-visionary-edition-2026",
-      "robots": "index, follow, max-image-preview:large",
-      "primaryKeyword": "CEO of the Year Visionary Edition 2026",
-      "keywords": [
-        "CEO of the Year 2026",
-        "Purpose-driven leadership",
-        "ESG strategy",
-        "Sustainable business leadership",
-        "Global Leadership Magazine",
-        "Global CEO Magazine",
-        "Best CEO Magazine",
-        "CEO Leadership Magazine",
-        "Visionary business leaders",
-        "Inspiring business leaders",
-        "Global business success stories",
-        "Top CEO and leadership magazine",
-        "Business Magazine for CEOs",
-        "CEO leadership stories"
-      ],
-      "openGraph": {
-        "type": "article",
-        "title": "CEO of the Year 2026 Visionary Edition | The Empire Insight",
-        "description": "Purpose, people and progress: how visionary CEOs build a better tomorrow.",
-        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-ceo-visionary.jpg",
-        "imageAlt": "Cover of The Empire Insight CEO of the Year Visionary Edition 2026",
-        "siteName": "The Empire Insight",
-        "locale": "en_US",
-        "publishedTime": "2026-06-01",
-        "modifiedTime": "2026-10-14",
-        "section": "Sustainability & ESG"
-      },
-      "twitter": {
-        "card": "summary_large_image",
-        "title": "CEO of the Year 2026: Visionary Edition",
-        "description": "Leadership beyond business: purpose, people, progress.",
-        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-ceo-visionary.jpg"
-      },
-      "structuredData": {
-        "@context": "https://schema.org",
-        "@type": "PublicationIssue",
-        "name": "CEO of the Year 2026: Visionary Edition",
-        "description": "Profiles of purpose-driven CEOs advancing sustainable and inclusive enterprise.",
-        "issueNumber": "Visionary Edition 2026",
-        "volumeNumber": "1",
-        "datePublished": "2026-06-01",
-        "dateModified": "2026-10-14",
-        "inLanguage": "en",
-        "numberOfPages": 60,
-        "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-ceo-visionary.jpg",
-        "url": "https://www.theempireinsight.com/magazine/ceo-of-the-year-visionary-edition-2026",
-        "isPartOf": {
-          "@type": "Periodical",
-          "name": "The Empire Insight",
-          "issn": "2834-9121"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "The Empire Insight",
-          "url": "https://www.theempireinsight.com"
-        },
-        "editor": {
-          "@type": "Person",
-          "name": "Greta Thorne",
-          "jobTitle": "Sustainability & Governance Editor"
-        }
-      }
-    },
-    "pdfUrl": "../images/article-pdf&cover/Article no 5.pdf",
-    "featuredArticle": {
-      "id": "4",
-      "url": "article/metrics-that-matter"
-    },
-    "relatedArticles": [
-      {
-        "id": "4",
-        "url": "article/metrics-that-matter"
-      },
-      {
-        "id": "5",
-        "url": "article/from-stability-to-agility"
-      }
-    ]
   }
+  
 ]

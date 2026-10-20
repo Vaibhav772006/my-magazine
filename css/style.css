@@ -4838,7 +4838,8 @@ body { padding-top: 110px !important; }
 .ed-story-cover {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #F2F0EB;
   transition: transform 0.4s ease;
 }
 
@@ -7596,7 +7597,7 @@ img, video, iframe, svg, canvas {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   max-height: 540px;
 }
 .ed-article-inline-figure figcaption {

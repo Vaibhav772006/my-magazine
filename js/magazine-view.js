@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const magId = urlParams.get("id");
+  const pathMatch = window.location.pathname.match(/^\/magazine\/([^/]+)(?:\/read)?\/?$/i);
+  const magId = urlParams.get("id") ||
+    (pathMatch ? decodeURIComponent(pathMatch[1]) : "");
   const assetBaseUrl = new URL("js/magazines.json", document.baseURI);
 
   /* ---------- helpers ---------- */

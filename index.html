@@ -363,7 +363,7 @@
         grid.innerHTML = '';
         mags.filter(function(m){ return m.visible !== false; }).forEach(function(m) {
           var card = document.createElement('a');
-          card.href = 'magazine/' + encodeURIComponent(m.id) + '/read';
+          card.href = '/magazine/' + encodeURIComponent(m.id) + '/read';
           card.className = 'ed-edition-card';
           card.setAttribute('aria-label', 'Read ' + m.title);
           card.innerHTML =
@@ -521,7 +521,7 @@
       if (el('hero-pages'))    el('hero-pages').innerHTML    = '<i class="fas fa-book-open"></i> ' + item.pages;
       if (el('hero-read'))     el('hero-read').innerHTML     = '<i class="far fa-clock"></i> ' + item.readingTime;
       if (el('hero-cat'))      el('hero-cat').innerHTML      = '<i class="fas fa-layer-group"></i> ' + item.category;
-      if (el('hero-cta'))      el('hero-cta').href           = 'magazine/' + encodeURIComponent(item.id) + '/read';
+      if (el('hero-cta'))      el('hero-cta').href           = '/magazine/' + encodeURIComponent(item.id) + '/read';
       if (el('hero-caption'))  el('hero-caption').innerHTML  = item.caption;
       if (counterEl)           counterEl.textContent         = formatNumber(index + 1) + ' / ' + formatNumber(total);
 

@@ -131,17 +131,17 @@
         return `
           <li style="--i:${i}">
             <article class="arc-card" itemscope itemtype="https://schema.org/PublicationIssue">
-              <a class="arc-card__cover" href="magazine/${id}/read" aria-label="Read ${title}">
+              <a class="arc-card__cover" href="/magazine/${id}/read" aria-label="Read ${title}">
                 <img src="${escapeHtml(resolveAsset(mag.cover))}" alt="${title} cover" loading="lazy" itemprop="image" />
                 ${badge ? `` : ''}
                 <span class="arc-card__peek">Read Online <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
               </a>
               <div class="arc-card__body">
-                <h3 class="arc-card__title" itemprop="name"><a href="magazine/${id}/read">${title}</a></h3>
+                <h3 class="arc-card__title" itemprop="name"><a href="/magazine/${id}/read">${title}</a></h3>
                 ${date ? `<p class="arc-card__date">${escapeHtml(date)}</p>` : ''}
                 <div class="arc-card__actions">
-                  <a class="arc-link" href="${pdf ? escapeHtml(pdf) : `magazine/${id}/read`}" ${pdf ? 'target="_blank" rel="noopener noreferrer"' : ''}>Digital</a>
-                  <a class="arc-btn arc-btn--solid arc-btn--sm" href="magazine/${id}/read">Read Online <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                  <a class="arc-link" href="${pdf ? escapeHtml(pdf) : `/magazine/${id}/read`}" ${pdf ? 'target="_blank" rel="noopener noreferrer"' : ''}>Digital</a>
+                  <a class="arc-btn arc-btn--solid arc-btn--sm" href="/magazine/${id}/read">Read Online <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
               </div>
             </article>
@@ -213,7 +213,7 @@
                 '@type': 'ListItem',
                 position: i + 1,
                 name: mag.title,
-                url: new URL(`magazine/${encodeURIComponent(mag.id)}/read`, window.location.href).href
+                url: new URL(`/magazine/${encodeURIComponent(mag.id)}/read`, window.location.origin).href
               }))
             }
           };

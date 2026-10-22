@@ -258,6 +258,43 @@
       border-bottom: 1px solid #F0ECE4;
     }
 
+    .ed-article-faq {
+      margin-top: 48px !important;
+      padding-top: 32px !important;
+      border-top: 2px solid #EAE6DF !important;
+    }
+
+    .ed-article-faq-title {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 1.85rem !important;
+      color: #0D0D0D !important;
+      margin: 0 0 20px !important;
+    }
+
+    .ed-article-faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .ed-article-faq-item {
+      border: 1px solid #EAE6DF;
+      border-radius: 4px;
+      background: #FAF8F5;
+    }
+
+    .ed-article-faq-item summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #0D0D0D;
+    }
+
+    .ed-article-faq-item p {
+      padding: 0 20px 16px !important;
+      margin: 0 !important;
+      color: #2D2D2D !important;
+    }
+
     .ed-article-lead-box {
       background: #FAF8F4 !important;
       border-left: 4px solid #B5892A !important;
@@ -670,8 +707,8 @@
 
       <div class="ed-article-byline-bar">
         <div class="ed-byline-info">
-          <strong id="article-author-name">The Empire Insight Editorial Board</strong>
-          <span id="article-byline-details">Published &bull; Executive Strategy &bull; Leadership Analysis</span>
+          <strong id="article-author-name">Flora Wilson</strong>
+          <span id="article-byline-details">Published &bull; Leadership Analysis</span>
         </div>
         <div class="ed-byline-share">
           <button class="ed-share-btn" id="share-article-btn" title="Share article">
@@ -724,6 +761,7 @@
       "4": "Metrics & Governance",
       "5": "Strategic Agility"
     };
+    const articleAuthor = "Flora Wilson";
 
     function resolveCover(cover) {
       if (!cover) return "images/article-pdf&cover/article1.jpg";
@@ -731,6 +769,32 @@
         return cover;
       }
       return cover.replace(/^\.\.\//, "");
+    }
+
+    function renderArticleFaq(article) {
+      const title = escapeHtml(article.title || "this article");
+      const category = escapeHtml(article.category || "business leadership");
+      const summary = escapeHtml(article.excerpt || article.subtitle || `This article explores ${article.title || "the featured topic"}.`);
+      const subject = escapeHtml(article.leader || article.shortTitle || article.title || "the featured subject");
+
+      return `
+        <section class="ed-article-faq" aria-labelledby="article-faq-title">
+          <h2 class="ed-article-faq-title" id="article-faq-title">Frequently Asked Questions</h2>
+          <div class="ed-article-faq-list">
+            <details class="ed-article-faq-item">
+              <summary>What is this article about?</summary>
+              <p>${summary}</p>
+            </details>
+            <details class="ed-article-faq-item">
+              <summary>What are the main themes covered?</summary>
+              <p>This ${category} article explains the key ideas, practical lessons and context readers need to understand the subject clearly.</p>
+            </details>
+            <details class="ed-article-faq-item">
+              <summary>Who or what is featured in this article?</summary>
+              <p>${subject} is the central subject explored in “${title}.”</p>
+            </details>
+          </div>
+        </section>`;
     }
 
     const fetchJson = (path) => fetch(new URL(path, document.baseURI));
@@ -803,7 +867,7 @@
         // Byline Info
         const authorEl = document.getElementById('article-author-name');
         if (authorEl) {
-          authorEl.textContent = article.author || "The Empire Insight Editorial Board";
+          authorEl.textContent = articleAuthor;
         }
 
         const bylineDetails = document.getElementById('article-byline-details');
@@ -812,9 +876,6 @@
           if (article.publishedDate) {
             parts.push(new Date(article.publishedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }));
           }
-          if (article.leader) {
-            parts.push(`Spotlight: ${article.leader}${article.leaderRole ? ` (${article.leaderRole})` : ''}`);
-          }
           if (cat) {
             parts.push(cat);
           }
@@ -822,7 +883,8 @@
         }
 
         // Article Body Content
-        document.getElementById('article-content').innerHTML = article.content;
+        const articleContent = document.getElementById('article-content');
+        articleContent.innerHTML = article.content + renderArticleFaq(article);
 
         // Meta Tag Updates for SEO
         const setMeta = (selector, content) => {
@@ -848,7 +910,7 @@
           "datePublished": article.publishedDate || "2026-10-14",
           "author": {
             "@type": "Organization",
-            "name": article.author || "The Empire Insight Editorial Board"
+            "name": articleAuthor
           },
           "publisher": {
             "@type": "Organization",

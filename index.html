@@ -680,9 +680,93 @@
       }
     });
 
+    // Replace the legacy showcase data with every visible edition from the
+    // magazine repository so the hero always reflects the latest archive.
+    function loadDynamicHeroEditions() {
+      fetch('js/magazines.json')
+        .then(function(response) {
+          if (!response.ok) throw new Error('Unable to load magazine editions');
+          return response.json();
+        })
+        .then(function(magazines) {
+          var dynamicEditions = magazines
+            .filter(function(magazine) { return magazine.visible !== false; })
+            .sort(function(a, b) {
+              return new Date(b.publishedDate || 0) - new Date(a.publishedDate || 0);
+            })
+            .map(function(magazine) {
+              var category = magazine.category || 'Leadership & Business';
+              var cover = (magazine.cover || '').replace(/^\.\.\//, '');
+              var pages = magazine.pageCount ? magazine.pageCount + ' pages' : 'Digital edition';
+              var readingTime = magazine.readingTime || 'Read online';
+              return {
+                id: magazine.id,
+                title: magazine.title,
+                shortTitle: magazine.shortTitle || magazine.title,
+                pillName: magazine.shortTitle || magazine.title,
+                subtitle: magazine.subtitle || '',
+                desc: magazine.executiveSummary || magazine.preview || '',
+                edition: magazine.edition || '',
+                label: [magazine.volume, magazine.publishedDate ? new Date(magazine.publishedDate).getFullYear() : ''].filter(Boolean).join(' | ') + ' \u2014 ' + category,
+                vol: [magazine.volume, magazine.publishedDate ? new Date(magazine.publishedDate).getFullYear() : ''].filter(Boolean).join(' \u2014 '),
+                pages: pages,
+                readingTime: readingTime,
+                category: category,
+                caption: [magazine.volume, magazine.edition || magazine.shortTitle || magazine.title].filter(Boolean).join(' | '),
+                cover: cover
+              };
+            });
+
+          if (!dynamicEditions.length) return;
+
+          EDITIONS.length = 0;
+          dynamicEditions.forEach(function(edition) { EDITIONS.push(edition); });
+          total = EDITIONS.length;
+          currentIndex = 0;
+
+          var slidesWrapper = document.getElementById('hero-slides-wrapper');
+          if (slidesWrapper) {
+            slidesWrapper.innerHTML = '';
+            EDITIONS.forEach(function(edition, index) {
+              var slide = document.createElement('div');
+              slide.className = 'ed-hero-cover-slide' + (index === 0 ? ' active' : '');
+              slide.setAttribute('data-index', index);
+              slide.innerHTML = '<img class="ed-hero-cover-img" src="' + edition.cover + '" alt="' + edition.shortTitle + ' Cover" loading="' + (index === 0 ? 'eager' : 'lazy') + '">';
+              slidesWrapper.appendChild(slide);
+            });
+            slides = slidesWrapper.querySelectorAll('.ed-hero-cover-slide');
+          }
+
+          if (dotsTrack) {
+            dotsTrack.innerHTML = '';
+            EDITIONS.forEach(function(item, index) {
+              var pill = document.createElement('button');
+              pill.type = 'button';
+              pill.className = 'ed-hero-dot-pill' + (index === 0 ? ' active' : '');
+              pill.setAttribute('role', 'tab');
+              pill.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+              pill.setAttribute('aria-label', 'View edition ' + (index + 1) + ': ' + item.shortTitle);
+              pill.innerHTML = '<span class="dot-indicator"></span> ' + formatNumber(index + 1) + ' ' + item.pillName;
+              pill.addEventListener('click', function() {
+                goToSlide(index);
+                restartTimer();
+              });
+              dotsTrack.appendChild(pill);
+            });
+          }
+
+          updateDetails(0);
+          restartTimer();
+        })
+        .catch(function(error) {
+          console.error('Could not load dynamic hero editions:', error);
+        });
+    }
+
     // Initial setup
     updateDetails(0);
     startTimer();
+    loadDynamicHeroEditions();
   })();
   </script>
 

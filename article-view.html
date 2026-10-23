@@ -763,6 +763,14 @@
     };
     const articleAuthor = "Flora Wilson";
 
+    const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[character]));
+
     function resolveCover(cover) {
       if (!cover) return "images/article-pdf&cover/article1.jpg";
       if (cover.startsWith("http://") || cover.startsWith("https://") || cover.startsWith("/")) {

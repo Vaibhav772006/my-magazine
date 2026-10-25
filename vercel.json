@@ -11,6 +11,10 @@
       "destination": "/api/article?slug=:slug"
     },
     {
+      "source": "/beyond-business",
+      "destination": "/beyond-business.html"
+    },
+    {
       "source": "/magazine/business-woman-2026/read",
       "destination": "/magazine-view?id=business-woman-2026"
     },

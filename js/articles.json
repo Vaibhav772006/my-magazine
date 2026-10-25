@@ -51,7 +51,8 @@
         "pay what you can tech support",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "featured-stories"
   },
   {
     "id": "jensen-huang-nvidia-2026",
@@ -105,7 +106,8 @@
         "GPU for AI",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "featured-stories"
   },
   {
     "id": "elon-musk-flying-car-2026",
@@ -157,7 +159,8 @@
         "are flying cars real",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "featured-stories"
   },
   {
     "id": "digital-transformation-trends-2026",
@@ -210,7 +213,8 @@
         "responsible AI",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "semiconductor-equipment-shortage-2026",
@@ -263,7 +267,8 @@
         "AI chip demand",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "top-5-ai-video-generation-tools-2026",
@@ -317,7 +322,8 @@
         "text to video AI",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "ai-leaders-infrastructure-strategy-2026",
@@ -375,7 +381,8 @@
         "custom AI chips",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "digital-transformation-modern-business-2026",
@@ -432,7 +439,8 @@
         "cloud computing for business",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "eman-al-mannai-2026",
@@ -484,7 +492,8 @@
         "Woman of the Year Real Estate and Construction",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "featured-stories"
   },
   {
     "id": "1",
@@ -519,7 +528,8 @@
         "modern management",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "2",
@@ -555,7 +565,8 @@
         "organizational culture",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "3",
@@ -591,7 +602,8 @@
         "workplace innovation",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "4",
@@ -627,7 +639,8 @@
         "sustainable business",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   },
   {
     "id": "5",
@@ -663,6 +676,7 @@
         "decentralized decision making",
         "The Empire Insight"
       ]
-    }
+    },
+    "section": "beyond-business"
   }
 ]

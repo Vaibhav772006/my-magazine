@@ -29,11 +29,12 @@ function loadArticles() {
   }
 
   const candidatePaths = [
-    path.join(process.cwd(), 'magazine', 'js', 'articles.json'),
-    path.join(process.cwd(), 'js', 'articles.json'),
     path.join(__dirname, '..', 'magazine', 'js', 'articles.json'),
     path.join(__dirname, '..', 'js', 'articles.json'),
-    path.join(__dirname, 'js', 'articles.json')
+    path.join(__dirname, 'magazine', 'js', 'articles.json'),
+    path.join(__dirname, 'js', 'articles.json'),
+    path.join(process.cwd(), 'magazine', 'js', 'articles.json'),
+    path.join(process.cwd(), 'js', 'articles.json')
   ];
 
   for (const p of candidatePaths) {
@@ -749,12 +750,17 @@ function renderArticlePage(article, allArticles) {
     };
   }
 
+  const isBeyond = (article.section === 'beyond-business' || article.section === 'Beyond Business' || (!article.section && !article.leader));
+  const sectionTitle = isBeyond ? 'Beyond Business' : 'Featured Stories';
+  const sectionPath = isBeyond ? '/beyond-business' : '/article';
+  const sectionUrl = `${SITE_URL}${sectionPath}`;
+
   const schemaBreadcrumbs = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
-      { "@type": "ListItem", "position": 2, "name": "Featured Stories", "item": `${SITE_URL}/article` },
+      { "@type": "ListItem", "position": 2, "name": sectionTitle, "item": sectionUrl },
       { "@type": "ListItem", "position": 3, "name": article.shortTitle || article.title, "item": canonicalUrl }
     ]
   };
@@ -874,7 +880,8 @@ ${ARTICLE_CSS}
       <nav class="primary-nav" id="main-nav" aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/magazine">Magazines</a>
-        <a href="/article" class="active" aria-current="page">Featured Stories</a>
+        <a href="/article" ${isBeyond ? '' : 'class="active" aria-current="page"'}>Featured Stories</a>
+        <a href="/beyond-business" ${isBeyond ? 'class="active" aria-current="page"' : ''}>Beyond Business</a>
         <a href="/about">About</a>
         <a href="/contact" class="nav-subscribe">Contact</a>
       </nav>
@@ -886,7 +893,7 @@ ${ARTICLE_CSS}
     <div class="mag-breadcrumb-container">
       <a href="/"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
       <span class="separator" aria-hidden="true">/</span>
-      <a href="/article">Featured Stories</a>
+      <a href="${sectionPath}">${sectionTitle}</a>
       <span class="separator" aria-hidden="true">/</span>
       <span class="current" aria-current="page">${escapeHtml(article.shortTitle || article.title)}</span>
     </div>
@@ -982,8 +989,8 @@ ${ARTICLE_CSS}
 
       <!-- Bottom Navigation Buttons -->
       <nav class="ed-article-nav-bottom" aria-label="Article navigation">
-        <a href="/article" class="btn-ghost-ed">
-          <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to All Stories
+        <a href="${sectionPath}" class="btn-ghost-ed">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to ${sectionTitle}
         </a>
         <a href="/magazine" class="btn-primary-ed">
           Explore Magazine Archive <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -1014,6 +1021,7 @@ ${ARTICLE_CSS}
        &bull; <a href="/about">About</a> 
        &bull; <a href="/contact">Contact</a> 
        &bull; <a href="/magazine">Magazine Archive</a>
+       &bull; <a href="/beyond-business">Beyond Business</a>
     </p>
   </footer>
 

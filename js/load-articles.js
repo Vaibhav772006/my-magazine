@@ -1,6 +1,7 @@
 /**
  * Centralized Article Loader for The Empire Insight
  * Reads directly from js/articles.json to dynamically render article archives
+ * Supports section filtering: "featured-stories" vs "beyond-business"
  */
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("articles-container");
@@ -22,7 +23,33 @@ document.addEventListener("DOMContentLoaded", () => {
     return cover.replace(/^\.\.\//, "");
   }
 
-  const fetchJson = (path) => fetch(new URL(path, document.baseURI));
+  // Determine target section
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramSection = urlParams.get("section");
+  const path = window.location.pathname.toLowerCase();
+
+  let targetSection = container.getAttribute("data-section") || paramSection;
+  if (!targetSection) {
+    if (path.includes("beyond-business")) {
+      targetSection = "beyond-business";
+    } else if (path.includes("article")) {
+      targetSection = "featured-stories";
+    }
+  }
+
+  const isMatchingSection = (article, sec) => {
+    if (!sec) return true;
+    const aSec = String(article.section || "").toLowerCase().trim();
+    if (sec === "beyond-business") {
+      return aSec === "beyond-business" || aSec === "beyond business" || (!aSec && !article.leader);
+    }
+    if (sec === "featured-stories") {
+      return aSec === "featured-stories" || aSec === "featured stories" || (!aSec && Boolean(article.leader));
+    }
+    return true;
+  };
+
+  const fetchJson = (p) => fetch(new URL(p, document.baseURI));
   (fetchJson("js/articles.json").then(r => r.ok ? r : Promise.reject()))
     .catch(() => fetchJson("../js/articles.json"))
     .then(res => {
@@ -35,12 +62,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const visibleData = data.filter(a => a.visible !== false);
+      const visibleData = data
+        .filter(a => a.visible !== false)
+        .filter(a => isMatchingSection(a, targetSection));
 
       // Update count badge if present
       const countEl = document.querySelector(".ed-stories-wrap .ed-section-link");
       if (countEl) {
         countEl.textContent = `${visibleData.length} Article${visibleData.length === 1 ? "" : "s"}`;
+      }
+
+      if (visibleData.length === 0) {
+        container.innerHTML = '<p class="ed-empty-text">No articles found in this section yet.</p>';
+        return;
       }
 
       container.innerHTML = "";

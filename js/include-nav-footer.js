@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const currentNorm = normalize(window.location.pathname);
       const sectionMap = {
         "magazine-view": "magazine",
-        "article-view": "article"
+        "article-view": "article",
+        "beyond-business": "beyond-business"
       };
       const target = sectionMap[currentNorm] || currentNorm;
 
@@ -98,47 +99,15 @@ function loadLatestFooterMagazines() {
   if (!list) return Promise.resolve();
 
   return fetch(new URL("js/magazines.json", document.baseURI))
-    .then(response => {
-      if (!response.ok) throw new Error("Unable to load magazine editions");
-      return response.json();
-    })
-    .then(magazines => {
-      const visibleMagazines = magazines
-        .filter(magazine => magazine.visible !== false)
-        .sort((a, b) => new Date(b.publishedDate || 0) - new Date(a.publishedDate || 0));
-
-      list.replaceChildren();
-      visibleMagazines.forEach(magazine => {
-        const link = document.createElement("a");
-        link.className = "footer-insight-item";
-        link.href = `/magazine/${encodeURIComponent(magazine.id)}/read`;
-
-        const meta = document.createElement("div");
-        meta.className = "footer-insight-meta";
-
-        const tag = document.createElement("span");
-        tag.className = "footer-insight-tag";
-        tag.textContent = magazine.category || (magazine.tags && magazine.tags[0]) || "Leadership";
-
-        const date = document.createElement("span");
-        date.className = "footer-insight-time";
-        date.textContent = magazine.edition || "Digital Edition";
-
-        const title = document.createElement("h4");
-        title.className = "footer-insight-title";
-        title.textContent = magazine.title;
-
-        const arrow = document.createElement("span");
-        arrow.className = "footer-insight-arrow";
-        arrow.innerHTML = "&rarr;";
-
-        meta.append(tag, date);
-        link.append(meta, title, arrow);
-        list.appendChild(link);
+    .then(r => r.ok ? r.json() : fetch(new URL("../js/magazines.json", document.baseURI)).then(r2 => r2.json()))
+    .then(data => {
+      if (!Array.isArray(data) || data.length === 0) return;
+      list.innerHTML = "";
+      data.filter(m => m.visible !== false).slice(0, 4).forEach(mag => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="/magazine/${encodeURIComponent(mag.id)}"><i class="fas fa-chevron-right"></i> ${mag.title || mag.id}</a>`;
+        list.appendChild(li);
       });
     })
-    .catch(error => {
-      console.error("Error loading footer magazines:", error);
-      list.innerHTML = '<span class="footer-insight-time">Latest editions are temporarily unavailable.</span>';
-    });
+    .catch(() => {});
 }

@@ -7,7 +7,7 @@
  * 
  * - Zero static file generation needed when adding articles to articles.json
  * - Instant Wave 1 Google / Bing indexing
- * - Perfect Open Graph & Twitter Cards for social platforms (WhatsApp, LinkedIn, X, FB)
+ * - Perfect Open Graph & Twitter Cards for social platforms (LinkedIn, X, FB)
  * - Full Schema.org JSON-LD (Article, Breadcrumbs, FAQPage)
  * - Vercel Edge cached for sub-30ms global response time
  */
@@ -493,7 +493,6 @@ body.ed-article-page {
 .ed-social-share-btn.share-linkedin { background: #0A66C2 !important; }
 .ed-social-share-btn.share-twitter  { background: #000000 !important; }
 .ed-social-share-btn.share-facebook { background: #1877F2 !important; }
-.ed-social-share-btn.share-whatsapp { background: #25D366 !important; }
 .ed-social-share-btn.share-copy     { background: #B5892A !important; color: #0D0D0D !important; }
 
 /* FAQ Section */
@@ -971,9 +970,6 @@ ${ARTICLE_CSS}
           </a>
           <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-facebook" title="Share on Facebook">
             <i class="fab fa-facebook-f"></i> Facebook
-          </a>
-          <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' ' + canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-whatsapp" title="Share on WhatsApp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
           <button type="button" class="ed-social-share-btn share-copy" id="share-article-btn" aria-label="Copy article link to clipboard" title="Copy article link">
             <i class="fas fa-link"></i> <span id="copy-btn-text">Copy Link</span>

@@ -672,7 +672,6 @@
     .ed-social-share-btn.share-linkedin { background: #0A66C2 !important; }
     .ed-social-share-btn.share-twitter  { background: #000000 !important; }
     .ed-social-share-btn.share-facebook { background: #1877F2 !important; }
-    .ed-social-share-btn.share-whatsapp { background: #25D366 !important; }
     .ed-social-share-btn.share-copy     { background: #B5892A !important; color: #0D0D0D !important; }
 
     .ed-byline-share-pill {
@@ -962,9 +961,6 @@
           <a href="#" id="share-facebook-link" target="_blank" rel="noopener" class="ed-social-share-btn share-facebook" title="Share on Facebook">
             <i class="fab fa-facebook-f"></i> Facebook
           </a>
-          <a href="#" id="share-whatsapp-link" target="_blank" rel="noopener" class="ed-social-share-btn share-whatsapp" title="Share on WhatsApp">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
           <button type="button" class="ed-social-share-btn share-copy" id="share-article-btn" aria-label="Copy article link to clipboard" title="Copy article link">
             <i class="fas fa-link"></i> <span id="copy-btn-text">Copy Link</span>
           </button>
@@ -1222,9 +1218,6 @@
         if (twLink) twLink.href = `https://twitter.com/intent/tweet?text=${curTitle}&url=${curUrl}`;
         const fbLink = document.getElementById("share-facebook-link");
         if (fbLink) fbLink.href = `https://www.facebook.com/sharer/sharer.php?u=${curUrl}`;
-        const waLink = document.getElementById("share-whatsapp-link");
-        if (waLink) waLink.href = `https://api.whatsapp.com/send?text=${curTitle}%20${curUrl}`;
-
         // Clipy Copy Link button
         const shareBtn = document.getElementById("share-article-btn");
         const copyText = document.getElementById("copy-btn-text");

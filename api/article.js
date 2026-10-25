@@ -107,6 +107,11 @@ body.ed-article-page {
   line-height: 1.7;
 }
 
+/* ── Prevent Floating Social from clipping across article text ── */
+.floating-social {
+  display: none !important;
+}
+
 /* ── Pre-rendered Site Header ── */
 .site-header {
   background: #0D0D0D;
@@ -144,24 +149,6 @@ body.ed-article-page {
   }
   .primary-nav.open { display: flex; }
 }
-
-/* ── Floating Social ── */
-.floating-social {
-  position: fixed; left: 0; top: 50%; transform: translateY(-50%);
-  display: flex; flex-direction: column; z-index: 100;
-}
-.floating-social a {
-  display: flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px;
-  font-size: 0.9rem; color: #FFFFFF; text-decoration: none;
-  transition: transform 0.2s, background 0.2s;
-}
-.floating-social a:hover { transform: translateX(4px); }
-.fs-linkedin { background: #0077B5; }
-.fs-twitter  { background: #000000; }
-.fs-instagram { background: #E1306C; }
-.fs-facebook  { background: #1877F2; }
-@media (max-width: 768px) { .floating-social { display: none; } }
 
 /* ── Sticky Breadcrumb Nav ── */
 .mag-breadcrumb-nav {
@@ -277,14 +264,29 @@ body.ed-article-page {
 }
 .ed-byline-info strong { font-size: 0.95rem; color: #0D0D0D; display: block; margin-bottom: 3px; }
 .ed-byline-info span   { font-size: 0.8rem; color: #767676; display: block; }
-.ed-share-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 9px 18px; font-size: 0.82rem; font-weight: 600;
-  background: transparent; color: #0D0D0D;
-  border: 1.5px solid #D8D3C9; border-radius: 3px; cursor: pointer;
-  transition: all 0.2s;
+
+.ed-byline-share-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0D0D0D !important;
+  background: #FAF8F5;
+  border: 1px solid #D8D3C9;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
-.ed-share-btn:hover { background: #B5892A; color: #FFF; border-color: #B5892A; }
+.ed-byline-share-pill:hover {
+  background: #B5892A;
+  color: #0D0D0D !important;
+  border-color: #B5892A;
+}
 
 /* ── Article Typography & Content ── */
 .ed-article-body { color: #1A1A1A !important; font-size: 1.08rem !important; line-height: 1.9 !important; }
@@ -388,63 +390,110 @@ body.ed-article-page {
 }
 .ed-quote-card {
   background: #FFFFFF !important;
-  border-left: 3px solid #B5892A !important;
-  border-radius: 3px;
-  padding: 18px 20px !important;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  border: 1px solid #E4DED4 !important;
+  border-left: 4px solid #B5892A !important;
+  border-radius: 4px !important;
+  padding: 22px 24px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
 }
-.ed-quote-card p {
+.ed-quote-card p,
+.ed-article-body .ed-quote-card p {
   font-family: 'Playfair Display', Georgia, serif !important;
-  font-style: italic !important; font-weight: 600 !important;
-  font-size: 0.95rem !important; color: #0D0D0D !important;
-  line-height: 1.6 !important; margin: 0 !important;
+  font-style: italic !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+  color: #0D0D0D !important;
+  line-height: 1.65 !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
-.ed-quote-card.highlight {
-  border-left-color: #0D0D0D !important;
-  background: #0D0D0D !important;
-}
-.ed-quote-card.highlight p { color: #FFFFFF !important; }
 
-/* Leader Dossier Card */
+/* ── Quote Card Highlight: 100% Crisp Visible Luxury Design ── */
+.ed-article-quotes-showcase .ed-quote-card.highlight,
+.ed-quote-card.highlight {
+  border: 2px solid #B5892A !important;
+  border-left: 6px solid #B5892A !important;
+  background: #FFFDF8 !important;
+  box-shadow: 0 4px 18px rgba(181, 137, 42, 0.16) !important;
+  grid-column: 1 / -1 !important;
+}
+.ed-article-quotes-showcase .ed-quote-card.highlight p,
+.ed-quote-card.highlight p,
+.ed-article-body .ed-quote-card.highlight p {
+  color: #0D0D0D !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ── Hide Leader Dossier Card (Show Article Like Standard Editorial Articles) ── */
 .ed-leader-dossier-card {
-  background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%) !important;
-  border: 1px solid #B5892A !important;
-  border-radius: 4px;
-  padding: 32px 28px !important;
-  margin: 2.8em 0 !important;
+  display: none !important;
+}
+
+/* ── Dedicated Article Share & Clipy (Copy Link) Section ── */
+.ed-article-share-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  background: #FAF8F5 !important;
+  border: 1px solid #E8E3DA !important;
+  border-left: 4px solid #B5892A !important;
+  border-radius: 4px !important;
+  padding: 18px 24px !important;
+  margin: 40px 0 24px 0 !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.03) !important;
+}
+.ed-share-label {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: #0D0D0D !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.ed-share-label i {
+  color: #B5892A !important;
+}
+.ed-share-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+.ed-social-share-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 8px 14px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  border-radius: 3px !important;
+  text-decoration: none !important;
   color: #FFFFFF !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: transform 0.15s ease, opacity 0.2s ease !important;
 }
-.ed-dossier-header {
-  display: flex; align-items: center; gap: 20px; margin-bottom: 24px;
+.ed-social-share-btn:hover {
+  transform: translateY(-2px) !important;
+  opacity: 0.92 !important;
 }
-.ed-dossier-avatar {
-  width: 62px; height: 62px; background: rgba(181,137,42,0.2);
-  border: 2px solid #B5892A; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem; color: #B5892A; flex-shrink: 0;
-}
-.ed-dossier-header h4 {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 1.25rem !important; color: #FFFFFF !important; margin-bottom: 4px !important;
-}
-.ed-dossier-role {
-  font-size: 0.85rem; color: #B5892A; font-weight: 600; display: block;
-}
-.ed-dossier-loc {
-  font-size: 0.78rem; color: rgba(255,255,255,0.65);
-  display: flex; align-items: center; gap: 6px; margin-top: 4px;
-}
-.ed-dossier-body {
-  display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 22px;
-}
-.ed-dossier-stat { text-align: center; flex: 1; min-width: 90px; }
-.stat-num {
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-size: 1.6rem !important; font-weight: 700 !important; color: #B5892A !important; display: block;
-}
-.stat-lbl { font-size: 0.74rem; color: rgba(255,255,255,0.7); font-weight: 600; }
-.ed-dossier-mantra { color: rgba(255,255,255,0.85); font-size: 0.92rem; line-height: 1.6; }
-.ed-dossier-mantra strong { color: #FFFFFF; }
+.ed-social-share-btn.share-linkedin { background: #0A66C2 !important; }
+.ed-social-share-btn.share-twitter  { background: #000000 !important; }
+.ed-social-share-btn.share-facebook { background: #1877F2 !important; }
+.ed-social-share-btn.share-whatsapp { background: #25D366 !important; }
+.ed-social-share-btn.share-copy     { background: #B5892A !important; color: #0D0D0D !important; }
 
 /* FAQ Section */
 .ed-article-faq {
@@ -613,35 +662,6 @@ function renderArticlePage(article, allArticles) {
               <p>&ldquo;${escapeHtml(q)}&rdquo;</p>
             </div>
           `).join('')}
-        </div>
-      </div>
-    `;
-  }
-
-  // Optional: Leader Dossier if present and not yet in body
-  let dossierHtml = '';
-  if (article.leader && article.leaderRole && !content.includes('ed-leader-dossier-card')) {
-    dossierHtml = `
-      <div class="ed-leader-dossier-card">
-        <div class="ed-dossier-header">
-          <div class="ed-dossier-avatar">
-            <i class="fas fa-user-tie"></i>
-          </div>
-          <div>
-            <h4>${escapeHtml(article.leader)}</h4>
-            <span class="ed-dossier-role">${escapeHtml(article.leaderRole)}</span>
-            ${article.location ? `<span class="ed-dossier-loc"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(article.location)}</span>` : ''}
-          </div>
-        </div>
-        <div class="ed-dossier-body">
-          <div class="ed-dossier-stat">
-            <span class="stat-num">${escapeHtml(article.readingTime || '6 min')}</span>
-            <span class="stat-lbl">Read Time</span>
-          </div>
-          <div class="ed-dossier-stat">
-            <span class="stat-num">${escapeHtml(article.category || 'Executive')}</span>
-            <span class="stat-lbl">Focus Area</span>
-          </div>
         </div>
       </div>
     `;
@@ -861,14 +881,6 @@ ${ARTICLE_CSS}
     </div>
   </header>
 
-  <!-- ═══ FLOATING SOCIAL ═══ -->
-  <div class="floating-social" aria-label="Follow us on social media">
-    <a href="https://www.linkedin.com/company/the-empire-insights/" target="_blank" rel="noopener" aria-label="LinkedIn" class="fs-linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://x.com/The_45Empire?t=alzRMjF1ebX5L0gDwQSacA&s=09" target="_blank" rel="noopener" aria-label="X / Twitter" class="fs-twitter" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-    <a href="https://www.instagram.com/the_empire_insights?igsh=dm8wYzdoZng4M3Zr" target="_blank" rel="noopener" aria-label="Instagram" class="fs-instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/the_empire_insights" target="_blank" rel="noopener" aria-label="Facebook" class="fs-facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-  </div>
-
   <!-- ═══ BREADCRUMB (Pre-rendered) ═══ -->
   <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
     <div class="mag-breadcrumb-container">
@@ -915,16 +927,16 @@ ${ARTICLE_CSS}
         </span>
       </div>
 
-      <!-- Byline & Share Bar -->
+      <!-- Byline & Quick Share Bar -->
       <div class="ed-article-byline-bar">
         <div class="ed-byline-info">
           <strong>${escapeHtml(article.author || 'The Empire Insight Editorial Board')}</strong>
           <span>${bylineText}</span>
         </div>
         <div class="ed-byline-share">
-          <button class="ed-share-btn" id="share-article-btn" aria-label="Share this article" title="Share article">
-            <i class="fas fa-share-alt" aria-hidden="true"></i> Share Article
-          </button>
+          <a href="#article-share-section" class="ed-byline-share-pill" title="Jump to share options">
+            <i class="fas fa-share-nodes"></i> Share Story
+          </a>
         </div>
       </div>
 
@@ -940,8 +952,27 @@ ${ARTICLE_CSS}
       <!-- Optional dynamic quotes showcase -->
       ${quotesHtml}
 
-      <!-- Optional dynamic leader dossier -->
-      ${dossierHtml}
+      <!-- ═══ ARTICLE SOCIAL SHARE & CLIPY (COPY LINK) SECTION ═══ -->
+      <div class="ed-article-share-bar" id="article-share-section" aria-label="Share this story">
+        <span class="ed-share-label"><i class="fas fa-share-nodes"></i> Share this Story:</span>
+        <div class="ed-share-links">
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-linkedin" title="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-twitter" title="Share on X / Twitter">
+            <i class="fab fa-x-twitter"></i> X / Twitter
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-facebook" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' ' + canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-whatsapp" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <button type="button" class="ed-social-share-btn share-copy" id="share-article-btn" aria-label="Copy article link to clipboard" title="Copy article link">
+            <i class="fas fa-link"></i> <span id="copy-btn-text">Copy Link</span>
+          </button>
+        </div>
+      </div>
 
       <!-- FAQ Section for Search Snippets -->
       ${faqHtml}
@@ -986,7 +1017,7 @@ ${ARTICLE_CSS}
     </p>
   </footer>
 
-  <!-- ═══ MINIMAL CLIENT-SIDE INTERACTIONS (Share & Mobile Toggle) ═══ -->
+  <!-- ═══ CLIENT-SIDE INTERACTIONS (Mobile Toggle & Clipy Copy Link) ═══ -->
   <script>
     (function() {
       // Mobile menu toggle
@@ -1004,24 +1035,29 @@ ${ARTICLE_CSS}
         });
       }
 
-      // Share button
-      var shareBtn = document.getElementById('share-article-btn');
-      if (shareBtn) {
-        shareBtn.addEventListener('click', function() {
-          if (navigator.share) {
-            navigator.share({
-              title: ${JSON.stringify(article.title)},
-              text: ${JSON.stringify(metaDesc)},
-              url: window.location.href
-            }).catch(function(){});
-          } else {
-            navigator.clipboard.writeText(window.location.href)
-              .then(function() {
-                var orig = shareBtn.innerHTML;
-                shareBtn.innerHTML = '<i class="fas fa-check" style="color:#B5892A"></i> Link Copied!';
-                setTimeout(function() { shareBtn.innerHTML = orig; }, 2000);
-              }).catch(function(){});
-          }
+      // Clipy (Copy link to clipboard) button with live visual feedback
+      var copyBtn = document.getElementById('share-article-btn');
+      var copyText = document.getElementById('copy-btn-text');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          navigator.clipboard.writeText(window.location.href)
+            .then(function() {
+              if (copyText) copyText.textContent = 'Link Copied!';
+              copyBtn.style.background = '#25D366';
+              copyBtn.style.color = '#FFFFFF';
+              setTimeout(function() {
+                if (copyText) copyText.textContent = 'Copy Link';
+                copyBtn.style.background = '#B5892A';
+                copyBtn.style.color = '#0D0D0D';
+              }, 2200);
+            }).catch(function() {
+              if (navigator.share) {
+                navigator.share({
+                  title: document.title,
+                  url: window.location.href
+                }).catch(function(){});
+              }
+            });
         });
       }
     })();

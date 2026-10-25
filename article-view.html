@@ -607,14 +607,95 @@
       font-weight: 700 !important;
     }
 
-    /* Executive Dossier Card */
+    /* Executive Dossier Card: Hidden as requested */
     .ed-leader-dossier-card {
-      background: #FFFFFF !important;
-      border: 2px solid #B5892A !important;
-      border-radius: 8px !important;
-      padding: 32px !important;
-      margin: 44px 0 20px 0 !important;
-      box-shadow: 0 10px 30px rgba(181, 137, 42, 0.08) !important;
+      display: none !important;
+    }
+
+    /* Prevent Floating Social from clipping across article text */
+    .floating-social {
+      display: none !important;
+    }
+
+    /* Dedicated Article Share & Clipy (Copy Link) Section */
+    .ed-article-share-bar {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px !important;
+      flex-wrap: wrap !important;
+      background: #FAF8F5 !important;
+      border: 1px solid #E8E3DA !important;
+      border-left: 4px solid #B5892A !important;
+      border-radius: 4px !important;
+      padding: 18px 24px !important;
+      margin: 40px 0 24px 0 !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03) !important;
+    }
+    .ed-share-label {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      color: #0D0D0D !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+    .ed-share-label i {
+      color: #B5892A !important;
+    }
+    .ed-share-links {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      flex-wrap: wrap !important;
+    }
+    .ed-social-share-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 7px !important;
+      padding: 8px 14px !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.78rem !important;
+      font-weight: 600 !important;
+      border-radius: 3px !important;
+      text-decoration: none !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: transform 0.15s ease, opacity 0.2s ease !important;
+    }
+    .ed-social-share-btn:hover {
+      transform: translateY(-2px) !important;
+      opacity: 0.92 !important;
+    }
+    .ed-social-share-btn.share-linkedin { background: #0A66C2 !important; }
+    .ed-social-share-btn.share-twitter  { background: #000000 !important; }
+    .ed-social-share-btn.share-facebook { background: #1877F2 !important; }
+    .ed-social-share-btn.share-whatsapp { background: #25D366 !important; }
+    .ed-social-share-btn.share-copy     { background: #B5892A !important; color: #0D0D0D !important; }
+
+    .ed-byline-share-pill {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 8px 16px !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+      color: #0D0D0D !important;
+      background: #FAF8F5 !important;
+      border: 1px solid #D8D3C9 !important;
+      border-radius: 3px !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+    .ed-byline-share-pill:hover {
+      background: #B5892A !important;
+      color: #0D0D0D !important;
+      border-color: #B5892A !important;
     }
 
     .ed-dossier-header h4 {
@@ -711,9 +792,9 @@
           <span id="article-byline-details">October 14, 2026 &bull; Spotlight: Alejandro Calle (Founder &amp; CEO, Tech In A Tux) &bull; Technology &amp; Entrepreneurship</span>
         </div>
         <div class="ed-byline-share">
-          <button class="ed-share-btn" id="share-article-btn" title="Share article">
-            <i class="fas fa-share-alt"></i> Share Article
-          </button>
+          <a href="#article-share-section" class="ed-byline-share-pill" title="Jump to share options">
+            <i class="fas fa-share-nodes"></i> Share Story
+          </a>
         </div>
       </div>
 
@@ -867,6 +948,28 @@
     </div>
   
       </article>
+
+      <!-- ═══ ARTICLE SOCIAL SHARE & CLIPY (COPY LINK) SECTION ═══ -->
+      <div class="ed-article-share-bar" id="article-share-section" aria-label="Share this story">
+        <span class="ed-share-label"><i class="fas fa-share-nodes"></i> Share this Story:</span>
+        <div class="ed-share-links">
+          <a href="#" id="share-linkedin-link" target="_blank" rel="noopener" class="ed-social-share-btn share-linkedin" title="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          <a href="#" id="share-twitter-link" target="_blank" rel="noopener" class="ed-social-share-btn share-twitter" title="Share on X / Twitter">
+            <i class="fab fa-x-twitter"></i> X / Twitter
+          </a>
+          <a href="#" id="share-facebook-link" target="_blank" rel="noopener" class="ed-social-share-btn share-facebook" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="#" id="share-whatsapp-link" target="_blank" rel="noopener" class="ed-social-share-btn share-whatsapp" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <button type="button" class="ed-social-share-btn share-copy" id="share-article-btn" aria-label="Copy article link to clipboard" title="Copy article link">
+            <i class="fas fa-link"></i> <span id="copy-btn-text">Copy Link</span>
+          </button>
+        </div>
+      </div>
 
       <div class="ed-article-nav-bottom">
         <a href="article" class="btn-ghost-ed">&larr; Back to All Stories</a>
@@ -1110,23 +1213,41 @@
           latestContainer.appendChild(item);
         });
 
-        // Share button
+        // Update Social Share URLs & Clipy Copy Link
+        const curUrl = encodeURIComponent(window.location.href);
+        const curTitle = encodeURIComponent(article.title || document.title);
+        const liLink = document.getElementById("share-linkedin-link");
+        if (liLink) liLink.href = `https://www.linkedin.com/sharing/share-offsite/?url=${curUrl}`;
+        const twLink = document.getElementById("share-twitter-link");
+        if (twLink) twLink.href = `https://twitter.com/intent/tweet?text=${curTitle}&url=${curUrl}`;
+        const fbLink = document.getElementById("share-facebook-link");
+        if (fbLink) fbLink.href = `https://www.facebook.com/sharer/sharer.php?u=${curUrl}`;
+        const waLink = document.getElementById("share-whatsapp-link");
+        if (waLink) waLink.href = `https://api.whatsapp.com/send?text=${curTitle}%20${curUrl}`;
+
+        // Clipy Copy Link button
         const shareBtn = document.getElementById("share-article-btn");
+        const copyText = document.getElementById("copy-btn-text");
         if (shareBtn) {
           shareBtn.addEventListener("click", () => {
-            if (navigator.share) {
-              navigator.share({
-                title: article.title,
-                text: article.subtitle || article.excerpt,
-                url: window.location.href
-              }).catch(() => {});
-            } else {
-              navigator.clipboard.writeText(window.location.href).then(() => {
-                const orig = shareBtn.innerHTML;
-                shareBtn.innerHTML = '<i class="fas fa-check" style="color:#B5892A"></i> Copied!';
-                setTimeout(() => { shareBtn.innerHTML = orig; }, 2000);
-              }).catch(() => {});
-            }
+            navigator.clipboard.writeText(window.location.href).then(() => {
+              if (copyText) copyText.textContent = "Link Copied!";
+              shareBtn.style.background = "#25D366";
+              shareBtn.style.color = "#FFFFFF";
+              setTimeout(() => {
+                if (copyText) copyText.textContent = "Copy Link";
+                shareBtn.style.background = "#B5892A";
+                shareBtn.style.color = "#0D0D0D";
+              }, 2200);
+            }).catch(() => {
+              if (navigator.share) {
+                navigator.share({
+                  title: article.title,
+                  text: article.subtitle || article.excerpt,
+                  url: window.location.href
+                }).catch(() => {});
+              }
+            });
           });
         }
       })

@@ -4,7 +4,11 @@
   "rewrites": [
     {
       "source": "/article/:slug",
-      "destination": "/article-view?slug=:slug"
+      "destination": "/api/article?slug=:slug"
+    },
+    {
+      "source": "/articles/:slug",
+      "destination": "/api/article?slug=:slug"
     },
     {
       "source": "/magazine/business-woman-2026/read",

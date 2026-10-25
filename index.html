@@ -219,10 +219,61 @@
         <a href="magazine.html" class="ed-section-link">Full Archive &rarr;</a>
       </div>
       <div class="ed-editions-grid" id="editions-grid">
-        <!-- Populated by JS from magazines.json -->
-        <div style="grid-column:1/-1;text-align:center;padding:40px;color:#999;font-family:var(--sans);font-size:0.85rem;">
-          Loading editions&hellip;
-        </div>
+        <a href="magazine-preview.html?id=alejandro-calle-october-2026" class="ed-edition-card" aria-label="Read The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026">
+          <div class="ed-edition-cover-wrap">
+            <img class="ed-edition-cover" src="images/Magazine-cover/cover-2026-alejandro-calle.jpg" alt="The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026 Cover" loading="lazy" />
+            <div class="ed-edition-overlay"></div>
+            <span class="ed-edition-badge">Published</span>
+            <span class="ed-edition-vol">Vol. 01 &middot; October Edition 2026</span>
+          </div>
+          <span class="ed-edition-cat">Technology &amp; AI</span>
+          <p class="ed-edition-title">The Visionary Tech Entrepreneur</p>
+          <span class="ed-edition-date">October 2026</span>
+        </a>
+        <a href="magazine-preview.html?id=eman-al-mannai-october-2026" class="ed-edition-card" aria-label="Read The Most Inspiring Female Personality to Watch in 2026: Eman Mohammed Al Mannai">
+          <div class="ed-edition-cover-wrap">
+            <img class="ed-edition-cover" src="images/Magazine-cover/cover-2026-eman-al-mannai.jpg" alt="The Most Inspiring Female Personality to Watch in 2026: Eman Mohammed Al Mannai Cover" loading="lazy" />
+            <div class="ed-edition-overlay"></div>
+            <span class="ed-edition-badge">Published</span>
+            <span class="ed-edition-vol">Vol. 01 &middot; October Edition 2026</span>
+          </div>
+          <span class="ed-edition-cat">Women in Leadership</span>
+          <p class="ed-edition-title">The Most Inspiring Female Personality</p>
+          <span class="ed-edition-date">October 2026</span>
+        </a>
+        <a href="magazine-preview.html?id=business-woman-2026" class="ed-edition-card" aria-label="Read Business Woman of the Year: Inspiring Women Shaping a Stronger Tomorrow">
+          <div class="ed-edition-cover-wrap">
+            <img class="ed-edition-cover" src="images/Magazine-cover/cover-2026-business-woman.jpg" alt="Business Woman of the Year: Inspiring Women Shaping a Stronger Tomorrow Cover" loading="lazy" />
+            <div class="ed-edition-overlay"></div>
+            <span class="ed-edition-badge">Published</span>
+            <span class="ed-edition-vol">Vol. 01 &middot; Special Edition 2026</span>
+          </div>
+          <span class="ed-edition-cat">Leadership &amp; Business</span>
+          <p class="ed-edition-title">Business Woman of the Year</p>
+          <span class="ed-edition-date">Annual Edition 2026</span>
+        </a>
+        <a href="magazine-preview.html?id=marketing-leaders-2026" class="ed-edition-card" aria-label="Read The Most Influential Marketing Leaders Shaping 2026">
+          <div class="ed-edition-cover-wrap">
+            <img class="ed-edition-cover" src="images/Magazine-cover/cover-2026-marketing-leaders.jpg" alt="The Most Influential Marketing Leaders Shaping 2026 Cover" loading="lazy" />
+            <div class="ed-edition-overlay"></div>
+            <span class="ed-edition-badge">Published</span>
+            <span class="ed-edition-vol">Vol. 01 &middot; Spring Edition 2026</span>
+          </div>
+          <span class="ed-edition-cat">Workplace &amp; Culture</span>
+          <p class="ed-edition-title">Marketing Leaders 2026</p>
+          <span class="ed-edition-date">Spring Edition 2026</span>
+        </a>
+        <a href="magazine-preview.html?id=tech-leaders-2026" class="ed-edition-card" aria-label="Read Tech Leaders to Watch in 2026: Innovation, People &amp; Impact">
+          <div class="ed-edition-cover-wrap">
+            <img class="ed-edition-cover" src="images/Magazine-cover/cover-2026-tech-leaders.jpg" alt="Tech Leaders to Watch in 2026: Innovation, People &amp; Impact Cover" loading="lazy" />
+            <div class="ed-edition-overlay"></div>
+            <span class="ed-edition-badge">Published</span>
+            <span class="ed-edition-vol">Vol. 01 &middot; Tech Frontier 2026</span>
+          </div>
+          <span class="ed-edition-cat">Technology &amp; AI</span>
+          <p class="ed-edition-title">Tech Leaders 2026</p>
+          <span class="ed-edition-date">Tech Frontier 2026</span>
+        </a>
       </div>
     </div>
   </section>
@@ -368,7 +419,7 @@
           card.setAttribute('aria-label', 'Read ' + m.title);
           card.innerHTML =
             '<div class="ed-edition-cover-wrap">' +
-              '<img class="ed-edition-cover" src="' + m.cover + '" alt="' + m.title + ' Cover" loading="lazy" />' +
+              '<img class="ed-edition-cover" src="' + (m.cover ? m.cover.replace(/^(\.\.\/)+/, "") : "") + '" alt="' + m.title + ' Cover" loading="lazy" />' +
               '<div class="ed-edition-overlay"></div>' +
               '<span class="ed-edition-badge">' + (m.status || 'Published') + '</span>' +
               '<span class="ed-edition-vol">' + m.volume + ' &middot; ' + m.issue + '</span>' +

@@ -95,6 +95,10 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
+.arc-hero__cta {
+  margin-top: 28px;
+}
+
 .arc-hero__stats {
   display: flex;
   flex-wrap: wrap;
@@ -235,6 +239,7 @@
   max-width: 1180px;
   margin: 0 auto;
   padding: 56px 24px 90px;
+  scroll-margin-top: 92px;
 }
 
 .arc-library__head {
@@ -598,6 +603,7 @@
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .arc-grid > li { animation: none; opacity: 1; }
   .arc-card__cover, .arc-card__cover img, .arc-card__peek,
   .arc-spotlight__cover, .arc-btn, .arc-search,

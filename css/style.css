@@ -6282,7 +6282,7 @@ footer.footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   text-decoration: none !important;
   position: relative;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-insight-item:first-child {
@@ -6345,6 +6345,10 @@ footer.footer {
   color: #B5892A;
 }
 
+.footer-insight-item:hover {
+  transform: translateX(4px);
+}
+
 .footer-insight-item:hover .footer-insight-arrow {
   color: #B5892A;
   transform: translateY(-50%) translateX(4px);
@@ -6389,6 +6393,16 @@ footer.footer {
 
 .footer-nav-list li a:hover i {
   color: #D4A63F;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-insight-item,
+  .footer-insight-title,
+  .footer-insight-arrow,
+  .footer-nav-list li a,
+  .footer-nav-list li a i {
+    transition: none;
+  }
 }
 
 .footer-issn-box {

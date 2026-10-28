@@ -104,9 +104,33 @@ function loadLatestFooterMagazines() {
       if (!Array.isArray(data) || data.length === 0) return;
       list.innerHTML = "";
       data.filter(m => m.visible !== false).slice(0, 4).forEach(mag => {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="/magazine/${encodeURIComponent(mag.id)}"><i class="fas fa-chevron-right"></i> ${mag.title || mag.id}</a>`;
-        list.appendChild(li);
+        const link = document.createElement("a");
+        link.className = "footer-insight-item";
+        link.href = `/magazine/${encodeURIComponent(mag.id)}/read`;
+        link.setAttribute("aria-label", `Read ${mag.title || mag.id}`);
+
+        const meta = document.createElement("span");
+        meta.className = "footer-insight-meta";
+
+        const tag = document.createElement("span");
+        tag.className = "footer-insight-tag";
+        tag.textContent = mag.category || "Featured";
+
+        const time = document.createElement("span");
+        time.className = "footer-insight-time";
+        time.textContent = mag.edition || mag.issue || "";
+
+        const title = document.createElement("span");
+        title.className = "footer-insight-title";
+        title.textContent = mag.shortTitle || mag.title || mag.id;
+
+        const arrow = document.createElement("i");
+        arrow.className = "fas fa-arrow-right footer-insight-arrow";
+        arrow.setAttribute("aria-hidden", "true");
+
+        meta.append(tag, time);
+        link.append(meta, title, arrow);
+        list.appendChild(link);
       });
     })
     .catch(() => {});

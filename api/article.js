@@ -46,11 +46,23 @@ function loadArticles() {
         return cachedArticles;
       } catch (err) {
         console.error(`Error loading articles from ${p}:`, err);
+        cachedArticles = null;
+        lastLoadTime = 0;
       }
     }
   }
 
   return cachedArticles || [];
+}
+
+function normalizeArticleSlug(rawSlug) {
+  if (!rawSlug) return '';
+  return decodeURIComponent(String(rawSlug))
+    .trim()
+    .replace(/\/+$/g, '')
+    .replace(/^\/+/, '')
+    .replace(/\.html$/i, '')
+    .toLowerCase();
 }
 
 // ── Sanitization & Helpers ──────────────────────────────────────────────────
@@ -1116,14 +1128,15 @@ module.exports = function handler(req, res) {
       return res.end();
     }
 
-    const target = decodeURIComponent(slug).toLowerCase().trim().replace(/\.html$/i, '');
+    const target = normalizeArticleSlug(slug);
     const articles = loadArticles();
-    const visibleArticles = articles.filter(a => a.visible !== false);
+    const visibleArticles = Array.isArray(articles) ? articles.filter(a => a.visible !== false) : [];
 
-    const article = visibleArticles.find(a =>
-      (a.slug && a.slug.toLowerCase().trim() === target) ||
-      (a.id && a.id.toString().toLowerCase().trim() === target)
-    );
+    const article = visibleArticles.find(a => {
+      const slugMatch = a.slug && normalizeArticleSlug(a.slug) === target;
+      const idMatch = a.id && normalizeArticleSlug(String(a.id)) === target;
+      return slugMatch || idMatch;
+    });
 
     if (!article) {
       res.statusCode = 404;

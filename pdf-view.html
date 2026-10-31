@@ -853,9 +853,6 @@
         <button type="button" class="ctrl-btn ctrl-btn-icon" id="btn-fullscreen" title="Toggle fullscreen" aria-label="Toggle fullscreen">
           <i class="fas fa-expand" id="fullscreen-icon" aria-hidden="true"></i>
         </button>
-        <a class="ctrl-btn ctrl-btn-icon" id="btn-download" href="#" download title="Download raw PDF" aria-label="Download raw PDF" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-download" aria-hidden="true"></i>
-        </a>
       </div>
     </header>
 
@@ -992,7 +989,6 @@
       const soundIcon      = $('sound-icon');
       const btnFullscreen  = $('btn-fullscreen');
       const fullscreenIcon = $('fullscreen-icon');
-      const btnDownload    = $('btn-download');
       const btnZoomIn      = $('btn-zoom-in');
       const btnZoomOut     = $('btn-zoom-out');
       const btnThumbsToggle= $('btn-thumbs-toggle');
@@ -1696,8 +1692,6 @@
             throw new Error('No PDF file associated with this edition.');
           }
 
-          btnDownload.href = pdfParam;
-
           // Load PDF Document via PDF.js
           const loadingTask = pdfjsLib.getDocument({
             url: pdfParam,
@@ -1740,6 +1734,7 @@
       // Book panel clicks
       panelLeft.addEventListener('click', goPrev);
       panelRight.addEventListener('click', goNext);
+      bookEl.addEventListener('contextmenu', (e) => e.preventDefault());
 
       // Scrubber slider
       pageScrubber.addEventListener('input', (e) => {

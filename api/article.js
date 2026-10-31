@@ -7,7 +7,7 @@
  * 
  * - Zero static file generation needed when adding articles to articles.json
  * - Instant Wave 1 Google / Bing indexing
- * - Perfect Open Graph & Twitter Cards for social platforms (LinkedIn, X, FB)
+ * - Perfect Open Graph & Twitter Cards for social platforms (WhatsApp, LinkedIn, X, FB)
  * - Full Schema.org JSON-LD (Article, Breadcrumbs, FAQPage)
  * - Vercel Edge cached for sub-30ms global response time
  */
@@ -46,23 +46,11 @@ function loadArticles() {
         return cachedArticles;
       } catch (err) {
         console.error(`Error loading articles from ${p}:`, err);
-        cachedArticles = null;
-        lastLoadTime = 0;
       }
     }
   }
 
   return cachedArticles || [];
-}
-
-function normalizeArticleSlug(rawSlug) {
-  if (!rawSlug) return '';
-  return decodeURIComponent(String(rawSlug))
-    .trim()
-    .replace(/\/+$/g, '')
-    .replace(/^\/+/, '')
-    .replace(/\.html$/i, '')
-    .toLowerCase();
 }
 
 // ── Sanitization & Helpers ──────────────────────────────────────────────────
@@ -125,52 +113,19 @@ body.ed-article-page {
   display: none !important;
 }
 
-/* ── Pre-rendered Site Header ── */
-.site-header {
-  background: #0D0D0D;
-  border-bottom: 1px solid rgba(181,137,42,0.3);
-  position: sticky; top: 0; z-index: 200;
-}
-.header-main-inner {
-  max-width: 1260px; margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
-}
-.nav-logo-img { height: 42px; width: auto; }
-.primary-nav { display: flex; align-items: center; gap: 28px; }
-.primary-nav a {
-  color: rgba(255,255,255,0.85); text-decoration: none;
-  font-size: 0.88rem; font-weight: 500; letter-spacing: 0.3px;
-  transition: color 0.2s;
-}
-.primary-nav a:hover, .primary-nav a.active { color: #B5892A; }
-.nav-subscribe {
-  background: #B5892A; color: #FFFFFF !important;
-  padding: 8px 18px; border-radius: 3px;
-}
-.nav-subscribe:hover { background: #9A7320 !important; }
-.nav-toggle-btn {
-  display: none; background: transparent; border: none; color: #FFFFFF;
-  font-size: 1.3rem; cursor: pointer; padding: 8px;
-}
-@media (max-width: 768px) {
-  .nav-toggle-btn { display: block; }
-  .primary-nav {
-    display: none; position: absolute; top: 64px; left: 0; right: 0;
-    background: #0D0D0D; border-bottom: 2px solid #B5892A;
-    flex-direction: column; padding: 20px 24px; gap: 16px; align-items: flex-start;
-  }
-  .primary-nav.open { display: flex; }
-}
-
 /* ── Sticky Breadcrumb Nav ── */
 .mag-breadcrumb-nav {
   background: #FFFFFF !important;
   border-bottom: 1px solid #EBE7DF !important;
   padding: 12px 0;
   position: sticky;
-  top: 64px;
+  top: 76px;
   z-index: 90;
+}
+@media (max-width: 768px) {
+  .mag-breadcrumb-nav {
+    top: 62px;
+  }
 }
 .mag-breadcrumb-container {
   max-width: 1200px;
@@ -505,6 +460,7 @@ body.ed-article-page {
 .ed-social-share-btn.share-linkedin { background: #0A66C2 !important; }
 .ed-social-share-btn.share-twitter  { background: #000000 !important; }
 .ed-social-share-btn.share-facebook { background: #1877F2 !important; }
+.ed-social-share-btn.share-whatsapp { background: #25D366 !important; }
 .ed-social-share-btn.share-copy     { background: #B5892A !important; color: #0D0D0D !important; }
 
 /* FAQ Section */
@@ -878,24 +834,28 @@ ${ARTICLE_CSS}
 <body class="ed-article-page">
 
   <!-- ═══ HEADER (Pre-rendered) ═══ -->
-  <header class="site-header">
-    <div class="header-main-inner">
-      <div class="header-logo">
-        <a href="/" title="The Empire Insight — Home">
-          <img src="/images/logo.png" alt="The Empire Insight" class="nav-logo-img" width="auto" height="42" />
-        </a>
+  <header class="site-header" id="site-header">
+    <div class="header-main">
+      <div class="header-main-inner">
+        <div class="header-logo">
+          <a href="/" title="The Empire Insight">
+            <img src="/images/logo.png" alt="The Empire Insight" class="nav-logo-img" />
+          </a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/magazine">Magazines</a>
+          <a href="/article" ${isBeyond ? '' : 'class="active" aria-current="page"'}>Featured Stories</a>
+          <a href="/beyond-business" ${isBeyond ? 'class="active" aria-current="page"' : ''}>Beyond Business</a>
+          <a href="/about">About</a>
+          <a href="/contact" class="nav-subscribe">Contact</a>
+        </nav>
       </div>
-      <button class="nav-toggle-btn" id="mobile-nav-toggle" aria-label="Toggle navigation menu">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav class="primary-nav" id="main-nav" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/magazine">Magazines</a>
-        <a href="/article" ${isBeyond ? '' : 'class="active" aria-current="page"'}>Featured Stories</a>
-        <a href="/beyond-business" ${isBeyond ? 'class="active" aria-current="page"' : ''}>Beyond Business</a>
-        <a href="/about">About</a>
-        <a href="/contact" class="nav-subscribe">Contact</a>
-      </nav>
     </div>
   </header>
 
@@ -983,6 +943,9 @@ ${ARTICLE_CSS}
           <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-facebook" title="Share on Facebook">
             <i class="fab fa-facebook-f"></i> Facebook
           </a>
+          <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' ' + canonicalUrl)}" target="_blank" rel="noopener" class="ed-social-share-btn share-whatsapp" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
           <button type="button" class="ed-social-share-btn share-copy" id="share-article-btn" aria-label="Copy article link to clipboard" title="Copy article link">
             <i class="fas fa-link"></i> <span id="copy-btn-text">Copy Link</span>
           </button>
@@ -1037,16 +1000,18 @@ ${ARTICLE_CSS}
   <script>
     (function() {
       // Mobile menu toggle
-      var toggleBtn = document.getElementById('mobile-nav-toggle');
-      var navMenu   = document.getElementById('main-nav');
+      var toggleBtn = document.getElementById('nav-toggle');
+      var navMenu   = document.getElementById('primary-nav');
       if (toggleBtn && navMenu) {
         toggleBtn.addEventListener('click', function(e) {
           e.stopPropagation();
-          navMenu.classList.toggle('open');
+          var isOpen = navMenu.classList.toggle('open');
+          toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
         document.addEventListener('click', function(e) {
           if (!toggleBtn.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('open');
+            toggleBtn.setAttribute('aria-expanded', 'false');
           }
         });
       }
@@ -1128,15 +1093,14 @@ module.exports = function handler(req, res) {
       return res.end();
     }
 
-    const target = normalizeArticleSlug(slug);
+    const target = decodeURIComponent(slug).toLowerCase().trim().replace(/\.html$/i, '');
     const articles = loadArticles();
-    const visibleArticles = Array.isArray(articles) ? articles.filter(a => a.visible !== false) : [];
+    const visibleArticles = articles.filter(a => a.visible !== false);
 
-    const article = visibleArticles.find(a => {
-      const slugMatch = a.slug && normalizeArticleSlug(a.slug) === target;
-      const idMatch = a.id && normalizeArticleSlug(String(a.id)) === target;
-      return slugMatch || idMatch;
-    });
+    const article = visibleArticles.find(a =>
+      (a.slug && a.slug.toLowerCase().trim() === target) ||
+      (a.id && a.id.toString().toLowerCase().trim() === target)
+    );
 
     if (!article) {
       res.statusCode = 404;

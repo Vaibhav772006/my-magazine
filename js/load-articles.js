@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function resolveCover(cover) {
-    if (!cover) return "images/article-pdf&cover/article1.jpg";
+    if (!cover) return "images/article-pdf%26cover/article1.jpg";
     if (cover.startsWith("http://") || cover.startsWith("https://") || cover.startsWith("/")) {
-      return cover;
+      return cover.replace(/article-pdf&cover/g, 'article-pdf%26cover');
     }
-    return cover.replace(/^\.\.\//, "");
+    return cover.replace(/^\.\.\//, "").replace(/article-pdf&cover/g, 'article-pdf%26cover');
   }
 
   // Determine target section
@@ -44,10 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
       return aSec === "beyond-business" || aSec === "beyond business" || (!aSec && !article.leader);
     }
     if (sec === "featured-stories") {
-      return aSec === "featured-stories" || aSec === "featured stories" || (!aSec && Boolean(article.leader));
+      return aSec === "featured-stories" || aSec === "featured stories" || Boolean(article.leader);
     }
     return true;
   };
+
+  const basePath = window.location.pathname.startsWith('/magazine') ? '/magazine' : '';
 
   const fetchJson = (p) => fetch(new URL(p, document.baseURI));
   (fetchJson("js/articles.json").then(r => r.ok ? r : Promise.reject()))
@@ -93,8 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ? `<span class="ed-story-leader"><i class="fas fa-user-tie"></i> ${article.leader}</span>`
           : "";
 
+        const articleUrl = `${basePath}/article/${encodeURIComponent(article.slug)}`;
+
         card.innerHTML = `
-          <a href="/article/${encodeURIComponent(article.slug)}" class="ed-story-cover-link" aria-label="Read ${article.title}">
+          <a href="${articleUrl}" class="ed-story-cover-link" aria-label="Read ${article.title}">
             <img src="${coverSrc}" alt="${article.title}" class="ed-story-cover" loading="lazy" onerror="this.onerror=null;this.src='images/assets/bg.jpg';" />
           </a>
           <div class="ed-story-body">
@@ -104,23 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             ${leaderBadge}
             <h3 class="ed-story-title">
-              <a href="/article/${encodeURIComponent(article.slug)}">${article.title}</a>
+              <a href="${articleUrl}">${article.title}</a>
             </h3>
             <p class="ed-story-subtitle">${article.subtitle || article.excerpt || ""}</p>
             <div class="ed-story-footer">
               <span class="ed-story-readtime"><i class="far fa-clock"></i> ${readTime}</span>
-              <a href="/article/${encodeURIComponent(article.slug)}" class="ed-story-link">
+              <a href="${articleUrl}" class="ed-story-link">
                 Read Story &rarr;
               </a>
             </div>
           </div>
         `;
-
         container.appendChild(card);
       });
     })
     .catch(err => {
-      console.error("Error loading articles:", err);
-      container.innerHTML = '<p class="ed-error-text">Articles are temporarily unavailable. Please check back shortly.</p>';
+      console.warn("Articles dynamic render skipped, using pre-rendered fallback:", err);
     });
 });

@@ -10,7 +10,12 @@ DirectoryIndex index.html
   RewriteRule ^article-view\.html$ /article/%2? [R=301,L,NE]
 
   # Article detail pages use the article's stable slug.
-  # Article detail pages: clean route to master article-view template
+  # If a pre-rendered static directory or file exists, serve it directly
+  RewriteCond %{REQUEST_FILENAME} -d [OR]
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Fallback to dynamic article-view template if no static file exists
   RewriteRule ^article/([^/]+)/?$ article-view.html?slug=$1 [L,QSA,NE]
   RewriteRule ^articles/([^/]+)/?$ article-view.html?slug=$1 [L,QSA,NE]
 

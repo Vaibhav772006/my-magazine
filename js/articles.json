@@ -14,10 +14,10 @@
   "publishedDate": "2026-10-28",
   "readingTime": "9 min read",
   "featured": true,
-  "cover": "images/Magazine-cover/cover-2026-phyllis-j-wright.jpg",
+  "cover": "images/article-pdf&cover/phyllis-j-wright-ambition-to-achievement.jpg",
   "gallery": [
-    "images/article-pdf&cover/phyllis-j-wright-power-of-career-coaching.jpg",
-    "images/article-pdf&cover/from-career-ambition-to-achievement.jpeg"
+  "images/Magazine-cover/the-power-of-career-coaching.jpeg",
+  "images/Magazine-cover/from-career-ambition-to-achievement.jpeg"
   ],
   "coverCredit": "Wisdom in Action Coaching / The Empire Insight",
   "coverSourceUrl": "https://www.theempireinsight.com",
@@ -123,9 +123,9 @@
     "publishedDate": "2026-10-28",
     "readingTime": "7 min read",
     "featured": true,
-    "cover": "images/article-pdf&cover/from-career-ambition-to-achievement.jpeg",
+    "cover": "images/Magazine-cover/from-career-ambition-to-achievement.jpeg",
     "gallery": [
-      "images/article-pdf&cover/phyllis-j-wright-power-of-career-coaching.jpg",
+      "images/Magazine-cover/the-power-of-career-coaching.jpeg",
       "images/Magazine-cover/cover-2026-phyllis-j-wright.jpg"
     ],
     "coverCredit": "Wisdom in Action Coaching / The Empire Insight",
@@ -171,7 +171,7 @@
         "type": "article",
         "title": "The Power of Career Coaching in Transforming Professional Potential Into Purpose",
         "description": "Discover how visionary career coach Phyllis J. Wright, PMP, helps executives and professionals unlock their true potential, redefine success, and turn reflection into purposeful action.",
-        "image": "https://www.theempireinsight.com/images/article-pdf&cover/from-career-ambition-to-achievement.jpeg",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/from-career-ambition-to-achievement.jpeg",
         "imageAlt": "Phyllis J. Wright, Founder of Wisdom in Action Coaching",
         "siteName": "The Empire Insight",
         "locale": "en_US",
@@ -183,14 +183,14 @@
         "card": "summary_large_image",
         "title": "The Power of Career Coaching: Phyllis J. Wright | The Empire Insight",
         "description": "Discover how visionary career coach Phyllis J. Wright, PMP, helps executives unlock potential and turn reflection into purposeful action.",
-          "image": "https://www.theempireinsight.com/images/article-pdf&cover/from-career-ambition-to-achievement.jpeg"
+          "image": "https://www.theempireinsight.com/images/Magazine-cover/from-career-ambition-to-achievement.jpeg"
       },
       "structuredData": {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "The Power of Career Coaching in Transforming Professional Potential Into Purpose",
         "description": "Discover how visionary career coach Phyllis J. Wright, PMP, helps executives and professionals unlock their true potential, redefine success, and turn reflection into purposeful action.",
-        "image": "https://www.theempireinsight.com/images/article-pdf&cover/from-career-ambition-to-achievement.jpeg",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/from-career-ambition-to-achievement.jpeg",
         "datePublished": "2026-10-28",
         "dateModified": "2026-10-31",
         "author": {
@@ -225,9 +225,9 @@
     "publishedDate": "2026-10-29",
     "readingTime": "8 min read",
     "featured": false,
-    "cover": "images/article-pdf&cover/the-power-of-career-coaching.jpeg",
+    "cover": "images/Magazine-cover/the-power-of-career-coaching.jpeg",
     "gallery": [
-      "images/article-pdf&cover/the-power-of-career-coaching.jpeg",
+      "images/Magazine-cover/the-power-of-career-coaching.jpeg",
       "images/Magazine-cover/cover-2026-phyllis-j-wright.jpg"
     ],
     "coverCredit": "Wisdom in Action Coaching / The Empire Insight",
@@ -271,7 +271,7 @@
         "type": "article",
         "title": "From Career Ambition to Achievement Through Strategic Coaching and Purposeful Action",
         "description": "Learn how strategic career coaching with Phyllis J. Wright, PMP, translates ambitions into actionable strategies, sustainable habits, and tangible executive success.",
-        "image": "https://www.theempireinsight.com/images/article-pdf&cover/the-power-of-career-coaching.jpeg",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/the-power-of-career-coaching.jpeg",
         "imageAlt": "Phyllis J. Wright, PMP - Strategic Career Coaching",
         "siteName": "The Empire Insight",
         "locale": "en_US",
@@ -283,14 +283,14 @@
         "card": "summary_large_image",
         "title": "From Career Ambition to Achievement: Phyllis J. Wright | The Empire Insight",
         "description": "Learn how strategic career coaching with Phyllis J. Wright, PMP, translates ambitions into actionable strategies and tangible executive success.",
-        "image": "https://www.theempireinsight.com/images/article-pdf&cover/the-power-of-career-coaching.jpeg"
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/the-power-of-career-coaching.jpeg"
       },
       "structuredData": {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "From Career Ambition to Achievement Through Strategic Coaching and Purposeful Action",
         "description": "Learn how strategic career coaching with Phyllis J. Wright, PMP, translates ambitions into actionable strategies, sustainable habits, and tangible executive success.",
-        "image": "https://www.theempireinsight.com/images/article-pdf&cover/the-power-of-career-coaching.jpeg",
+        "image": "https://www.theempireinsight.com/images/Magazine-cover/the-power-of-career-coaching.jpeg",
         "datePublished": "2026-10-29",
         "dateModified": "2026-10-31",
         "author": {
@@ -418,7 +418,7 @@
         "The Empire Insight"
       ]
     },
-    "section": "featured-stories"
+    "section": "beyond-business"
   },
   {
     "id": "elon-musk-flying-car-2026",

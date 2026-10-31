@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return aSec === "beyond-business" || aSec === "beyond business" || (!aSec && !article.leader);
     }
     if (sec === "featured-stories") {
-      return aSec === "featured-stories" || aSec === "featured stories" || Boolean(article.leader);
+      return aSec === "featured-stories" || aSec === "featured stories";
     }
     return true;
   };

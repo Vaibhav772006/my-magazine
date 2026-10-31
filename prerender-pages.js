@@ -88,7 +88,7 @@ function injectNavAndFooter(filePath) {
 }
 
 // ── 3. Pre-render article.html (Featured Stories) ───────────────────────────
-const featuredArticles = articles.filter(a => a.section === 'featured-stories' || Boolean(a.leader));
+const featuredArticles = articles.filter(a => a.section === 'featured-stories');
 const articleHtmlPath = path.join(ROOT, 'article.html');
 let articleHtml = fs.readFileSync(articleHtmlPath, 'utf8');
 
@@ -140,7 +140,7 @@ if (articlesContainerRegex.test(articleHtml)) {
 }
 
 // ── 3b. Pre-render beyond-business.html ───────────────────────────────────────
-const beyondArticles = articles.filter(a => a.section === 'beyond-business' || (!a.leader && a.section !== 'featured-stories'));
+const beyondArticles = articles.filter(a => a.section === 'beyond-business' || (!a.section && !a.leader));
 const beyondHtmlPath = path.join(ROOT, 'beyond-business.html');
 if (fs.existsSync(beyondHtmlPath)) {
   let beyondHtml = fs.readFileSync(beyondHtmlPath, 'utf8');

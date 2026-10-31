@@ -229,7 +229,7 @@
                 <h3 class="arc-card__title" itemprop="name"><a href="/magazine/${id}/read">${title}</a></h3>
                 ${date ? `<p class="arc-card__date">${escapeHtml(date)}</p>` : ''}
                 <div class="arc-card__actions">
-                  <a class="arc-link" href="${pdf ? escapeHtml(pdf) : `/magazine/${id}/read`}" ${pdf ? 'target="_blank" rel="noopener noreferrer"' : ''}>Digital</a>
+                  <a class="arc-link" href="${pdf ? `pdf-view.html?id=${id}` : `/magazine/${id}/read`}" ${pdf ? 'target="_blank" rel="noopener noreferrer"' : ''}>Digital</a>
                   <a class="arc-btn arc-btn--solid arc-btn--sm" href="/magazine/${id}/read">Read Online <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
               </div>

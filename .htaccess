@@ -32,4 +32,5 @@ DirectoryIndex index.html
   RewriteRule ^blog/?$ blog.html [L,QSA]
   RewriteRule ^blog-view/?$ blog-view.html [L,QSA]
   RewriteRule ^splash/?$ splash.html [L,QSA]
+  RewriteRule ^pdf-view/?$ pdf-view.html [L,QSA]
 </IfModule>

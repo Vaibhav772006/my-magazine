@@ -3,6 +3,14 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/pdf-view",
+      "destination": "/pdf-view.html"
+    },
+    {
+      "source": "/pdf-view.html",
+      "destination": "/pdf-view.html"
+    },
+    {
       "source": "/article/:slug",
       "destination": "/api/article?slug=:slug"
     },

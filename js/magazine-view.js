@@ -241,13 +241,19 @@ document.addEventListener("DOMContentLoaded", () => {
       // PDF buttons + cover link
       const pdfUrl = mag.pdfUrl ? resolveMagazineAsset(mag.pdfUrl) : "";
 
+      const pdfViewerUrl = mag.pdfUrl ? `/pdf-view.html?id=${encodeURIComponent(mag.id)}` : "";
+
       const pdfBtn = $("mag-view-pdf-btn");
       if (pdfBtn) {
-        if (pdfUrl) pdfBtn.href = pdfUrl;
-        pdfBtn.hidden = !pdfUrl;
+        if (pdfViewerUrl) {
+          pdfBtn.href = pdfViewerUrl;
+          pdfBtn.target = "_blank";
+          pdfBtn.rel = "noopener noreferrer";
+        }
+        pdfBtn.hidden = !pdfViewerUrl;
       }
 
-      setupCover(mag, pdfUrl);
+      setupCover(mag, pdfViewerUrl);
       setupShare(mag);
       renderFeaturedArticle(mag);
       renderRelatedArticles(mag);

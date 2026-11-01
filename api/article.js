@@ -590,9 +590,8 @@ function renderArticlePage(article, allArticles) {
   const coverAsset = resolveAssetPath(article.cover);
   const cat = article.category || 'Executive Insight';
 
-  const pageTitle = (article.seo && article.seo.metaTitle)
-    ? `${article.seo.metaTitle} | The Empire Insight`
-    : `${article.title} | The Empire Insight`;
+  const rawTitle = (article.seo && article.seo.metaTitle) ? article.seo.metaTitle : article.title;
+  const pageTitle = rawTitle.includes('The Empire Insight') ? rawTitle : `${rawTitle} | The Empire Insight`;
 
   const metaDesc = (article.seo && article.seo.metaDescription)
     ? article.seo.metaDescription

@@ -1,0 +1,20 @@
+{
+  "name": "the-empire-insight",
+  "version": "1.0.0",
+  "description": "The Empire Insight — Global Executive Magazine & Leadership Publishing",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "generate": "node generate-articles.js",
+    "prerender": "node prerender-pages.js",
+    "sitemap": "node update_sitemaps.js"
+  },
+  "keywords": [
+    "magazine",
+    "publishing",
+    "business",
+    "leadership"
+  ],
+  "author": "The Empire Insight Editorial Board",
+  "license": "ISC"
+}

@@ -1,7 +1,7 @@
 /**
  * Centralized Article Loader for The Empire Insight
  * Reads directly from js/articles.json to dynamically render article archives
- * Supports section filtering: "featured-stories" vs "beyond-business"
+ * Supports section filtering: "all", "featured-stories", "beyond-business"
  */
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("articles-container");
@@ -16,11 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function resolveCover(cover) {
-    if (!cover) return "images/article-pdf%26cover/article1.jpg";
-    if (cover.startsWith("http://") || cover.startsWith("https://") || cover.startsWith("/")) {
+    if (!cover) return "/images/article-pdf%26cover/article1.jpg";
+    if (cover.startsWith("http://") || cover.startsWith("https://")) {
       return cover.replace(/article-pdf&cover/g, 'article-pdf%26cover');
     }
-    return cover.replace(/^\.\.\//, "").replace(/article-pdf&cover/g, 'article-pdf%26cover');
+    const clean = cover.replace(/^(\.\.\/)+/, "").replace(/^\//, "").replace(/article-pdf&cover/g, 'article-pdf%26cover');
+    return `/${clean}`;
   }
 
   // Determine target section
@@ -33,26 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (path.includes("beyond-business")) {
       targetSection = "beyond-business";
     } else if (path.includes("article")) {
-      targetSection = "featured-stories";
+      targetSection = "all";
     }
   }
 
   const isMatchingSection = (article, sec) => {
-    if (!sec) return true;
+    if (!sec || sec === "all") return true;
     const aSec = String(article.section || "").toLowerCase().trim();
     if (sec === "beyond-business") {
       return aSec === "beyond-business" || aSec === "beyond business" || (!aSec && !article.leader);
     }
     if (sec === "featured-stories") {
-      return aSec === "featured-stories" || aSec === "featured stories";
+      return aSec === "featured-stories" || aSec === "featured stories" || Boolean(article.leader) || Boolean(article.featured);
     }
     return true;
   };
 
-  const basePath = window.location.pathname.startsWith('/magazine') ? '/magazine' : '';
-
   const fetchJson = (p) => fetch(new URL(p, document.baseURI));
-  (fetchJson("js/articles.json").then(r => r.ok ? r : Promise.reject()))
+  (fetchJson("/js/articles.json").then(r => r.ok ? r : Promise.reject()))
+    .catch(() => fetchJson("js/articles.json"))
     .catch(() => fetchJson("../js/articles.json"))
     .then(res => {
       if (!res.ok) throw new Error("Could not load articles");
@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(data => {
       if (!Array.isArray(data) || data.length === 0) {
-        container.innerHTML = '<p class="ed-empty-text">No articles published yet.</p>';
         return;
       }
 
@@ -75,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (visibleData.length === 0) {
-        container.innerHTML = '<p class="ed-empty-text">No articles found in this section yet.</p>';
         return;
       }
 
@@ -95,11 +93,11 @@ document.addEventListener("DOMContentLoaded", () => {
           ? `<span class="ed-story-leader"><i class="fas fa-user-tie"></i> ${article.leader}</span>`
           : "";
 
-        const articleUrl = `${basePath}/article/${encodeURIComponent(article.slug)}`;
+        const articleUrl = `/article/${encodeURIComponent(article.slug)}`;
 
         card.innerHTML = `
           <a href="${articleUrl}" class="ed-story-cover-link" aria-label="Read ${article.title}">
-            <img src="${coverSrc}" alt="${article.title}" class="ed-story-cover" loading="lazy" onerror="this.onerror=null;this.src='images/assets/bg.jpg';" />
+            <img src="${coverSrc}" alt="${article.title}" class="ed-story-cover" loading="lazy" onerror="this.onerror=null;this.src='/images/article-pdf%26cover/article1.jpg';" />
           </a>
           <div class="ed-story-body">
             <div class="ed-story-meta-row">

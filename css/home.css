@@ -113,8 +113,8 @@ body { padding-top: 110px; }
 .ed-hero-slide-counter { font-family: var(--label); font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; color: var(--muted); margin-left: 6px; white-space: nowrap; }
 
 /* Visual Column & Slides */
-.ed-hero-visual { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; padding: 50px 0 50px 40px; }
-.ed-hero-cover-frame { position: relative; width: 100%; max-width: 360px; }
+.ed-hero-visual { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.ed-hero-cover-frame { position: relative; width: 100%; max-width: 400px; margin: 0 auto; }
 .ed-hero-cover-frame::before { content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 1px solid var(--accent); z-index: 0; pointer-events: none; }
 .ed-hero-slides-wrapper { position: relative; width: 100%; aspect-ratio: 3 / 4; z-index: 1; box-shadow: 20px 24px 60px rgba(0,0,0,0.18); overflow: hidden; background: #0D0D0D; }
 .ed-hero-cover-slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; visibility: hidden; transform: scale(1.03); transition: opacity 0.75s cubic-bezier(0.25, 1, 0.5, 1), transform 0.75s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; }
@@ -176,11 +176,11 @@ body { padding-top: 110px; }
 /* ── EDITIONS ─────────────────────────────────────────────── */
 .ed-editions { padding: var(--section-gap) 0; background: var(--bg-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .ed-editions-wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
-.ed-editions-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
+.ed-editions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; max-width: 1100px; margin: 0 auto; justify-content: center; }
 .ed-edition-card { display: block; transition: transform 0.25s; }
 .ed-edition-card:hover { transform: translateY(-5px); }
 .ed-edition-cover-wrap { position: relative; overflow: hidden; margin-bottom: 16px; aspect-ratio: 3 / 4; background: var(--bg); }
-.ed-edition-cover { width: 100%; height: 100%; object-fit: contain; background: #0f172a; transition: transform 0.4s; }
+.ed-edition-cover { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
 .ed-edition-card:hover .ed-edition-cover { transform: scale(1.04); }
 .ed-edition-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 55%); pointer-events: none; }
 .ed-edition-badge { position: absolute; top: 10px; left: 10px; font-family: var(--label); font-size: 0.56rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); background: var(--accent); padding: 3px 8px; }
@@ -462,8 +462,8 @@ body { padding-top: 110px; }
   :root { --section-gap: 64px; }
   .ed-hero-inner { grid-template-columns: 1fr; padding: 56px 32px; gap: 48px; }
   .ed-hero-text { padding: 0; }
-  .ed-hero-visual { padding: 0; min-height: unset; justify-content: flex-start; }
-  .ed-hero-cover-frame { max-width: 280px; }
+  .ed-hero-visual { padding: 24px 0; min-height: unset; justify-content: center; width: 100%; margin: 0 auto; }
+  .ed-hero-cover-frame { max-width: 340px; margin: 0 auto; width: 100%; }
   .ed-features-grid { grid-template-columns: 1fr; gap: 32px; }
   .ed-feature-main { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 36px; }
   .ed-editions-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -488,7 +488,7 @@ body { padding-top: 110px; }
   .nav-subscribe { margin: 8px 22px; text-align: center; }
   .ed-hero-inner { padding: 44px 18px 36px; gap: 32px; }
   .ed-hero-headline { font-size: 2rem; }
-  .ed-hero-cover-frame { max-width: 220px; margin: 0 auto; }
+  .ed-hero-cover-frame { max-width: 310px; margin: 0 auto; }
   .ed-hero-cover-caption { font-size: 0.56rem; padding: 9px 13px; right: -10px; }
   .ed-features-wrap, .ed-editions-wrap, .ed-categories-wrap, .ed-pullquote-inner, .ed-newsletter-inner { padding: 0 18px; }
   .ed-about-inner { padding: 0 18px; }
@@ -824,7 +824,7 @@ img, video, iframe, svg, canvas {
   }
 
   .ed-hero-cover-frame {
-    max-width: 250px !important;
+    max-width: 320px !important;
     margin: 0 auto !important;
     width: 100% !important;
   }

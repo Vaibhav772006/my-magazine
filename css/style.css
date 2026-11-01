@@ -6713,7 +6713,7 @@ img, video, iframe, svg, canvas {
   }
 
   .ed-hero-cover-frame {
-    max-width: 250px !important;
+    max-width: 320px !important;
     margin: 0 auto !important;
     width: 100% !important;
   }

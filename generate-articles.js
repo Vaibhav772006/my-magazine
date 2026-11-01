@@ -13,7 +13,11 @@ const fs   = require('fs');
 const path = require('path');
 
 // ── Paths ────────────────────────────────────────────────────────────────────
-const ROOT       = path.join(__dirname, 'magazine');
+const ROOT = fs.existsSync(path.join(__dirname, 'js', 'articles.json'))
+  ? __dirname
+  : (fs.existsSync(path.join(__dirname, 'magazine', 'js', 'articles.json'))
+      ? path.join(__dirname, 'magazine')
+      : __dirname);
 const JSON_SRC   = path.join(ROOT, 'js', 'articles.json');
 const SITE_URL   = 'https://www.theempireinsight.com';
 
@@ -464,9 +468,8 @@ function buildPageHtml(article, allArticles, depth) {
   const safeAbsoluteCover = (`${SITE_URL}/magazine/${safeCoverRelative}`).replace(/article-pdf&cover/g, 'article-pdf%26cover');
 
   const cat       = article.category || 'Executive Insight';
-  const pageTitle = (article.seo && article.seo.metaTitle)
-    ? article.seo.metaTitle + ' | The Empire Insight'
-    : article.title + ' | The Empire Insight';
+  const rawTitle = (article.seo && article.seo.metaTitle) ? article.seo.metaTitle : article.title;
+  const pageTitle = rawTitle.includes('The Empire Insight') ? rawTitle : `${rawTitle} | The Empire Insight`;
   const metaDesc  = (article.seo && article.seo.metaDescription)
     ? article.seo.metaDescription
     : (article.subtitle || article.excerpt || '');
@@ -495,7 +498,7 @@ function buildPageHtml(article, allArticles, depth) {
   const sidebarStories = others.map(a => {
     const sCat   = a.category || 'Story';
     const sCover = (a.cover ? prefix + a.cover.replace(/^(\.\.\/)*/, '') : prefix + 'images/article-pdf%26cover/article1.jpg').replace(/article-pdf&cover/g, 'article-pdf%26cover');
-    const sLink  = `${prefix}article/${encodeURIComponent(a.slug)}`;
+    const sLink  = `/article/${encodeURIComponent(a.slug)}`;
     return `
       <a href="${sLink}" class="ed-sidebar-story">
         <img src="${sCover}" alt="${escapeAttr(a.title)}" class="ed-sidebar-story-img" loading="lazy" />

@@ -113,15 +113,13 @@
     },
     "pdfUrl": "../images/article-pdf&cover/phyllis-j-wright-career-coach-2026.pdf",
     "featuredArticle": {
-       "id": "phyllis-j-wright-unwritten-rules-of-career-advancement",
-        "url": "article/phyllis-j-wright-unwritten-rules-of-career-advancement-wisdom-in-action-coaching"
-     },
+           },
     "relatedArticles": [
       {
         
-      "id": "phyllis-j-wright-transforming-potential-into-purpose",
-      "url": "article/the-power-of-career-coaching-transforming-professional-potential-into-purpose"
-  
+       "id": "phyllis-j-wright-unwritten-rules-of-career-advancement",
+        "url": "article/phyllis-j-wright-unwritten-rules-of-career-advancement-wisdom-in-action-coaching"
+
           }
     ]
   },

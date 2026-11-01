@@ -4706,14 +4706,14 @@ header.site-header .menu-toggle {
 .nav-toggle span { display: block; width: 18px; height: 1.5px; background: rgba(255,255,255,0.65); transition: all 0.3s; }
 
 /* ── Body offset for fixed header ────────────────────────── */
-body { padding-top: 110px !important; }
+body { padding-top: 76px !important; }
 
 /* ── Page banner offset — override JS adjustBannerTop ───── */
 .page-banner { margin-top: 0 !important; }
 
 /* ── Responsive Navbar ───────────────────────────────────── */
 @media (max-width: 768px) {
-  body { padding-top: 100px !important; }
+  body { padding-top: 64px !important; }
   .header-strip-inner, .header-main-inner { padding: 0 18px; }
   .strip-search { display: none; }
   .header-main-inner { height: 62px; }
@@ -6558,9 +6558,7 @@ img, video, iframe, svg, canvas {
 @media screen and (max-width: 768px) {
 
   /* ── Header Calibration ────────────────────────────────── */
-  body {
-    padding-top: 96px !important;
-  }
+  body { padding-top: 64px !important; }
 
   .site-header, header.site-header {
     width: 100% !important;
@@ -7374,6 +7372,7 @@ img, video, iframe, svg, canvas {
 .floating-social {
   position: fixed;
   right: 0;
+  left: auto;
   top: 50%;
   transform: translateY(-50%);
   z-index: 990;
@@ -7932,3 +7931,10 @@ img, video, iframe, svg, canvas {
     .ed-dossier-mantra strong {
       color: #0D0D0D !important;
     }
+
+
+/* Category Switch Pills */
+.ed-category-switch { display: flex; align-items: center; gap: 12px; margin: 32px 0 24px; flex-wrap: wrap; }
+.ed-category-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 30px; font-family: var(--sans-h, 'Inter', sans-serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; text-decoration: none; background: #141414; border: 1px solid rgba(255, 255, 255, 0.12); color: #A0A0A0; transition: all 0.22s ease; }
+.ed-category-pill:hover { background: rgba(181, 137, 42, 0.15); border-color: #B5892A; color: #FFFFFF; }
+.ed-category-pill.active { background: #B5892A; border-color: #B5892A; color: #0D0D0D; font-weight: 700; }

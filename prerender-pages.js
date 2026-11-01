@@ -92,15 +92,16 @@ function injectNavAndFooter(filePath) {
   fs.writeFileSync(filePath, html, 'utf8');
 }
 
-// ── 3. Pre-render article.html (All Stories) ──────────────────────────────────
+// ── 3. Pre-render article.html (Featured Stories) ─────────────────────────────
+const featuredArticles = articles.filter(a => a.section === 'featured-stories');
 const articleHtmlPath = path.join(ROOT, 'article.html');
 if (fs.existsSync(articleHtmlPath)) {
   let articleHtml = fs.readFileSync(articleHtmlPath, 'utf8');
 
   articleHtml = articleHtml.replace(/<link rel="canonical" href="[^"]*" \/>/, '<link rel="canonical" href="https://www.theempireinsight.com/article" />');
-  articleHtml = articleHtml.replace(/<span class="ed-section-link">\d+ Articles<\/span>/, `<span class="ed-section-link">${articles.length} Articles</span>`);
+  articleHtml = articleHtml.replace(/<span class="ed-section-link">.*?<\/span>/, `<span class="ed-section-link">${featuredArticles.length} Articles</span>`);
 
-  const articleCardsHtml = articles.map(article => {
+  const articleCardsHtml = featuredArticles.map(article => {
     const cat = article.category || "Executive Insight";
     const coverSrc = safeCoverPath(article.cover);
     const readTime = article.readingTime || "6 min read";
@@ -140,12 +141,12 @@ if (fs.existsSync(articleHtmlPath)) {
   if (articlesContainerRegex.test(articleHtml)) {
     articleHtml = articleHtml.replace(articlesContainerRegex, `$1\n${articleCardsHtml}\n    $2`);
     fs.writeFileSync(articleHtmlPath, articleHtml, 'utf8');
-    console.log(`  ✔ Pre-rendered ${articles.length} story cards directly into magazine/article.html`);
+    console.log(`  ✔ Pre-rendered ${featuredArticles.length} featured story cards directly into magazine/article.html`);
   }
 }
 
 // ── 3b. Pre-render beyond-business.html ───────────────────────────────────────
-const beyondArticles = articles.filter(a => a.section === 'beyond-business' || (!a.leader && a.section !== 'featured-stories'));
+const beyondArticles = articles.filter(a => a.section === 'beyond-business');
 const beyondHtmlPath = path.join(ROOT, 'beyond-business.html');
 if (fs.existsSync(beyondHtmlPath)) {
   let beyondHtml = fs.readFileSync(beyondHtmlPath, 'utf8');

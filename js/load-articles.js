@@ -33,19 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!targetSection) {
     if (path.includes("beyond-business")) {
       targetSection = "beyond-business";
-    } else if (path.includes("article")) {
-      targetSection = "all";
+    } else {
+      targetSection = "featured-stories";
     }
+  }
   }
 
   const isMatchingSection = (article, sec) => {
     if (!sec || sec === "all") return true;
     const aSec = String(article.section || "").toLowerCase().trim();
     if (sec === "beyond-business") {
-      return aSec === "beyond-business" || aSec === "beyond business" || (!aSec && !article.leader);
+      return aSec === "beyond-business" || aSec === "beyond business";
     }
     if (sec === "featured-stories") {
-      return aSec === "featured-stories" || aSec === "featured stories" || Boolean(article.leader) || Boolean(article.featured);
+      return aSec === "featured-stories" || aSec === "featured stories";
     }
     return true;
   };

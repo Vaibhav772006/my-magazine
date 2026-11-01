@@ -67,7 +67,7 @@ a { color: inherit; text-decoration: none; }
 .nav-toggle { display: none; flex-direction: column; justify-content: center; align-items: center; width: 36px; height: 36px; background: none; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; cursor: pointer; gap: 5px; padding: 0; }
 .nav-toggle span { display: block; width: 18px; height: 1.5px; background: rgba(255,255,255,0.65); transition: all 0.3s; }
 
-body { padding-top: 110px; }
+body { padding-top: 76px; }
 
 /* ── HERO ─────────────────────────────────────────────────── */
 .ed-hero { background: var(--bg); border-bottom: 1px solid var(--border); min-height: calc(100vh - 110px); display: flex; align-items: stretch; overflow: hidden; position: relative; }
@@ -475,7 +475,7 @@ body { padding-top: 110px; }
 
 @media (max-width: 768px) {
   :root { --section-gap: 48px; }
-  body { padding-top: 100px; }
+  body { padding-top: 64px; }
   .header-strip-inner, .header-main-inner { padding: 0 18px; }
   .strip-search { display: none; }
   .header-main-inner { height: 62px; }
@@ -542,9 +542,7 @@ header.site-header {
 }
 
 /* Old body padding override */
-body {
-  padding-top: 110px !important;
-}
+body { padding-top: 76px !important; }
 
 /* Hide old Swiper magazine-slider section styles */
 .magazine-slider { display: none !important; }
@@ -669,9 +667,7 @@ img, video, iframe, svg, canvas {
 @media screen and (max-width: 768px) {
 
   /* ── Header Calibration ────────────────────────────────── */
-  body {
-    padding-top: 96px !important;
-  }
+  body { padding-top: 64px !important; }
 
   .site-header, header.site-header {
     width: 100% !important;

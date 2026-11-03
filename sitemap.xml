@@ -116,7 +116,37 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Published Articles (17 stories) -->
+  <!-- Published Articles (22 stories) -->
+  <url>
+    <loc>https://www.theempireinsight.com/article/gta-6-release-date-november-19-2026-what-to-know</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/black-friday-2026-dates-early-deals-cyber-monday-guide</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/anthropic-ipo-explained-ant-nasdaq-s1-filing-what-it-means</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/microsoft-60000-employee-buyouts-what-it-means-for-tech-jobs</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/gemini-4-carbon-gpt-6-1-terra-mistral-large-4-ai-models-this-week</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://www.theempireinsight.com/article/phyllis-j-wright-unwritten-rules-of-career-advancement-wisdom-in-action-coaching</loc>
     <lastmod>2026-10-28</lastmod>

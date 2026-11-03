@@ -7935,6 +7935,6 @@ img, video, iframe, svg, canvas {
 
 /* Category Switch Pills */
 .ed-category-switch { display: flex; align-items: center; gap: 12px; margin: 32px 0 24px; flex-wrap: wrap; }
-.ed-category-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 30px; font-family: var(--sans-h, 'Inter', sans-serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; text-decoration: none; background: #141414; border: 1px solid rgba(255, 255, 255, 0.12); color: #A0A0A0; transition: all 0.22s ease; }
-.ed-category-pill:hover { background: rgba(181, 137, 42, 0.15); border-color: #B5892A; color: #FFFFFF; }
+.ed-category-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 30px; font-family: var(--sans-h, 'Inter', sans-serif); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; text-decoration: none; background: #F0EDE8; border: 1px solid #D5CFC4; color: #555555; transition: all 0.22s ease; }
+.ed-category-pill:hover { background: rgba(181, 137, 42, 0.12); border-color: #B5892A; color: #0D0D0D; }
 .ed-category-pill.active { background: #B5892A; border-color: #B5892A; color: #0D0D0D; font-weight: 700; }

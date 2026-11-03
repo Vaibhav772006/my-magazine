@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="HI4F3xJNEMNANtPi0ggxT1XeK7OUKcplKlHCj5J67Gg" />
-  <link rel="icon" type="image/png" href="images/favicon.png?v=2" sizes="32x32" />
-  <link rel="icon" type="image/png" href="images/favicon.png?v=2" sizes="512x512" />
-  <link rel="shortcut icon" type="image/png" href="images/favicon.png?v=2" />
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=2" />
+  <link rel="icon" type="image/png" href="/images/favicon.png?v=2" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/images/favicon.png?v=2" sizes="512x512" />
+  <link rel="shortcut icon" type="image/png" href="/images/favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png?v=2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alejandro Calle &amp; Tech In A Tux: Accessible Tech Support | The Empire Insight</title>
   <meta name="description" content="Meet Alejandro Calle, the self-taught Canadian founder of Tech In A Tux, who built a pay-what-you-can tech support company to close the digital divide." />
   <meta name="keywords" content="Business leadership insights, Global business leadership insights, CEO leadership stories, Successful CEO stories, Global business leader profiles, Top business leaders around the world, Inspiring business leaders, Global entrepreneur stories, Global CEO interviews, The Empire Insight" />
   <meta name="robots" content="index, follow" />
-  <base href="../" />
-
   <!-- Open Graph -->
   <meta property="og:title" content="Article | The Empire Insight" />
   <meta property="og:description" content="In-depth analysis and executive perspectives from The Empire Insight." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:image" content="https://www.theempireinsight.com/images/logo.png" />
   <meta property="og:site_name" content="The Empire Insight" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Article | The Empire Insight" />
   <meta name="twitter:description" content="In-depth analysis and executive perspectives from The Empire Insight." />
-  <meta name="twitter:image" content="images/logo.png" />
+  <meta name="twitter:image" content="https://www.theempireinsight.com/images/logo.png" />
 
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -811,11 +809,12 @@
 
 
 
+
   <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
     <div class="mag-breadcrumb-container">
       <a href="/"><i class="fas fa-home"></i> Home</a>
       <span class="separator">/</span>
-      <a href="article">Featured Stories</a>
+      <a href="/article">Featured Stories</a>
       <span class="separator">/</span>
       <span id="article-breadcrumb-current" class="current">Bridging the Digital Divide</span>
     </div>
@@ -839,7 +838,7 @@
     <main class="ed-article-main">
       <!-- Uncropped Vertical Cover Frame Showcase -->
       <div class="ed-article-cover-frame" id="article-cover-frame">
-        <img id="article-cover" class="ed-article-hero-img" src="images/article-pdf&cover/alejandro-calle-cover.jpg" alt="Alejandro Calle and Tech In A Tux: Making Tech Support Accessible to Everyone Cover" onerror="this.onerror=null;this.src='images/assets/bg.jpg';" />
+        <img id="article-cover" class="ed-article-hero-img" src="/images/article-pdf&cover/alejandro-calle-cover.jpg" alt="Alejandro Calle and Tech In A Tux: Making Tech Support Accessible to Everyone Cover" onerror="this.onerror=null;this.src='/images/assets/bg.jpg';" />
         <span class="ed-article-cover-badge" id="article-cover-badge"><i class="fas fa-award"></i> The Empire Insight Official Cover Feature</span>
       </div>
 
@@ -910,7 +909,7 @@
     </p>
 
     <figure class="ed-article-inline-figure">
-      <img src="images/article-pdf&cover/alejandro-calle-team.png" alt="Tech In A Tux founder Alejandro Calle celebrating with colleagues and community members" loading="lazy" />
+      <img src="/images/article-pdf&cover/alejandro-calle-team.png" alt="Tech In A Tux founder Alejandro Calle celebrating with colleagues and community members" loading="lazy" />
       <figcaption><i class="fas fa-camera"></i> Alejandro Calle with peers and community partners, building connection and accessible tech support together.</figcaption>
     </figure>
 
@@ -1026,7 +1025,7 @@
       </div>
 
       <div class="ed-article-nav-bottom">
-        <a href="article" class="btn-ghost-ed">&larr; Back to All Stories</a>
+        <a href="/article" class="btn-ghost-ed">&larr; Back to All Stories</a>
         <a href="magazine" class="btn-primary-ed">Explore Magazine Archive &rarr;</a>
       </div>
     </main>
@@ -1151,6 +1150,7 @@
   </div>
 </footer>
 </div>
+
 
 
 
@@ -1369,7 +1369,7 @@
           const otherCover = resolveCover(a.cover);
 
           item.innerHTML = `
-            <img src="${otherCover}" alt="${a.title}" class="ed-sidebar-story-img" loading="lazy" onerror="this.onerror=null;this.src='images/assets/bg.jpg';" />
+            <img src="${otherCover}" alt="${a.title}" class="ed-sidebar-story-img" loading="lazy" onerror="this.onerror=null;this.src='/images/assets/bg.jpg';" />
             <div class="ed-sidebar-story-body">
               <span class="ed-sidebar-story-cat">${otherCat}</span>
               <p class="ed-sidebar-story-title">${a.title}</p>

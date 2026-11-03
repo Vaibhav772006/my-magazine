@@ -579,14 +579,51 @@ const renderedFooterHtml = rawFooterTpl
     `<div class="footer-insights-list" id="footer-insights-list">\n${preMagItems}\n        </div>`
   );
 
+
+// ── Universal Cover / Asset Resolution (Supports external URLs & local assets) ──
+function resolveCover(cover, prefix = '') {
+  if (!cover) {
+    const fallback = 'images/article-pdf%26cover/article1.jpg';
+    return prefix ? `${prefix}${fallback}` : `/${fallback}`;
+  }
+  const trimmed = String(cover).trim();
+  // Absolute external URL (http, https, //) or data URI
+  if (/^(?:https?:)?\/\//i.test(trimmed) || trimmed.startsWith('data:')) {
+    return trimmed;
+  }
+  // Local asset path
+  const clean = trimmed
+    .replace(/^(\.\.\/)+/, '')
+    .replace(/^\/+/, '')
+    .replace(/^magazine\//, '')
+    .replace(/article-pdf&cover/g, 'article-pdf%26cover');
+
+  return prefix ? `${prefix}${clean}` : `/${clean}`;
+}
+
+function resolveAbsoluteCover(cover) {
+  if (!cover) return `${SITE_URL}/images/article-pdf%26cover/article1.jpg`;
+  const trimmed = String(cover).trim();
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  if (trimmed.startsWith('//')) {
+    return `https:${trimmed}`;
+  }
+  const clean = trimmed
+    .replace(/^(\.\.\/)+/, '')
+    .replace(/^\/+/, '')
+    .replace(/^magazine\//, '')
+    .replace(/article-pdf&cover/g, 'article-pdf%26cover');
+
+  return `${SITE_URL}/${clean}`;
+}
+
 function buildPageHtml(article, allArticles, depth) {
   // depth: 2 for article/[slug]/index.html, 1 for articles/[slug].html
   const prefix = depth === 2 ? '../../' : '../';
-  const safeCoverRelative = article.cover
-    ? article.cover.replace(/^(\.\.\/)*/, '')
-    : 'images/article-pdf%26cover/article1.jpg';
-  const coverSrc = (prefix + safeCoverRelative).replace(/article-pdf&cover/g, 'article-pdf%26cover');
-  const safeAbsoluteCover = (`${SITE_URL}/magazine/${safeCoverRelative}`).replace(/article-pdf&cover/g, 'article-pdf%26cover');
+  const coverSrc = resolveCover(article.cover, prefix);
+  const safeAbsoluteCover = resolveAbsoluteCover(article.cover);
 
   const cat       = article.category || 'Executive Insight';
   const rawTitle = (article.seo && article.seo.metaTitle) ? article.seo.metaTitle : article.title;
@@ -618,7 +655,7 @@ function buildPageHtml(article, allArticles, depth) {
   const others = allArticles.filter(a => a.id !== article.id).slice(0, 5);
   const sidebarStories = others.map(a => {
     const sCat   = a.category || 'Story';
-    const sCover = (a.cover ? prefix + a.cover.replace(/^(\.\.\/)*/, '') : prefix + 'images/article-pdf%26cover/article1.jpg').replace(/article-pdf&cover/g, 'article-pdf%26cover');
+    const sCover = resolveCover(a.cover, prefix);
     const sLink  = `/article/${encodeURIComponent(a.slug)}`;
     return `
       <a href="${sLink}" class="ed-sidebar-story">

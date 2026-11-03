@@ -51,7 +51,32 @@ function formatDate(dateStr) {
 
 function safeCoverPath(cover, fallback = 'images/article-pdf%26cover/article1.jpg') {
   if (!cover) return fallback;
-  return cover.replace(/^(\.\.\/)*/, '').replace(/article-pdf&cover/g, 'article-pdf%26cover');
+  const trimmed = String(cover).trim();
+  if (/^(?:https?:)?\/\//i.test(trimmed) || trimmed.startsWith('data:')) {
+    return trimmed;
+  }
+  return trimmed
+    .replace(/^(\.\.\/)+/, '')
+    .replace(/^\/+/, '')
+    .replace(/^magazine\//, '')
+    .replace(/article-pdf&cover/g, 'article-pdf%26cover');
+}
+
+function resolveAbsoluteCover(cover) {
+  if (!cover) return `${SITE_URL}/images/article-pdf%26cover/article1.jpg`;
+  const trimmed = String(cover).trim();
+  if (/^https?:\/\//i.test(trimmed)) {
+    return trimmed;
+  }
+  if (trimmed.startsWith('//')) {
+    return `https:${trimmed}`;
+  }
+  const clean = trimmed
+    .replace(/^(\.\.\/)+/, '')
+    .replace(/^\/+/, '')
+    .replace(/^magazine\//, '')
+    .replace(/article-pdf&cover/g, 'article-pdf%26cover');
+  return `${SITE_URL}/${clean}`;
 }
 
 // ── 2. Helper: Inject Navbar & Footer Into Static Pages ────────────────────────
@@ -407,7 +432,7 @@ magazines.forEach(mag => {
   if (!fs.existsSync(magReadDir)) fs.mkdirSync(magReadDir, { recursive: true });
 
   const coverSrc = safeCoverPath(mag.cover);
-  const absoluteCover = `${SITE_URL}/${coverSrc}`;
+  const absoluteCover = resolveAbsoluteCover(mag.cover);
   const canonicalUrl = `${SITE_URL}/magazine/${mag.id}`;
   const rawTitle = (mag.seo && mag.seo.metaTitle) ? mag.seo.metaTitle : mag.title;
   const pageTitle = rawTitle.includes('The Empire Insight') ? rawTitle : `${rawTitle} | The Empire Insight`;
@@ -536,7 +561,7 @@ ${navbarHtml}
 
   <main class="mag-landing-wrap">
     <div>
-      <img src="/${coverSrc}" alt="${escapeAttr(mag.title)} Cover" class="mag-landing-cover" />
+      <img src="${/^(?:https?:)?\/\//i.test(coverSrc) ? coverSrc : `/${coverSrc.replace(/^\/+/, '')}`}" alt="${escapeAttr(mag.title)} Cover" class="mag-landing-cover" />
     </div>
     <div>
       <span class="mag-landing-kicker">${escapeHtml(mag.category || 'Executive Edition')}</span>

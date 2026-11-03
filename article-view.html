@@ -909,6 +909,7 @@ body.ed-article-page .footer-bottom-links a,
 
 
 
+
   <nav class="mag-breadcrumb-nav" aria-label="Breadcrumb">
     <div class="mag-breadcrumb-container">
       <a href="/"><i class="fas fa-home"></i> Home</a>
@@ -1285,6 +1286,7 @@ body.ed-article-page .footer-bottom-links a,
 
 
 
+
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     let articleId = urlParams.get('slug') || urlParams.get('id');
@@ -1311,11 +1313,17 @@ body.ed-article-page .footer-bottom-links a,
     }[character]));
 
     function resolveCover(cover) {
-      if (!cover) return "images/article-pdf&cover/article1.jpg";
-      if (cover.startsWith("http://") || cover.startsWith("https://") || cover.startsWith("/")) {
-        return cover;
+      if (!cover) return "/images/article-pdf%26cover/article1.jpg";
+      const trimmed = String(cover).trim();
+      if (/^(?:https?:)?\/\//i.test(trimmed) || trimmed.startsWith('data:')) {
+        return trimmed;
       }
-      return cover.replace(/^\.\.\//, "");
+      const clean = trimmed
+        .replace(/^(\.\.\/)+/, "")
+        .replace(/^\/+/, "")
+        .replace(/^magazine\//, "")
+        .replace(/article-pdf&cover/g, 'article-pdf%26cover');
+      return "/" + clean;
     }
 
     function renderArticleFaq(article) {

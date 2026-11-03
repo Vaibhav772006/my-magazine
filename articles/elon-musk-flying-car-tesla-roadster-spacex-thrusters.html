@@ -534,14 +534,102 @@ body.ed-article-page {
   .floating-social a:hover { width: 40px; }
 }
 
-* ── Pre-rendered Footer ── */
-.site-footer {
-  background: #0D0D0D; color: rgba(255,255,255,0.65);
-  text-align: center; padding: 36px 24px;
-  font-size: 0.84rem; border-top: 1px solid rgba(181,137,42,0.2);
+/* ── Pre-rendered Footer ── */
+
+/* ── High-Contrast Footer Styling for Article View Canvas ── */
+body.ed-article-page footer.footer,
+body.ed-article-page .footer-cta-strip,
+footer.footer,
+.footer-cta-strip {
+  color: #FFFFFF !important;
 }
-.site-footer a { color: #B5892A; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+
+body.ed-article-page .footer-cta-kicker,
+.footer-cta-kicker {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-cta-strip h2,
+.footer-cta-strip h2 {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-cta-strip p,
+.footer-cta-strip p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ed-article-page .footer-cta-btn-ghost,
+.footer-cta-btn-ghost {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.ed-article-page .footer-col-heading,
+.footer-col-heading {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-heading-kicker,
+.footer-heading-kicker {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-brand-desc,
+.footer-brand-desc {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ed-article-page .footer-brand-desc strong,
+.footer-brand-desc strong {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-contact-lbl,
+.footer-contact-lbl {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-contact-link,
+.footer-contact-link {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-social-row a,
+.footer-social-row a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.ed-article-page .footer-insight-time,
+.footer-insight-time {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.ed-article-page .footer-insight-title,
+.footer-insight-title {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-insight-arrow,
+.footer-insight-arrow {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.ed-article-page .footer-nav-list li a,
+.footer-nav-list li a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.ed-article-page .footer-copy,
+.footer-copy {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.ed-article-page .footer-bottom-links a,
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
 
   </style>
 </head>
@@ -879,14 +967,147 @@ body.ed-article-page {
     </aside>
   </div>
 
-  <!-- ═══ FOOTER (Pre-rendered) ═══ -->
-  <footer class="site-footer" role="contentinfo">
-    <p>&copy; 2026 <a href="../">The Empire Insight</a>. All rights reserved. 
-       &bull; <a href="../about">About</a> 
-       &bull; <a href="../contact">Contact</a> 
-       &bull; <a href="../magazine">Magazine Archive</a>
-    </p>
-  </footer>
+  <!-- ═══ FOOTER (Pre-rendered Executive Footer) ═══ -->
+  <div id="footer-placeholder">
+<!-- Footer Pre-CTA Strip -->
+<footer class="footer-cta-strip">
+  <div class="footer-cta-container">
+    <span class="footer-cta-kicker">Global Executive Publishing</span>
+    <h2>Global Executive Intelligence</h2>
+    <p>Empowering decision-makers, innovators, and future leaders through impactful journalism and strategic intelligence.</p>
+    <div class="footer-cta-btns">
+      <a href="/magazine" class="footer-cta-btn-primary">Browse Editions</a>
+      <a href="/contact" class="footer-cta-btn-ghost">Contact Editorial Desk</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Main Footer -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: About Publication -->
+    <div class="footer-card footer-about-card">
+      <div class="footer-col about">
+        <div class="footer-logo-wrap">
+          <a href="/" title="The Empire Insight">
+            <img src="/images/logo.png" onerror="this.onerror=null;this.src='/images/logo.png';" alt="The Empire Insight Logo" class="footer-logo">
+          </a>
+        </div>
+        <p class="footer-brand-desc">
+          <strong>The Empire Insight</strong> is an executive business publication dedicated to visionary leadership, technological frontiers, global capital, and sustainable enterprise.
+        </p>
+        <div class="footer-contact-block">
+          <span class="footer-contact-lbl">Editorial Desk</span>
+          <a href="mailto:theempireinsights@gmail.com" class="footer-contact-link">
+            <i class="fas fa-envelope"></i> theempireinsights@gmail.com
+          </a>
+        </div>
+        <div class="footer-social-row">
+          <a href="https://www.linkedin.com/company/the-empire-insights/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://x.com/The_45Empire?t=alzRMjF1ebX5L0gDwQSacA&s=09" target="_blank" rel="noopener" aria-label="Twitter / X" title="Twitter / X">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/the_empire_insight/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61578779788871" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Featured Insights -->
+    <div class="footer-card footer-insights-card">
+      <div class="footer-col posts-cards">
+        <div class="footer-heading-wrap">
+          <span class="footer-heading-kicker">Curated Intelligence</span>
+          <h3 class="footer-col-heading">FEATURED INSIGHTS</h3>
+        </div>
+
+        <div class="footer-insights-list" id="footer-insights-list">
+
+          <a class="footer-insight-item" href="/magazine/visionary-career-coach-2026/read" aria-label="Read The Visionary Career Coach: Phyllis J. Wright on Career Advancement and Professional Growth">
+            <span class="footer-insight-meta">
+              <span class="footer-insight-tag">Leadership &amp; Career Development</span>
+              <span class="footer-insight-time">Annual Edition 2026</span>
+            </span>
+            <span class="footer-insight-title">The Visionary Career Coach</span>
+            <i class="fas fa-arrow-right footer-insight-arrow" aria-hidden="true"></i>
+          </a>
+
+          <a class="footer-insight-item" href="/magazine/alejandro-calle-october-2026/read" aria-label="Read The Visionary Tech Entrepreneur Bridging the Digital Divide, 2026">
+            <span class="footer-insight-meta">
+              <span class="footer-insight-tag">Technology &amp; AI</span>
+              <span class="footer-insight-time">October 2026</span>
+            </span>
+            <span class="footer-insight-title">The Visionary Tech Entrepreneur</span>
+            <i class="fas fa-arrow-right footer-insight-arrow" aria-hidden="true"></i>
+          </a>
+
+          <a class="footer-insight-item" href="/magazine/eman-al-mannai-october-2026/read" aria-label="Read The Most Inspiring Female Personality to Watch in 2026: Eman Mohammed Al Mannai">
+            <span class="footer-insight-meta">
+              <span class="footer-insight-tag">Women in Leadership</span>
+              <span class="footer-insight-time">October 2026</span>
+            </span>
+            <span class="footer-insight-title">The Most Inspiring Female Personality</span>
+            <i class="fas fa-arrow-right footer-insight-arrow" aria-hidden="true"></i>
+          </a>
+
+          <a class="footer-insight-item" href="/magazine/business-woman-2026/read" aria-label="Read Business Woman of the Year: Inspiring Women Shaping a Stronger Tomorrow">
+            <span class="footer-insight-meta">
+              <span class="footer-insight-tag">Leadership &amp; Business</span>
+              <span class="footer-insight-time">Annual Edition 2026</span>
+            </span>
+            <span class="footer-insight-title">Business Woman of the Year</span>
+            <i class="fas fa-arrow-right footer-insight-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Quick Navigation -->
+    <div class="footer-card footer-links-card">
+      <div class="footer-col quick-links">
+        <div class="footer-heading-wrap">
+          <span class="footer-heading-kicker">Navigation</span>
+          <h3 class="footer-col-heading">QUICK LINKS</h3>
+        </div>
+        <ul class="footer-nav-list">
+          <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="/about"><i class="fas fa-chevron-right"></i> About the Publication</a></li>
+          <li><a href="/magazine"><i class="fas fa-chevron-right"></i> Magazine Archive</a></li>
+          <li><a href="/article"><i class="fas fa-chevron-right"></i> Featured Stories</a></li>
+          <li><a href="/beyond-business"><i class="fas fa-chevron-right"></i> Beyond Business</a></li>
+          <li><a href="/contact"><i class="fas fa-chevron-right"></i> Contact Editorial Desk</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom Strip -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <p class="footer-copy">
+        &copy; 2026 <strong>The Empire Insight</strong> &bull; All rights reserved.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="/about">Mission</a>
+        <span class="sep">&bull;</span>
+        <a href="/magazine">Editions</a>
+        <span class="sep">&bull;</span>
+        <a href="/contact">Editorial Inquiries</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <script defer src="/js/include-nav-footer.js"></script>
 
   <!-- ═══ MINIMAL CLIENT-SIDE INTERACTIONS (Share & Mobile Toggle) ═══ -->
   <script>

@@ -575,17 +575,153 @@ body.ed-article-page {
 .ed-sidebar-btn:hover { background: #9A7320; }
 
 /* ── Pre-rendered Footer ── */
-.site-footer {
-  background: #0D0D0D; color: rgba(255,255,255,0.65);
-  text-align: center; padding: 36px 24px;
-  font-size: 0.84rem; border-top: 1px solid rgba(181,137,42,0.2);
+
+/* ── High-Contrast Footer Styling for Article View Canvas ── */
+body.ed-article-page footer.footer,
+body.ed-article-page .footer-cta-strip,
+footer.footer,
+.footer-cta-strip {
+  color: #FFFFFF !important;
 }
-.site-footer a { color: #B5892A; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+
+body.ed-article-page .footer-cta-kicker,
+.footer-cta-kicker {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-cta-strip h2,
+.footer-cta-strip h2 {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-cta-strip p,
+.footer-cta-strip p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ed-article-page .footer-cta-btn-ghost,
+.footer-cta-btn-ghost {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.ed-article-page .footer-col-heading,
+.footer-col-heading {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-heading-kicker,
+.footer-heading-kicker {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-brand-desc,
+.footer-brand-desc {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ed-article-page .footer-brand-desc strong,
+.footer-brand-desc strong {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-contact-lbl,
+.footer-contact-lbl {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-contact-link,
+.footer-contact-link {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-social-row a,
+.footer-social-row a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.ed-article-page .footer-insight-time,
+.footer-insight-time {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.ed-article-page .footer-insight-title,
+.footer-insight-title {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-insight-arrow,
+.footer-insight-arrow {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.ed-article-page .footer-nav-list li a,
+.footer-nav-list li a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.ed-article-page .footer-copy,
+.footer-copy {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.ed-article-page .footer-bottom-links a,
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
 `;
+
+function loadFooterWithMagazines() {
+  const footerCandidatePaths = [
+    path.join(__dirname, '..', 'magazine', 'footer.html'),
+    path.join(__dirname, '..', 'footer.html'),
+    path.join(__dirname, 'footer.html'),
+    path.join(process.cwd(), 'magazine', 'footer.html'),
+    path.join(process.cwd(), 'footer.html')
+  ];
+  let tpl = '';
+  for (const p of footerCandidatePaths) {
+    if (fs.existsSync(p)) {
+      try { tpl = fs.readFileSync(p, 'utf8'); break; } catch(e){}
+    }
+  }
+
+  const magCandidatePaths = [
+    path.join(__dirname, '..', 'magazine', 'js', 'magazines.json'),
+    path.join(__dirname, '..', 'js', 'magazines.json'),
+    path.join(__dirname, 'js', 'magazines.json'),
+    path.join(process.cwd(), 'magazine', 'js', 'magazines.json'),
+    path.join(process.cwd(), 'js', 'magazines.json')
+  ];
+  let mags = [];
+  for (const p of magCandidatePaths) {
+    if (fs.existsSync(p)) {
+      try { mags = JSON.parse(fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, '')); break; } catch(e){}
+    }
+  }
+
+  const items = mags.filter(m => m.visible !== false).slice(0, 4).map(mag => `
+          <a class="footer-insight-item" href="/magazine/${encodeURIComponent(mag.id)}/read" aria-label="Read ${escapeAttr(mag.title || mag.id)}">
+            <span class="footer-insight-meta">
+              <span class="footer-insight-tag">${escapeHtml(mag.category || 'Featured')}</span>
+              <span class="footer-insight-time">${escapeHtml(mag.edition || mag.issue || '')}</span>
+            </span>
+            <span class="footer-insight-title">${escapeHtml(mag.shortTitle || mag.title || mag.id)}</span>
+            <i class="fas fa-arrow-right footer-insight-arrow" aria-hidden="true"></i>
+          </a>`).join('\n');
+
+  return (tpl || '')
+    .replace(/src="images\/logo\.png"/g, 'src="/images/logo.png"')
+    .replace(
+      /<div class="footer-insights-list" id="footer-insights-list">[\s\S]*?<\/div>/,
+      `<div class="footer-insights-list" id="footer-insights-list">\n${items}\n        </div>`
+    );
+}
 
 // ── HTML Page Renderer ───────────────────────────────────────────────────────
 function renderArticlePage(article, allArticles) {
+  const renderedFooterHtml = loadFooterWithMagazines();
   const coverUrl = resolveCoverUrl(article.cover);
   const coverAsset = resolveAssetPath(article.cover);
   const cat = article.category || 'Executive Insight';
@@ -985,15 +1121,11 @@ ${ARTICLE_CSS}
     </aside>
   </div>
 
-  <!-- ═══ FOOTER (Pre-rendered) ═══ -->
-  <footer class="site-footer" role="contentinfo">
-    <p>&copy; ${new Date().getFullYear()} <a href="/">The Empire Insight</a>. All rights reserved. 
-       &bull; <a href="/about">About</a> 
-       &bull; <a href="/contact">Contact</a> 
-       &bull; <a href="/magazine">Magazine Archive</a>
-       &bull; <a href="/beyond-business">Beyond Business</a>
-    </p>
-  </footer>
+  <!-- ═══ FOOTER (Pre-rendered Executive Footer) ═══ -->
+  <div id="footer-placeholder">
+${renderedFooterHtml}
+  </div>
+  <script defer src="/js/include-nav-footer.js"></script>
 
   <!-- ═══ CLIENT-SIDE INTERACTIONS (Mobile Toggle & Clipy Copy Link) ═══ -->
   <script>

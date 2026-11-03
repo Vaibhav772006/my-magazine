@@ -19,6 +19,8 @@ const ROOT = fs.existsSync(path.join(__dirname, 'js', 'articles.json'))
       ? path.join(__dirname, 'magazine')
       : __dirname);
 const JSON_SRC   = path.join(ROOT, 'js', 'articles.json');
+const MAG_SRC    = path.join(ROOT, 'js', 'magazines.json');
+const FOOTER_SRC = path.join(ROOT, 'footer.html');
 const SITE_URL   = 'https://www.theempireinsight.com';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -460,17 +462,123 @@ body.ed-article-page {
   .floating-social a:hover { width: 40px; }
 }
 
-* ── Pre-rendered Footer ── */
-.site-footer {
-  background: #0D0D0D; color: rgba(255,255,255,0.65);
-  text-align: center; padding: 36px 24px;
-  font-size: 0.84rem; border-top: 1px solid rgba(181,137,42,0.2);
+/* ── Pre-rendered Footer ── */
+
+/* ── High-Contrast Footer Styling for Article View Canvas ── */
+body.ed-article-page footer.footer,
+body.ed-article-page .footer-cta-strip,
+footer.footer,
+.footer-cta-strip {
+  color: #FFFFFF !important;
 }
-.site-footer a { color: #B5892A; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
+
+body.ed-article-page .footer-cta-kicker,
+.footer-cta-kicker {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-cta-strip h2,
+.footer-cta-strip h2 {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-cta-strip p,
+.footer-cta-strip p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ed-article-page .footer-cta-btn-ghost,
+.footer-cta-btn-ghost {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body.ed-article-page .footer-col-heading,
+.footer-col-heading {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-heading-kicker,
+.footer-heading-kicker {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-brand-desc,
+.footer-brand-desc {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body.ed-article-page .footer-brand-desc strong,
+.footer-brand-desc strong {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-contact-lbl,
+.footer-contact-lbl {
+  color: #B5892A !important;
+}
+
+body.ed-article-page .footer-contact-link,
+.footer-contact-link {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-social-row a,
+.footer-social-row a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.ed-article-page .footer-insight-time,
+.footer-insight-time {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.ed-article-page .footer-insight-title,
+.footer-insight-title {
+  color: #FFFFFF !important;
+}
+
+body.ed-article-page .footer-insight-arrow,
+.footer-insight-arrow {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.ed-article-page .footer-nav-list li a,
+.footer-nav-list li a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+body.ed-article-page .footer-copy,
+.footer-copy {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+body.ed-article-page .footer-bottom-links a,
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
 `;
 
 // ── HTML Page Builder ─────────────────────────────────────────────────────────
+const rawFooterTpl = fs.existsSync(FOOTER_SRC) ? fs.readFileSync(FOOTER_SRC, 'utf8') : '';
+const magazinesList = fs.existsSync(MAG_SRC) ? JSON.parse(fs.readFileSync(MAG_SRC, 'utf8').replace(/^\uFEFF/, '')) : [];
+const preMagItems = magazinesList.filter(m => m.visible !== false).slice(0, 4).map(mag => `
+          <a class="footer-insight-item" href="/magazine/${encodeURIComponent(mag.id)}/read" aria-label="Read ${escapeAttr(mag.title || mag.id)}">
+            <span class="footer-insight-meta">
+              <span class="footer-insight-tag">${escapeHtml(mag.category || 'Featured')}</span>
+              <span class="footer-insight-time">${escapeHtml(mag.edition || mag.issue || '')}</span>
+            </span>
+            <span class="footer-insight-title">${escapeHtml(mag.shortTitle || mag.title || mag.id)}</span>
+            <i class="fas fa-arrow-right footer-insight-arrow" aria-hidden="true"></i>
+          </a>`).join('\n');
+const renderedFooterHtml = rawFooterTpl
+  .replace(/src="images\/logo\.png"/g, 'src="/images/logo.png"')
+  .replace(
+    /<div class="footer-insights-list" id="footer-insights-list">[\s\S]*?<\/div>/,
+    `<div class="footer-insights-list" id="footer-insights-list">\n${preMagItems}\n        </div>`
+  );
+
 function buildPageHtml(article, allArticles, depth) {
   // depth: 2 for article/[slug]/index.html, 1 for articles/[slug].html
   const prefix = depth === 2 ? '../../' : '../';
@@ -777,14 +885,11 @@ ${ARTICLE_CSS}
     </aside>
   </div>
 
-  <!-- ═══ FOOTER (Pre-rendered) ═══ -->
-  <footer class="site-footer" role="contentinfo">
-    <p>&copy; ${new Date().getFullYear()} <a href="${prefix}">The Empire Insight</a>. All rights reserved. 
-       &bull; <a href="${prefix}about">About</a> 
-       &bull; <a href="${prefix}contact">Contact</a> 
-       &bull; <a href="${prefix}magazine">Magazine Archive</a>
-    </p>
-  </footer>
+  <!-- ═══ FOOTER (Pre-rendered Executive Footer) ═══ -->
+  <div id="footer-placeholder">
+${renderedFooterHtml}
+  </div>
+  <script defer src="/js/include-nav-footer.js"></script>
 
   <!-- ═══ MINIMAL CLIENT-SIDE INTERACTIONS (Share & Mobile Toggle) ═══ -->
   <script>

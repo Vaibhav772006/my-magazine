@@ -6,7 +6,9 @@
   "title": "The Inspiring Creative Entrepreneur: Victoria Ajoku on Redefining the Art of Fan Making in the UK",
   "shortTitle": "The Inspiring Creative Entrepreneur",
   "subtitle": "Giving an Ancient Craft a Bold New Future",
-    "edition": "Annual Edition 2026",
+  "volume": "Vol. 00",
+  "issue": "Special Edition 2026",
+  "edition": "Annual Edition 2026",
   "publishedDate": "2026-11-05",
   "category": "Creative Entrepreneurship & Heritage Crafts",
   "tags": [
@@ -126,7 +128,9 @@
     }
   },
   "featuredArticle": {
-           },
+    "id": "victoria-ajoku-fan-maker-uk-ambassador-for-fan-making",
+    "title": "Victoria Ajoku: The UK Fan Maker Giving an Ancient Craft a Bold New Future"
+  },
 
   "relatedArticles": [
     {

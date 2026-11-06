@@ -110,6 +110,10 @@
       "destination": "/beyond-business.html"
     },
     {
+      "source": "/magazine-view",
+      "destination": "/magazine-view.html"
+    },
+    {
       "source": "/magazine/business-woman-2026/read",
       "destination": "/magazine-view?id=business-woman-2026"
     },

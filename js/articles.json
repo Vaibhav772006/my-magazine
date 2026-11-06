@@ -14,9 +14,9 @@
   "publishedDate": "2026-11-05",
   "readingTime": "7 min read",
   "featured": true,
-  "cover": "../images/magazine/images/article-pdf&cover/cover-2026-victoria-ajoku.png",
+  "cover": "/images/article-pdf&cover/cover-2026-victoria-ajoku.png",
   "gallery": [
-    "../images/Magazine-cover/cover-2026-victoria-ajoku.jpg"
+    "/images/Magazine-cover/cover-2026-victoria-ajoku.png"
   ],
   "tags": [
     "Victoria Ajoku",

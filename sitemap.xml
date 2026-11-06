@@ -7,42 +7,54 @@
   <!-- Primary Website Pages -->
   <url>
     <loc>https://www.theempireinsight.com/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/magazine</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/article</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/beyond-business</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/about</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/contact</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- Published Magazine Editions (6 editions) -->
+  <!-- Published Magazine Editions (7 editions) -->
+  <url>
+    <loc>https://www.theempireinsight.com/magazine/inspiring-creative-entrepreneur-victoria-ajoku-2026</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/magazine/inspiring-creative-entrepreneur-victoria-ajoku-2026/read</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <url>
     <loc>https://www.theempireinsight.com/magazine/visionary-career-coach-2026</loc>
     <lastmod>2026-10-28</lastmod>
@@ -116,7 +128,13 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Published Articles (22 stories) -->
+  <!-- Published Articles (23 stories) -->
+  <url>
+    <loc>https://www.theempireinsight.com/article/victoria-ajoku-fan-maker-uk-ambassador-for-fan-making</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://www.theempireinsight.com/article/gta-6-release-date-november-19-2026-what-to-know</loc>
     <lastmod>2026-11-03</lastmod>

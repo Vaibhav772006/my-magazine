@@ -816,6 +816,21 @@
         display: none;
       }
     }
+
+    @media print {
+      body > * {
+        display: none !important;
+      }
+
+      body::before {
+        display: block;
+        padding: 48px;
+        color: #111;
+        background: #fff;
+        content: "Printing is disabled for this confidential magazine.";
+        font: 600 18px/1.5 Arial, sans-serif;
+      }
+    }
   </style>
 </head>
 <body>
@@ -947,6 +962,42 @@
     </div>
 
   </main>
+
+  <script>
+    /* Keep this protection scoped to the magazine PDF reader only. */
+    (function protectMagazineReader() {
+      'use strict';
+
+      const blockedKey = (event) => {
+        const key = event.key.toLowerCase();
+        const modifier = event.ctrlKey || event.metaKey;
+        const devToolsShortcut =
+          event.key === 'F12' ||
+          (modifier && event.shiftKey && ['i', 'j', 'c'].includes(key));
+
+        return devToolsShortcut ||
+          (modifier && ['a', 'c', 'o', 'p', 's', 'u', 'x'].includes(key)) ||
+          (modifier && event.shiftKey && key === 's');
+      };
+
+      window.addEventListener('keydown', (event) => {
+        if (blockedKey(event)) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
+
+      ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach((eventName) => {
+        document.addEventListener(eventName, (event) => {
+          event.preventDefault();
+        }, true);
+      });
+
+      window.addEventListener('beforeprint', (event) => {
+        event.preventDefault();
+      });
+    }());
+  </script>
 
   <script>
     /* ==========================================================

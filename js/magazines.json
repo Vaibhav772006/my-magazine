@@ -1,5 +1,145 @@
 [
   {
+  "id": "inspiring-creative-entrepreneur-victoria-ajoku-2026",
+  "visible": true,
+  "slug": "inspiring-creative-entrepreneur-victoria-ajoku-2026",
+  "title": "The Inspiring Creative Entrepreneur: Victoria Ajoku on Redefining the Art of Fan Making in the UK",
+  "shortTitle": "The Inspiring Creative Entrepreneur",
+  "subtitle": "Giving an Ancient Craft a Bold New Future",
+  "volume": "Vol. 00",
+  "issue": "Special Edition 2026",
+  "edition": "Annual Edition 2026",
+  "publishedDate": "2026-11-05",
+  "category": "Creative Entrepreneurship & Heritage Crafts",
+  "tags": [
+    "Victoria Ajoku",
+    "Fan Making",
+    "Fan The Glory With Tori",
+    "UK Ambassador for Fan Making",
+    "Endangered Crafts",
+    "Heritage Crafts UK",
+    "Master Fan Maker",
+    "Creative Entrepreneur",
+    "Solopreneur",
+    "Women in Business",
+    "Craft Business UK",
+    "Inclusive Workshops",
+    "Cultural Heritage",
+    "Fan Making Workshops UK",
+    "British Crafts"
+  ],
+  "cover": "../images/Magazine-cover/cover-2026-victoria-ajoku.jpg",
+  "featured": true,
+  "readingTime": "7 min read",
+  "editor": {
+    "name": "Elena Sterling",
+    "role": "Executive Editor"
+  },
+  "preview": "Meet Victoria Ajoku, Master Fan Maker, Fan Curator and UK Ambassador for Fan Making. Discover how her UK company, Fan The Glory With Tori, is reviving a critically endangered heritage craft through inclusive mobile workshops.",
+  "executiveSummary": "This special edition features Victoria Ajoku, Master of Arts, Master Fan Maker, Fan Curator and UK Ambassador for Fan Making. When fan making was classed as critically endangered in 2017, she built Fan The Glory With Tori to teach, make, perform and champion the hand fan. Explore her journey, her marbled hand fans, her inclusive mobile workshops across the UK and her advice for makers and small business owners.",
+  "seo": {
+    "metaTitle": "Victoria Ajoku: UK Ambassador for Fan Making | The Empire Insight",
+    "metaDescription": "Meet Victoria Ajoku, Master Fan Maker and UK Ambassador for Fan Making. Explore UK heritage crafts, mobile fan making workshops and her mission to revive an endangered craft.",
+    "canonicalUrl": "https://www.theempireinsight.com/magazine/inspiring-creative-entrepreneur-victoria-ajoku-2026",
+    "robots": "index, follow, max-image-preview:large",
+    "primaryKeyword": "Victoria Ajoku fan maker",
+    "keywords": [
+      "Victoria Ajoku",
+      "Victoria Ajoku fan maker",
+      "UK Ambassador for Fan Making",
+      "Fan The Glory With Tori",
+      "Fan Making",
+      "fan maker UK",
+      "fan making workshops UK",
+      "mobile craft workshops UK",
+      "craft workshops near me",
+      "bespoke handmade fans UK",
+      "Endangered Crafts",
+      "Heritage Crafts UK",
+      "British heritage crafts",
+      "Master Fan Maker",
+      "Marbled Hand Fan",
+      "Creative Entrepreneur",
+      "Solopreneur",
+      "Craft Business UK",
+      "Women in Business UK",
+      "Global Business Magazine",
+      "Business Leadership Magazine",
+      "Business Magazine for Entrepreneurs",
+      "International Leadership Magazine"
+    ],
+    "openGraph": {
+      "type": "article",
+      "title": "The Inspiring Creative Entrepreneur: Victoria Ajoku | The Empire Insight",
+      "description": "Discover Victoria Ajoku, UK Ambassador for Fan Making, and her mission to give a critically endangered UK craft a bold new future.",
+      "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-victoria-ajoku.jpg",
+      "imageAlt": "The Inspiring Creative Entrepreneur magazine cover featuring Victoria Ajoku, Master Fan Maker and UK Ambassador for Fan Making",
+      "siteName": "The Empire Insight",
+      "locale": "en_GB",
+      "publishedTime": "2026-11-05",
+      "modifiedTime": "2026-11-05",
+      "section": "Creative Entrepreneurship & Heritage Crafts"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "The Inspiring Creative Entrepreneur | Victoria Ajoku",
+      "description": "Explore UK heritage crafts, fan making workshops and creative entrepreneurship with Victoria Ajoku, UK Ambassador for Fan Making.",
+      "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-victoria-ajoku.jpg"
+    },
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "PublicationIssue",
+      "name": "The Inspiring Creative Entrepreneur: Victoria Ajoku",
+      "description": "A magazine feature on Victoria Ajoku, Master Fan Maker, Fan Curator and UK Ambassador for Fan Making, highlighting UK heritage crafts and creative entrepreneurship.",
+      "issueNumber": "Special Edition 2026",
+      "volumeNumber": "00",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "inLanguage": "en-GB",
+      "image": "https://www.theempireinsight.com/images/Magazine-cover/cover-2026-victoria-ajoku.jpg",
+      "url": "https://www.theempireinsight.com/magazine/inspiring-creative-entrepreneur-victoria-ajoku-2026",
+      "contentLocation": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "about": {
+        "@type": "Person",
+        "name": "Victoria Ajoku",
+        "jobTitle": "UK Ambassador for Fan Making",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Fan The Glory With Tori"
+        }
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "The Empire Insight"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Empire Insight",
+        "url": "https://www.theempireinsight.com"
+      },
+      "editor": {
+        "@type": "Person",
+        "name": "Elena Sterling",
+        "jobTitle": "Executive Editor"
+      }
+    }
+  },
+  "featuredArticle": {
+    "id": "victoria-ajoku-fan-maker-uk-ambassador-for-fan-making",
+    "title": "Victoria Ajoku: The UK Fan Maker Giving an Ancient Craft a Bold New Future"
+  },
+  "relatedArticles": [
+    {
+      "id": "victoria-ajoku-fan-maker-uk-ambassador-for-fan-making",
+      "url": "article/victoria-ajoku-fan-maker-uk-ambassador-for-fan-making"
+    }
+  ]
+}
+,
+  {
     "id": "visionary-career-coach-2026",
     "visible": true,
     "slug": "visionary-career-coach-2026",

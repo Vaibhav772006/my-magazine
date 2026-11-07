@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Remove markup from older cached reader templates; magazine view only uses related articles.
+  document.getElementById("mag-reader-featured")?.remove();
+
   const urlParams = new URLSearchParams(window.location.search);
   const pathMatch = window.location.pathname.match(/^\/magazine\/([^/]+)(?:\/read)?\/?$/i);
   const magId = urlParams.get("id") ||
@@ -63,36 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /* ---------- featured article ---------- */
-  function renderFeaturedArticle(mag) {
-    const section = $("mag-reader-featured");
-    const card = $("mag-reader-featured-card");
-    if (!section || !card || !mag.featuredArticle) return;
-
-    articlesPromise
-      .then((articles) => {
-        if (!Array.isArray(articles)) throw new Error("Invalid articles repository");
-
-        const ref = mag.featuredArticle;
-        const article = articles.find((a) => String(a.id) === String(ref.id));
-        if (!article) return;
-
-        card.href = articleUrl(article, ref.url);
-
-        const img = $("mag-reader-featured-image");
-        img.src = new URL(article.cover, document.baseURI).href;
-        img.alt = ""; // title is already in the card text
-
-        $("mag-reader-featured-category").textContent = article.category || "Feature";
-        $("mag-reader-featured-title").textContent = article.title;
-        $("mag-reader-featured-excerpt").textContent =
-          article.excerpt || article.subtitle || "";
-
-        section.hidden = false;
-      })
-      .catch((error) => console.error(error));
-  }
-
   /* ---------- related articles (horizontal cards) ---------- */
   function renderRelatedArticles(mag) {
     const section = $("mag-reader-articles");
@@ -122,13 +95,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const title = escapeHtml(article.title);
           const category = escapeHtml(article.category || "Feature");
           const excerpt = escapeHtml(article.excerpt || article.subtitle || "");
-          const cover = escapeHtml(new URL(article.cover, document.baseURI).href);
+          const coverUrl = new URL(article.cover, document.baseURI).href
+            .replace(/&/g, "%26");
+          const cover = escapeHtml(coverUrl);
 
           const li = document.createElement("li");
           li.innerHTML = `
             <article class="mag-article-card">
               <a class="mag-article-card__media" href="${href}" tabindex="-1" aria-hidden="true">
-                <img src="${cover}" alt="" width="240" height="160" loading="lazy" />
+                <img src="${cover}" alt="" width="240" height="160" loading="eager" decoding="async" />
               </a>
               <div class="mag-article-card__body">
                 <span class="mag-article-card__category">${category}</span>
@@ -255,7 +230,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setupCover(mag, pdfViewerUrl);
       setupShare(mag);
-      renderFeaturedArticle(mag);
       renderRelatedArticles(mag);
     })
     .catch((err) => {

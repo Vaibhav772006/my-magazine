@@ -7,37 +7,37 @@
   <!-- Primary Website Pages -->
   <url>
     <loc>https://www.theempireinsight.com/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/magazine</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/article</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/beyond-business</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/about</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/contact</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -128,7 +128,37 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Published Articles (23 stories) -->
+  <!-- Published Articles (28 stories) -->
+  <url>
+    <loc>https://www.theempireinsight.com/article/anthropic-ipo-nasdaq-ant-price-range-google-nvidia-10-billion</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/dow-surges-1500-points-midterm-elections-2026-what-it-means-for-business</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/john-ternus-apple-ceo-tim-cook-executive-chairman-what-changes</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/demis-hassabis-steps-down-google-deepmind-ceo-kavukcuoglu-jeff-dean</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/boomerang-founders-aneel-bhusri-workday-ceo-return-steve-jobs-playbook</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://www.theempireinsight.com/article/victoria-ajoku-fan-maker-uk-ambassador-for-fan-making</loc>
     <lastmod>2026-11-05</lastmod>

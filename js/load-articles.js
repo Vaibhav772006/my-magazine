@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       targetSection = "featured-stories";
     }
   }
-  }
 
   const isMatchingSection = (article, sec) => {
     if (!sec || sec === "all") return true;

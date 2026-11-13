@@ -164,7 +164,11 @@ if (fs.existsSync(articleHtmlPath)) {
 
   const articlesContainerRegex = /(<div class="ed-stories-grid" id="articles-container"[^>]*>)[\s\S]*?(<\/div>\s*<\/main>)/;
   if (articlesContainerRegex.test(articleHtml)) {
-    articleHtml = articleHtml.replace(articlesContainerRegex, `$1\n${articleCardsHtml}\n    $2`);
+    articleHtml = articleHtml.replace(/<\/main>[\s\S]*?(?=\s*<footer)/, '</main>\n');
+    articleHtml = articleHtml.replace(
+      articlesContainerRegex,
+      (match, openingTag, closingTags) => `${openingTag}\n${articleCardsHtml}\n    ${closingTags}`
+    );
     fs.writeFileSync(articleHtmlPath, articleHtml, 'utf8');
     console.log(`  ✔ Pre-rendered ${featuredArticles.length} featured story cards directly into magazine/article.html`);
   }
@@ -210,7 +214,11 @@ if (fs.existsSync(beyondHtmlPath)) {
 
   const articlesContainerRegex = /(<div class="ed-stories-grid" id="articles-container"[^>]*>)[\s\S]*?(<\/div>\s*<\/main>)/;
   if (articlesContainerRegex.test(beyondHtml)) {
-    beyondHtml = beyondHtml.replace(articlesContainerRegex, `$1\n${beyondCardsHtml}\n    $2`);
+    beyondHtml = beyondHtml.replace(/<\/main>[\s\S]*?(?=\s*<footer)/, '</main>\n');
+    beyondHtml = beyondHtml.replace(
+      articlesContainerRegex,
+      (match, openingTag, closingTags) => `${openingTag}\n${beyondCardsHtml}\n    ${closingTags}`
+    );
     fs.writeFileSync(beyondHtmlPath, beyondHtml, 'utf8');
     console.log(`  ✔ Pre-rendered ${beyondArticles.length} beyond-business story cards directly into magazine/beyond-business.html`);
   }

@@ -7,37 +7,37 @@
   <!-- Primary Website Pages -->
   <url>
     <loc>https://www.theempireinsight.com/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/magazine</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/article</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/beyond-business</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/about</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.theempireinsight.com/contact</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -128,7 +128,67 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Published Articles (28 stories) -->
+  <!-- Published Articles (38 stories) -->
+  <url>
+    <loc>https://www.theempireinsight.com/article/gold-price-india-today-why-gold-rates-are-changing-2026</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/latest-movie-reviews-what-makes-a-film-worth-watching</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/royal-enfield-250cc-hybrid-motorcycle-expected-features-technology</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/nasa-voyager-1-how-far-has-humanitys-most-distant-spacecraft-travelled</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/india-vs-nepal-cricket-players-match-preview-key-statistics</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/dev-uthani-ekadashi-2026-date-importance-traditional-rituals</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/anthropic-ipo-how-artificial-intelligence-is-transforming-the-startup-industry</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/nifty-50-and-sensex-understanding-indias-stock-market-movements</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/upi-security-7-digital-payment-mistakes-every-indian-should-avoid</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.theempireinsight.com/article/ai-is-changing-software-development-7-skills-future-developers-should-learn</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
   <url>
     <loc>https://www.theempireinsight.com/article/anthropic-ipo-nasdaq-ant-price-range-google-nvidia-10-billion</loc>
     <lastmod>2026-11-13</lastmod>
